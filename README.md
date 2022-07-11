@@ -2,13 +2,13 @@
 
 # SITE Capstone Project
 
-SITE Course Year: **20__**
+SITE Course Year: **2022**
 
-Cohort: **Add Company Sponsor Name**
+Cohort: **Workday 10**
 
-Team Member Names:**Insert Team Member Names**
+Team Member Names:**Folasade Oloye, Evans Asuboah, Andrew Valerio**
 
-Mentors Names: **Insert Professional Mentor Names**
+Mentors Names: **Matt Carreon, Arianna Malakis, Lalitha Nanduri**
 
 Project Code Repository Links
 
