@@ -1,6 +1,6 @@
 # Project Proposal
 
-Pod Members: **Add Pod Members Names**
+Pod Members: Andrew Valerio, Evans Asuboah, Folasade Oloye
 
 ## Problem Statement
 
@@ -42,5 +42,5 @@ Role 3 Persona 2: Jake is a 27 year old living in New York. He dropped out of co
 
 ## Wireframe 
 
-[Wireframe](https://www.figma.com/proto/XsJcRBAIbN0YkjsIXjSQll/Capstone-Project---TerraLearn?node-id=10%3A14&scaling=scale-down&page-id=0%3A1&starting-point-node-id=0%3A3 
+[Wireframe on Figma](https://www.figma.com/proto/XsJcRBAIbN0YkjsIXjSQll/Capstone-Project---TerraLearn?node-id=10%3A14&scaling=scale-down&page-id=0%3A1&starting-point-node-id=0%3A3 
 )
