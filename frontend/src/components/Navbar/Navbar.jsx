@@ -3,12 +3,12 @@ import React from 'react'
 import './Navbar.css'
 import { Avatar } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import globe from '../assets/globe.png'
+import earthIcon from '../assets/earth-icon.png'
 function Navbar() {
   return (
     <div className="Navbar">
       <div className="Navbar_logo">
-      {/* <Avatar alt="Guest" src={globe} /> */}
+      <Avatar alt="Guest" src={earthIcon} />
       </div>
      
       <div className="Navbar_search">
