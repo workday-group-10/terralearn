@@ -9,6 +9,11 @@ function Navbar() {
     <div className="Navbar">
       <div className="Navbar_logo">
       <Avatar alt="Guest" src={earthIcon} />
+      <div className='Logo_Name'>
+      <span className="Navbar_optionLineOne">TerraLearn</span>
+
+      </div>
+      
       </div>
      
       <div className="Navbar_search">
