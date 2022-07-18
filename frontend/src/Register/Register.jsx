@@ -2,7 +2,9 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import "./Register.css"
-// import apiClient from "components/services/apiClient"
+
+//import apiClient from "components/services/apiClient"
+
 
 export default function Register({ setAppState, loggedIn, setLoggedIn, redirect, redirectInfo, setRedirect, setRedirectInfo}) {
   const navigate = useNavigate()
