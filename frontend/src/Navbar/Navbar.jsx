@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import './Navbar.css'
-//import { Avatar } from '@material-ui/core';
-//import SearchIcon from '@material-ui/icons/Search';
-//import globe from '../assets/globe.png'
+import { Avatar } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
+import globe from '../assets/globe.png'
 function Navbar() {
   return (
     <div className="Navbar">
@@ -14,7 +14,7 @@ function Navbar() {
       <div className="Navbar_search">
      
         <input className="Navbar_search_input" type="text" />
-           {/* {<SearchIcon className="Navbar_searchIcon"/>} */}
+           {<SearchIcon className="Navbar_searchIcon"/>}
         {/*Logo*/}
       </div>
       <div className="Navbar_nav">
