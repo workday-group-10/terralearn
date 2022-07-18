@@ -5,13 +5,13 @@ import "./Login.css"
 // import apiClient from "components/services/apiClient"
 
 export default function Login() {
-//   const navigate = useNavigate()
-//   const [isLoading, setIsLoading] = useState(false)
-//   const [errors, setErrors] = useState({})
-//   const [form, setForm] = useState({
-//     email: "",
-//     password: "",
-//   })
+  const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
+  const [errors, setErrors] = useState({})
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  })
 //   let pageDirect= "closed"
 //   if (redirect) {
 //     pageDirect = "redirect"
@@ -85,52 +85,58 @@ export default function Login() {
 
   return (
     <div className="Login">
-        <h1>HELLO THIS IS THE LOGIN</h1>
-      {/* <div className="card">
-        <h2>Login</h2>
+        
+           
+        
+            <h1>HELLO THIS IS THE LOGIN</h1>
+            <div className="login-card">
+                <p className="switchR">
+                    Don't have an account? Sign up <Link to="/register">here</Link>
+                </p>
+                <h2>Sign Up</h2>
 
-        {errors.form || message ? <span className="error">{errors.form || message}</span>: null}
-        <h4 className={pageDirect}>You must be logged in to access the {redirectInfo} page.</h4>
+                <div className="form">
+                <div className="input-field">
+                    <label htmlFor="email">Email or Username</label><br/>
+                    <input
+                    className="input-bar"
+                    type="email"
+                    name="email"
+                    placeholder="user@gmail.com"
+                    value={form.email}
+                    //   onChange={handleOnInputChange}
+                    />
+                    {/* {errors.email && <span className="error">{errors.email}</span>} */}
+                </div>
 
-        {Boolean(errors.form) && <span className="error">{errors.form}</span>}
-        <br />
+                <div className="input-field">
+                    <label htmlFor="password">Password</label><br/>
+                    <input
+                    className="input-bar"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={form.password}
+                    //   onChange={handleOnInputChange}
+                    />
+                    {/* {errors.password && <span className="error">{errors.password}</span>} */}
+                </div>
 
-        <div className="form">
-          <div className="input-field">
-            <label htmlFor="email">Email</label><br/>
-            <input
-              type="email"
-              name="email"
-              placeholder="user@gmail.com"
-              value={form.email}
-              onChange={handleOnInputChange}
-            />
-            {errors.email && <span className="error">{errors.email}</span>}
-          </div>
+                {/* <button className="btn" disabled={isLoading} onClick={handleOnSubmit}>
+                    {isLoading ? "Loading..." : "Login"}
+                </button> */}
+                <button className="login-btn">Sign In</button>
+                <h2>Welcome back to TerraLearn!</h2>
+                </div>
 
-          <div className="input-field">
-            <label htmlFor="password">Password</label><br/>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={form.password}
-              onChange={handleOnInputChange}
-            />
-            {errors.password && <span className="error">{errors.password}</span>}
-          </div>
-
-          <button className="btn" disabled={isLoading} onClick={handleOnSubmit}>
-            {isLoading ? "Loading..." : "Login"}
-          </button>
+                <div className="footer">
+                
+                </div>
+            </div>
+         <div className="background-login">
         </div>
-
-        <div className="footer">
-          <p>
-            Don't have an account? Sign up <Link to="/register">here</Link>
-          </p>
+        <div className="background-login-two">
         </div>
-      </div> */}
     </div>
   )
 }
