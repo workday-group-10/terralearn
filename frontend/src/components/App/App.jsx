@@ -21,18 +21,11 @@ function App() {
        <main>
         <Navbar/>
         <Routes>
-<<<<<<< HEAD:frontend/src/App/App.jsx
-            {/* <Route path ="/" element = {<LandingPage/>}/> */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-
-=======
              <Route path ="/" element = {<PostLoginLanding/>}/> 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             {/* <Route path ="/landing" element = {<PostLoginLanding/>}/> */}
             {/* <Route path ="/instructions" element = {<InstructionsPage/>}/> */}
->>>>>>> 46b2e1349607d16e018112ba88a00101fbd4ecf1:frontend/src/components/App/App.jsx
               
           </Routes>
        </main>
