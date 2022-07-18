@@ -22,7 +22,8 @@ function App() {
             {/* <Route path ="/" element = {<LandingPage/>}/> */}
             <Route path="/login" element={<Login setAppState={setAppState} redirect={redirect} redirectInfo={redirectInfo} loggedIn={loggedIn} setLoggedIn={setLoggedIn} setRedirect={setRedirect} setRedirectInfo={setRedirectInfo} appState={appState}/>} />
             <Route path="/register" element={<Register setRedirect={setRedirect} setRedirectInfo={setRedirectInfo} setAppState={setAppState} loggedIn={loggedIn} setLoggedIn={setLoggedIn} appState={appState}/>} />
-
+            {/* <Route path ="/landing" element = {<PostLoginLanding/>}/> */}
+            {/* <Route path ="/instructions" element = {<InstructionsPage/>}/> */}
               
           </Routes>
        </main>
