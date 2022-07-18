@@ -5,6 +5,8 @@ import Navbar from '../Navbar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from "../Register/Register"
 import Login from "../Login/Login"
+//import InstructionsPage from "../InstructionsPage/InstructionsPage"
+import PostLoginLanding from '../PostLoginLanding/PostLoginLanding'
 
 
 
@@ -19,10 +21,18 @@ function App() {
        <main>
         <Navbar/>
         <Routes>
+<<<<<<< HEAD:frontend/src/App/App.jsx
             {/* <Route path ="/" element = {<LandingPage/>}/> */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
+=======
+             <Route path ="/" element = {<PostLoginLanding/>}/> 
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            {/* <Route path ="/landing" element = {<PostLoginLanding/>}/> */}
+            {/* <Route path ="/instructions" element = {<InstructionsPage/>}/> */}
+>>>>>>> 46b2e1349607d16e018112ba88a00101fbd4ecf1:frontend/src/components/App/App.jsx
               
           </Routes>
        </main>

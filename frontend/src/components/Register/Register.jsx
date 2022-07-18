@@ -120,7 +120,7 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
 
   return (
     <div className="Register">
-      <div className="register-card">
+      <div className="card">
         <h1>HELLO THIS IS THE REGISTER PAGE</h1>
         <h2>Register an Account</h2>
 

@@ -1,12 +1,9 @@
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../Navbar/NavBar";
 import { Link } from "react-router-dom";
 import "./PostLoginLanding.css";
 export default function PostLoginLanding() {
   return (
     <div className = "post-login-landing">
-        <div>
-            <NavBar/> 
-        </div>
         <div>
             <h1>YOU LOGGED IN!</h1>
         </div>
