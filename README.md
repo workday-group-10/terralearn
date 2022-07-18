@@ -10,8 +10,8 @@ Mentors Names: **Matt Carreon, Arianna Malakis, Lalitha Nanduri**
 
 Project Code Repository Links
 
-* [Frontend Repo Link]()
-* [Backend Repo Link]()
+* [Frontend Repo Link](frontend/)
+* [Backend Repo Link](terralearn-backend/)
 
 ## Project Overview
 
