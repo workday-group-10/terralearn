@@ -89,12 +89,15 @@ export default function Login() {
         
            
         
-            <h1>HELLO THIS IS THE LOGIN</h1>
+            {/* <h1>HELLO THIS IS THE LOGIN</h1> */}
+            <br/>
             <div className="login-card">
                 <p className="switchR">
-                    Don't have an account? Sign up <Link to="/register">here</Link>
+                    Don't have an account?
+                    <br></br> 
+                    <Link to="/register">Sign up</Link>
                 </p>
-                <h2>Sign Up</h2>
+                <h1 className="sign-title">Sign Up</h1>
 
                 <div className="form">
                 <div className="input-field">

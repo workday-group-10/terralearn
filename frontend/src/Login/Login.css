@@ -23,27 +23,41 @@
 }
 .switchR{
     /* max-width: 100px; */
-    font-size: 10px;
-    width: 100px;
-    margin-left: 200px;
+    font-size: 25px;
+    margin-top: 3em;
+    width: 180px;
+    margin-left: 500px;
     text-align: right;
     
 }
+.sign-title{
+    margin-top: 2em;
+}
 .Login{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .login-btn{
-    margin-top: 10px;
+    margin-top: 2em;
+    border: solid #283C52 2px;
+    border-radius: 10px;
+    color: white;
+    background-color: #283C52;
+    padding: 10px 260px;
 }
+
 
 .input-bar {
     /* background-color: gray; */
     height: 40px;
     width: 575px;
+    border-radius: 10px;
+    border: solid black 1px;
+
 }
 
 .login-card{
+    margin-top: 2em;
     position: relative;
     margin: auto;
     background-color: white;
