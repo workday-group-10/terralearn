@@ -26,8 +26,8 @@ function App() {
             <Route path ="/nutrition/create" element = {<CreateNutrition nutritionItems={nutritionItems} loggedIn={loggedIn} setRedirect={setRedirect} setRedirectInfo={setRedirectInfo} appState={appState}/>}/>
             <Route path ="/sleep" element = {<Sleep loggedIn={loggedIn} setRedirect={setRedirect} setRedirectInfo={setRedirectInfo} appState={appState}/>}/>
             <Route path="*" element={<NotFound/>}></Route> */}
-            <Route path="/login" element={<Login setAppState={setAppState} redirect={redirect} redirectInfo={redirectInfo} loggedIn={loggedIn} setLoggedIn={setLoggedIn} setRedirect={setRedirect} setRedirectInfo={setRedirectInfo} appState={appState}/>} />
-            <Route path="/register" element={<Register setRedirect={setRedirect} setRedirectInfo={setRedirectInfo} setAppState={setAppState} loggedIn={loggedIn} setLoggedIn={setLoggedIn} appState={appState}/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register />} />
 
               
           </Routes>
