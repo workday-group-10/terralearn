@@ -5,9 +5,6 @@ export default function PostLoginLanding() {
   return (
     <div className = "post-login-landing">
         <div>
-            <NavBar/> 
-        </div>
-        <div>
             <h1>YOU LOGGED IN!</h1>
         </div>
     </div>
