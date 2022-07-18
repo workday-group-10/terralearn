@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import './Navbar.css'
-import { Avatar } from '@material-ui/core';
+//import { Avatar } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import globe from '../assets/globe.png'
+//import globe from '..components/assets/globe.png'
 function Navbar() {
   return (
     <div className="Navbar">
