@@ -36,7 +36,7 @@ function App() {
              <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> 
             <Route path ="/instructions" element = {<InstructionsPage/>}/>
             <Route path ="/countdown" element = {<RoundCountdownPage/>}/>
-            <Route path ="/gameplayscreen" element = {<RoundCountdownPage/>}/>
+            <Route path ="/gameplayscreen" element = {<GameplayScreen/>}/>
               
           </Routes>
        </main>
