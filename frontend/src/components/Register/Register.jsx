@@ -128,7 +128,7 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
         <p className="switchL">
             Already have an account? 
             <br></br>
-            Login <Link to="/login">here</Link>
+            <Link className="underline" to="/login">Log in here</Link>
           </p>
            
           <h2 className="title-sign">Sign Up</h2>

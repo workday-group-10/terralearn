@@ -5,7 +5,7 @@
     left: 0px;
     width: 50%;
     height: 100%;
-    background-color: #283C52;
+    background-color: #21254F;
     z-index: -1;
 
 }
@@ -27,8 +27,14 @@
     margin-top: 3em;
     width: 180px;
     margin-left: 500px;
+    
     text-align: right;
     
+}
+
+.underline{
+    text-decoration: none;
+    color: blue;
 }
 .wel-R{
     margin-top: 20px;
@@ -43,13 +49,21 @@
     font-size: 20px;
 }
 
+
 .register-btn{
     margin-top: 2em;
-    border: solid #283C52 2px;
+    border: solid #21254F 2px;
     border-radius: 10px;
     color: white;
-    background-color: #283C52;
+    background-color: #21254F;
     padding: 10px 260px;
+    font-size: 20px;
+}
+
+.register-btn:hover {
+    border-color: #4851AD;
+    cursor: pointer;
+    background-color: #4851AD;
 }
 
 
