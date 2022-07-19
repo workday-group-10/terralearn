@@ -1,5 +1,6 @@
 import React from 'react'
 import earthIcon from '../assets/earth-icon.png'
+import {useNavigate } from "react-router-dom"
 import "./Category.css"
 import { makeStyles } from '@material-ui/core/styles';
 import { Card,CardActionArea,CardMedia,CardActions,Button,Typography ,CardContent} from '@material-ui/core';
@@ -12,7 +13,13 @@ const useStyles = makeStyles({
 
 
 function Category({continent}) {
+  const navigate = useNavigate();
     const classes = useStyles();
+
+    const handleOnSubmit =()=>{
+      navigate("/instructions");
+
+    }
   return (
     <div className="category">
           <Card className={classes.root}>
@@ -38,7 +45,7 @@ function Category({continent}) {
         </CardContent>
       </CardActionArea >
       <CardActions className='category-color'>
-        <Button size="small" color="secondary">
+        <Button size="small" color="secondary" onClick={handleOnSubmit}>
           Play
         </Button>
         
