@@ -1,3 +1,44 @@
+.screen-GP {
+    background-color: #FFF5F1;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 .gameplay-screen{
-    background-color: #283C52;
+    text-align: center;
+}
+.guess-div{
+    display: inline-block;
+}
+.game-instruct{
+    font-size: 38px;
+    margin-top: 3em;
+}
+.guess-btn {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Verdana;
+	font-size:25px;
+	font-weight:bold;
+	padding:9px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+    margin-top: 20px;
+}
+.guess-btn:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.guess-btn:active {
+	position:relative;
+	top:1px;
 }

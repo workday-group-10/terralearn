@@ -1,0 +1,12 @@
+.streetview-map{
+    width: 100%;
+    background-color: lightslategray;
+    height: 500px;
+    margin: auto;
+    border-radius: 12px;
+    z-index: -1;
+}
+.streetPhoto{
+    width: 70%;
+    z-index: -1;
+}
