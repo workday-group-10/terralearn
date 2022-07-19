@@ -132,6 +132,7 @@ export default function Login() {
                 <button className="login-btn">Sign In</button>
                 <h2 className="wel-L">Welcome back to TerraLearn!</h2>
                 </div>
+                
 
                 <div className="footer">
                 
