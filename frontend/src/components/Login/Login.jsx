@@ -97,7 +97,7 @@ export default function Login() {
           <p className="switchR">
               Don't have an account?
               <br></br> 
-              <Link to="/register">Sign up</Link>
+              <Link className="underline" to="/register">Sign up</Link>
           </p>
           <h1 className="sign-title">Sign In</h1>
 
