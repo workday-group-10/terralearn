@@ -1,0 +1,16 @@
+.CountDownContainer{
+    background-color:#0b0a32;
+    width: 100%;
+    display: flex;
+    flex: column;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+.CountDownContainer .level{
+    color: white;
+    font-size: 40px;
+    margin-top: 40px;
+
+}
