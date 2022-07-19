@@ -1,0 +1,15 @@
+.instructions-page {
+    height: 800px;
+    background: #CCCCCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .instructions-card {
+    background-color: #FFFF00;
+    width: 50%;
+    height: 65%;
+    }
+    .header{
+        text-align: center;
+    }
