@@ -3,6 +3,7 @@ import './App.css'
 import * as React from 'react'
 import Navbar from '../Navbar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from "react"
 import Register from "../Register/Register"
 import Login from "../Login/Login"
 import InstructionsPage from "../InstructionsPage/InstructionsPage"
@@ -15,6 +16,9 @@ import NotFound from '../NotFound/NotFound'
 
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState({})
+
 
 
   return (
@@ -22,11 +26,11 @@ function App() {
        <React.Fragment>
        <BrowserRouter>
        <main>
-        <Navbar/>
+        <Navbar user={user} loggedIn={loggedIn}/>
         <Routes>
              <Route path ="/" element = {<LandingPage/>}/> 
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setUser={setUser}/>} />
+            <Route path="/register" element={<Register setLoggedIn={setLoggedIn} setUser={setUser}/>} />
             <Route path="*" element={<NotFound/>} />
              <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> 
             <Route path ="/instructions" element = {<InstructionsPage/>}/>

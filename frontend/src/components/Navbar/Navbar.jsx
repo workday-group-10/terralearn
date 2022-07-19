@@ -1,17 +1,39 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import './Navbar.css'
-import { Avatar } from '@material-ui/core';
+import { useEffect } from 'react';
+import { Avatar, IconButton } from '@material-ui/core';
 import { useNavigate, Link } from "react-router-dom"
 import SearchIcon from '@material-ui/icons/Search';
 import earthIcon from '../assets/earth-icon.png'
-function Navbar() {
+function Navbar(props) {
+  const navigate = useNavigate()
+  const navigateLanding = () => {
+    console.log("logo being clicked")
+    if (props.loggedIn){
+      navigate("/PostLoginlanding")
+    } else{
+      navigate("/")
+    }
+  }
+  let navUser = "TerraLearn"
+  console.log("This is the props.user", props.user)
+  console.log("User is loggedin: ", props.loggedIn)
+  // useEffect(() => {
+    
+  // })
+  if (props.loggedIn){
+    navUser = props.user.user.username
+  } 
+  
   return (
     <div className="Navbar">
-      <div className="Navbar_logo">
-      <Avatar alt="Guest" src={earthIcon} />
+      <div className="Navbar_logo" >
+      {/* <IconButton onClick={navigateLanding}> */}
+        <Avatar alt="Guest" src={earthIcon} onClick={navigateLanding}/>
+      {/* </IconButton> */}
       <div className='Logo_Name'>
-      <span className="Navbar_optionLineOne">TerraLearn</span>
+        <span className="Navbar_optionLineOne">{navUser}</span>
 
       </div>
       
