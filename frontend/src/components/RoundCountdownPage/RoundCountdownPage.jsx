@@ -10,7 +10,7 @@ function RoundCountdownPage() {
     if (completed) {
       // Render a complete state
       return <Completionist />;
-    } else {
+    } else if (seconds <4) {
       // Render a countdown
       return (
         <span>
@@ -18,13 +18,16 @@ function RoundCountdownPage() {
         </span>
       );
     }
+    else{
+        return "LOADING..."
+    }
   };
 
   return (
     <div className="CountDownContainer">
         <div className="level">Round 1</div>
         <div  className="countDown" >
-        <Countdown date={Date.now() + 3000} renderer={renderer}/>
+        <Countdown date={Date.now() + 4000} renderer={renderer}/>
         </div>
        
      
