@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 export default function PostLoginLanding(props) {
-
+  props.setNavbarName(props.user.firstName)
   return (
     <div className="home">
        <div className="home_container">
