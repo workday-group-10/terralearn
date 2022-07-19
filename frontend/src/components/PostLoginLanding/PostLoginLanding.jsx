@@ -2,7 +2,8 @@ import Banner from "../Banner/Banner";
 import { Link } from "react-router-dom";
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
-export default function PostLoginLanding() {
+export default function PostLoginLanding(props) {
+
   return (
     <div className="home">
        <div className="home_container">
