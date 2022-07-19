@@ -6,7 +6,7 @@ import "./Login.css"
 import { API_BASE_URL } from "../constants"
 
 
-export default function Login() {
+export default function Login(props) {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({})
@@ -74,8 +74,10 @@ export default function Login() {
         // setRedirectInfo("")
         // navigate(nav)
         setIsLoading(false)
+        props.setUser(res.data)
         console.log("users data", res.data)
         navigate("/PostLoginlanding");
+        props.setLoggedIn(true)
         
       } else {
         setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))

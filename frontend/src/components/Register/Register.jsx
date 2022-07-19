@@ -7,7 +7,7 @@ import { API_BASE_URL } from "../constants"
 //import apiClient from "components/services/apiClient"
 
 
-export default function Register({ setAppState, loggedIn, setLoggedIn, redirect, redirectInfo, setRedirect, setRedirectInfo}) {
+export default function Register(props) {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({})
@@ -83,7 +83,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
         // setRedirect(false)
         // setRedirectInfo("")
         console.log("users data", res.data)
+        props.setUser(res.data)
         navigate("/PostLoginlanding")
+        props.setLoggedIn(true)
         
       } else {
         setErrors((e) => ({ ...e, form: "Something went wrong with registration" }))
