@@ -27,6 +27,14 @@ function Navbar() {
           <span className="Navbar_optionLineOne">Hello Guest</span>
           <span className="Navbar_optionLineTwo">Sign In</span>
         </div>
+        <div className="Navbar_option">
+          <span className="Navbar_optionLineOne">Your</span>
+          <span className="Navbar_optionLineTwo">Info</span>
+        </div>
+        <div className="Navbar_option">
+          <span className="Navbar_optionLineOne">Your</span>
+          <span className="Navbar_optionLineTwo">Modes</span>
+        </div>
       </div>
     </div>
   )

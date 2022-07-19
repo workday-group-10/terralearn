@@ -1,0 +1,44 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+ 
+    margin-right: auto;
+}
+.home_row{
+    display: flex;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.home .home_container{
+    position: relative;
+    text-align: center;
+   
+
+}
+.home .home_container .text_titles{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20%;
+   
+    left: 40%;
+    
+   
+}
+ .home_container .text_titles .title1{
+    font-weight: 800;
+    color: yellow;
+    font-size: 50px;
+    margin-bottom: 2px;
+}
+.home_container .text_titles .title2{
+    font-weight: 800;
+    color: white;
+    font-size: 50px;
+}
+.home_container .text_titles .title2 .other_titles{
+
+}

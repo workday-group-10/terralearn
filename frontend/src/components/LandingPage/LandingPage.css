@@ -1,0 +1,54 @@
+.landingPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.landingPage_row{
+    display: flex;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.landingPageContainer{
+    position: relative;
+
+}
+.landingPageContainer .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    color: white;
+   
+  }
+  .landingPageContainer .button-container .btn{
+    margin-top: 30px;
+    width: 90px;
+    background-color: #2B70B0;
+    color: white;
+    font-size: 20px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .landingPageContainer .button-container  .btn:hover {
+    background-color: black;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .titles{
+    display: flex;
+    flex-direction: column;
+  }
+.titles .title-two{
+
+    font-size: 50px;
+
+  }
