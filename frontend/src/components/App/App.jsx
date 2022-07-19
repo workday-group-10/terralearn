@@ -7,6 +7,7 @@ import Register from "../Register/Register"
 import Login from "../Login/Login"
 //import InstructionsPage from "../InstructionsPage/InstructionsPage"
 import PostLoginLanding from '../PostLoginLanding/PostLoginLanding'
+import LandingPage from '../LandingPage/LandingPage'
 
 
 
@@ -21,10 +22,10 @@ function App() {
        <main>
         <Navbar/>
         <Routes>
-             <Route path ="/" element = {<PostLoginLanding/>}/> 
+             <Route path ="/" element = {<LandingPage/>}/> 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            {/* <Route path ="/landing" element = {<PostLoginLanding/>}/> */}
+            { <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> }
             {/* <Route path ="/instructions" element = {<InstructionsPage/>}/> */}
               
           </Routes>

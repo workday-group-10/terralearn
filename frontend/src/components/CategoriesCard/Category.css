@@ -1,0 +1,29 @@
+.category{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    z-index: 1;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px;
+    width: 100%;
+    max-height: 400px;
+    min-width: 100px
+}
+
+.category-info{
+    height: 100px;
+    color: white;
+    margin-bottom: 15px; 
+   
+}
+.description{
+    color: white;
+}
+.continent{
+    color: yellow;
+}
+.category-color{
+    background-color: #0b0a32;
+
+}
