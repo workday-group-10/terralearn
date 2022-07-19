@@ -51,6 +51,13 @@
     color: white;
     background-color: #283C52;
     padding: 10px 260px;
+    font-size: 20px;
+}
+
+.login-btn:hover{
+    cursor: pointer;
+    border-color: #4A6F96;
+    background-color: #4A6F96;
 }
 
 
