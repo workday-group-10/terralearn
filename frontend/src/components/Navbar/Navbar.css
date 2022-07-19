@@ -8,6 +8,10 @@
     z-index: 100;
  
 }
+.nav-u{
+    text-decoration: none;
+    color: white;
+}
 .Navbar_logo{
     width: 50px;
     object-fit: contain;

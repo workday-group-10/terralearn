@@ -9,6 +9,7 @@ import InstructionsPage from "../InstructionsPage/InstructionsPage"
 import PostLoginLanding from '../PostLoginLanding/PostLoginLanding'
 import LandingPage from '../LandingPage/LandingPage'
 import RoundCountdownPage from '../RoundCountdownPage/RoundCountdownPage'
+import NotFound from '../NotFound/NotFound'
 
 
 
@@ -26,6 +27,7 @@ function App() {
              <Route path ="/" element = {<LandingPage/>}/> 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="*" element={<NotFound/>} />
              <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> 
             <Route path ="/instructions" element = {<InstructionsPage/>}/>
             <Route path ="/countdown" element = {<RoundCountdownPage/>}/>
