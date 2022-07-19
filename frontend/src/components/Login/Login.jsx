@@ -97,7 +97,7 @@ export default function Login() {
                     <br></br> 
                     <Link to="/register">Sign up</Link>
                 </p>
-                <h1 className="sign-title">Sign Up</h1>
+                <h1 className="sign-title">Sign In</h1>
 
                 <div className="form">
                 <div className="input-field">
@@ -130,7 +130,7 @@ export default function Login() {
                     {isLoading ? "Loading..." : "Login"}
                 </button> */}
                 <button className="login-btn">Sign In</button>
-                <h2>Welcome back to TerraLearn!</h2>
+                <h2 className="wel-L">Welcome back to TerraLearn!</h2>
                 </div>
 
                 <div className="footer">

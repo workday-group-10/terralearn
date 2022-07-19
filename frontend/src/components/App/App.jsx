@@ -8,6 +8,7 @@ import Login from "../Login/Login"
 //import InstructionsPage from "../InstructionsPage/InstructionsPage"
 import PostLoginLanding from '../PostLoginLanding/PostLoginLanding'
 import LandingPage from '../LandingPage/LandingPage'
+import InstructionsPage from '../InstructionsPage/InstructionsPage'
 
 
 
@@ -25,8 +26,8 @@ function App() {
              <Route path ="/" element = {<LandingPage/>}/> 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            { <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> }
-            {/* <Route path ="/instructions" element = {<InstructionsPage/>}/> */}
+            <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/>
+            <Route path ="/instructions" element = {<InstructionsPage/>}/>
               
           </Routes>
        </main>

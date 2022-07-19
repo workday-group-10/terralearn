@@ -120,16 +120,24 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
 
   return (
     <div className="Register">
-      <div className="card">
-        <h1>HELLO THIS IS THE REGISTER PAGE</h1>
-        <h2>Register an Account</h2>
+      <br></br>
+      <div className="register-card">
+       
+        <p className="switchL">
+            Already have an account? 
+            <br></br>
+            Login <Link to="/login">here</Link>
+          </p>
+           
+          <h2 className="title-sign">Sign Up</h2>
 
         {/* {errors.form && <span className="error">{errors.form}</span>} */}
 
           <div className="split-inputs">
           <div className="input-field">
-              <label htmlFor="name">Username</label>
+              <label htmlFor="name">Username</label><br/>
               <input
+              className="input-bar"
                 type="text"
                 name="username"
                 placeholder="Username"
@@ -139,8 +147,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
               {/* {errors.username && <span className="error">{errors.username}</span>} */}
             </div>
             <div className="input-field">
-              <label htmlFor="name">First Name</label>
+              <label htmlFor="name">First Name</label><br/>
               <input
+              className="input-bar"
                 type="text"
                 name="first_name"
                 placeholder="Jane"
@@ -150,8 +159,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
               {/* {errors.first_name && <span className="error">{errors.first_name}</span>} */}
             </div>
             <div className="input-field">
-              <label htmlFor="name">Last Name</label>
+              <label htmlFor="name">Last Name</label><br/>
               <input
+              className="input-bar"
                 type="text"
                 name="last_name"
                 placeholder="Doe"
@@ -163,8 +173,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
           </div>
 
           <div className="input-field">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email</label><br/>
             <input
+            className="input-bar"
               type="email"
               name="email"
               placeholder="jane@doe.io"
@@ -175,8 +186,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
           </div>
 
           <div className="input-field">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password</label><br/>
             <input
+            className="input-bar"
               type="password"
               name="password"
               placeholder="password"
@@ -187,8 +199,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
           </div>
 
           <div className="input-field">
-            <label htmlFor="passwordConfirm">Confirm Password</label>
+            <label htmlFor="passwordConfirm">Confirm Password</label><br/>
             <input
+            className="input-bar"
               type="password"
               name="passwordConfirm"
               placeholder="confirm password"
@@ -201,10 +214,14 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
           {/* <button className="btn" disabled={isLoading} onClick={handleOnSubmit}>
             {isLoading ? "Loading..." : "Create Account"}
           </button> */}
-          <button>Sign Up</button>
-          <p>
-            Already have an account? Login <Link to="/login">here</Link>
-          </p>
+          <button className="register-btn">Sign Up</button>
+          
+          <h2 className="wel-R">Welcome to TerraLearn!</h2>
+          
+        </div>
+        <div className="background-register">
+        </div>
+        <div className="background-register-two">
         </div>
 
     
