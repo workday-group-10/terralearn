@@ -11,6 +11,7 @@ import PostLoginLanding from '../PostLoginLanding/PostLoginLanding'
 import LandingPage from '../LandingPage/LandingPage'
 import RoundCountdownPage from '../RoundCountdownPage/RoundCountdownPage'
 import NotFound from '../NotFound/NotFound'
+import GameplayScreen from '../GameplayScreen/GameplayScreen'
 
 
 
@@ -35,6 +36,7 @@ function App() {
              <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> 
             <Route path ="/instructions" element = {<InstructionsPage/>}/>
             <Route path ="/countdown" element = {<RoundCountdownPage/>}/>
+            <Route path ="/gameplayscreen" element = {<RoundCountdownPage/>}/>
               
           </Routes>
        </main>
