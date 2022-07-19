@@ -5,9 +5,10 @@ import Navbar from '../Navbar/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Register from "../Register/Register"
 import Login from "../Login/Login"
-import InstructionsPage from "../InstructionsPage/InstructionsPage"
+//import InstructionsPage from "../InstructionsPage/InstructionsPage"
 import PostLoginLanding from '../PostLoginLanding/PostLoginLanding'
 import LandingPage from '../LandingPage/LandingPage'
+import RoundCountdownPage from 'components/RoundCountdownPage/RoundCountdownPage'
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             { <Route path ="/PostLoginlanding" element = {<PostLoginLanding/>}/> }
             <Route path ="/instructions" element = {<InstructionsPage/>}/>
+            <Route path ="/countdown" element = {<RoundCountdownPage/>}/>
               
           </Routes>
        </main>

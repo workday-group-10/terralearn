@@ -2,7 +2,7 @@
     height:90px;
     display: flex;
     align-items: center;
-    background-color: #131921;
+    background-color: #0b0a32;
     position: sticky;
     top:0;
     z-index: 100;
@@ -13,6 +13,7 @@
     object-fit: contain;
     margin: 2px 5px;
     margin-top: 18px;
+    margin-left: 40px;
     display: flex;
     flex-direction:column;
     justify-content: center;
@@ -31,7 +32,8 @@
 }
 .Navbar_search{
 display: flex;
-flex: 1;
+margin-left: 290px;
+flex:1;
 align-items: center;
 border-radius: 24px;
 
@@ -40,13 +42,14 @@ border-radius: 24px;
 .Navbar_searchIcon{
     padding: 5px;
     height: 22px !important;
-    background-color: #cd9042;
+    background-color:gray
 }
 .Navbar_search_input{
+   
     height: 12px;
     padding: 10px;
     border: none;
-    width: 100%;
+    width: 70%;
     
 }
 .Navbar_optionLineOne{
@@ -59,6 +62,7 @@ border-radius: 24px;
 .Navbar_nav{
     display: flex;
     justify-content: space-evenly;
+    margin-right: 60px;
 }
 .Navbar_option{
     display: flex;
@@ -66,13 +70,4 @@ border-radius: 24px;
     margin-left: 20px;
     margin-right: 20px;
     color: white;
-}
-.Navbar_optionBasket{
-    display: flex;
-    align-items: center;
-    color: white;
-}
-.Navbar_basketCount{
-    margin-left: 10px;
-    margin-right: 10px;
 }
