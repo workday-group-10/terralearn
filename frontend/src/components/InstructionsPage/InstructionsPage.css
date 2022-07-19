@@ -10,11 +10,13 @@
     justify-content: center;
     }
     .instructions-card {
-    background-color: #0095ff;
+    background-color: #0b85dc;
+    color: aliceblue;
     width: 40%;
     height: 65%;
     text-align: center;
     font-size: 28px;
+    border-radius: 15%;
     }
     .header{
         text-align: center;
@@ -27,7 +29,7 @@
     }
     .start-button {
     position: absolute;
-    top: 90%;
+    top: 95%;
     background-color:#0a0a23;
     color: #fff;
     border:none;
@@ -37,7 +39,8 @@
     font-size: 24px;
     }
     .start-button:hover {
-        background-color:#002ead;
+        background-color:#f6f33f;
+        color:#094876;
         transition: 0.7s;
     }
 

@@ -5,20 +5,43 @@ export default function LandingPage() {
 
   return (
     <div className="landingPage">
+    <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+
+            <div class="bg-animation">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="stars4"></div>
+            </div>
       <div className="landingPageContainer">
-        <Banner />
+        {/* <Banner /> */}
+        <div className="planet"> 
+        <div className="wrap">
+        <div className="background"></div> 
+        </div>
+        <div className="mask"></div>
+        </div>
         <div className="button-container">
-            <div className="titles">
+        <div className="titles">
             <h2 className="title-one">Learn About </h2>
             <h1 className="title-two">Your Home</h1>
             </div>
-           
             <button className="btn">Play</button>
         </div>
       </div>
 
       <div className="landingPage_row">
-
       </div>
     </div>
   );
