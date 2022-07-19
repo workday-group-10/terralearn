@@ -7,7 +7,7 @@ import { API_BASE_URL } from "../constants"
 //import apiClient from "components/services/apiClient"
 
 
-export default function Register({ setAppState, loggedIn, setLoggedIn, redirect, redirectInfo, setRedirect, setRedirectInfo}) {
+export default function Register(props) {
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({})
