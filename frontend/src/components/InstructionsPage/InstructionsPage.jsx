@@ -1,5 +1,13 @@
 import "./InstructionsPage.css";
+import { useNavigate } from "react-router-dom";
 export default function InstructionsPage() {
+  const navigate = useNavigate()
+
+  const handleSubmit = () =>{
+    navigate("/countdown")
+  }
+
+
   return (
     <div className = "instructions-page">
             <ul class="circles">
@@ -31,7 +39,7 @@ export default function InstructionsPage() {
             <li>Have fun!</li>
             </ol>
         </div>
-        <button className="start-button">Start</button>
+        <button className="start-button" onClick={handleSubmit}>Start</button>
     </div>
   );
 }
