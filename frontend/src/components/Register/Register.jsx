@@ -83,7 +83,9 @@ export default function Register({ setAppState, loggedIn, setLoggedIn, redirect,
         // setRedirect(false)
         // setRedirectInfo("")
         console.log("users data", res.data)
+        props.setUser(res.data)
         navigate("/PostLoginlanding")
+        props.setLoggedIn(true)
         
       } else {
         setErrors((e) => ({ ...e, form: "Something went wrong with registration" }))
