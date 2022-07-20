@@ -158,8 +158,6 @@ export default function Register(props) {
     {
      setAppState(data);
       apiClient.setToken(data.token)
-
-    
       navigate("/PostLoginlanding");
       setIsLoading(false);
       setIsLoggedIn(true)
