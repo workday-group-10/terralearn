@@ -3,13 +3,8 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    
 }
-/* .landingPage_row{
-    display: flex;
-    z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
-} */
 .landingPageContainer{
     position: relative;
     align-items: center;
@@ -62,8 +57,8 @@
     height: 100%;
   }
   .planet{
-    width:700px;
-    height:700px;
+    width:35vw;
+    height:70vh;
     border-radius:50%;
     overflow:hidden;
     box-shadow: 0 0 60px -20px rgba(3, 234, 255, 0.72), -14px -15px 40px -10px rgba(21, 128, 190, 0.23);
@@ -74,8 +69,8 @@
     z-index: -1;
   }
   .planet .mask{
-    width:100%;
-    height:100%;
+    width:35vw;
+    height:70vh;
     box-shadow:inset -10px -10px 40px #0a72b7, inset 10px 10px 30px -10px rgba(14, 223, 242, 0.6);
     border-radius:50%;
     z-index: -1;
@@ -84,14 +79,14 @@
     animation: translateBackground 40s infinite linear;  
     background:url(../assets/earth-animation.jpg) repeat-x;
     background-size: cover;
-    width:700px;
-    height:700px;
+    width: 35vw;
+    height:70vh;
     border-radius:50%;
     z-index: -1;
   }
   .planet .wrap{
-    width:700px;
-    height:700px;
+    width:35vw;
+    height:70vh;
     border-radius:50%;
     animation: rotatePlanet 150s infinite linear;  
     z-index: -1;

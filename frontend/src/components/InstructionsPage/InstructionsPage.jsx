@@ -39,7 +39,7 @@ export default function InstructionsPage() {
             <li>Have fun!</li>
             </ol>
         </div>
-        <br/><button className="start-button" onClick={handleSubmit}>Start</button>
+        <div><button className="start-button" onClick={handleSubmit}>Start</button></div>
     </div>
   );
 }
