@@ -40,6 +40,7 @@ export default function PostLoginLanding(props) {
             <button className="btn">Play</button>
         </div>
       </div>
+      <div className="break">Most Popular Categories</div>
       <div className="home_row">
       <Category continent="Europe"/>
         <Category continent="Asia"/>
