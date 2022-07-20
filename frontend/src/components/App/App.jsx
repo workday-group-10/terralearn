@@ -12,6 +12,7 @@ import NotFound from "../NotFound/NotFound";
 import GameplayScreen from "../GameplayScreen/GameplayScreen";
 import { AuthContextProvider, useAuthContext } from "../contexts/auth";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
+import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
 
 
 export default function AppContainer() {
@@ -98,6 +99,8 @@ function App() {
                   />
                 }
               ></Route>
+
+                <Route path="/gameSummary" element={<GameSummaryPage />} />
 
               {/* <Route path="/instructions" element={<InstructionsPage />} />
               <Route path="/countdown" element={<RoundCountdownPage />} />
