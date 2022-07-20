@@ -1,9 +1,14 @@
+import React from 'react';
 import Banner from "../Banner/Banner";
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 export default function PostLoginLanding(props) {
-  props.setNavbarName(props.user.firstName)
+  useEffect(() => {
+    props.setNavbarName(props.user.username)
+  }, []);
+  
   return (
     <div className="home">
     <ul class="circles">
@@ -19,7 +24,7 @@ export default function PostLoginLanding(props) {
                     <li></li>
             </ul>
 
-            <div class="bg-animation">
+            <div className="bg-animation">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
