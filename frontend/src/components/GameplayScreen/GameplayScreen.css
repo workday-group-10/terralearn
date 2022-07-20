@@ -17,6 +17,26 @@
     font-size: 38px;
     margin-top: 3em;
 }
+
+/* .street-div{
+	position: absolute;
+} */
+.round-div{
+	display: flex;
+	justify-content: space-around;
+	width:150px;
+	background-color: #fce4d8;
+	font-size: 20px;
+	float: right;
+	position:static;
+	z-index: 100;
+	
+	border-radius: 15px;
+}
+.title-round{
+	padding: 5px;
+}
+
 .guess-btn {
 	box-shadow: 3px 4px 0px 0px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
