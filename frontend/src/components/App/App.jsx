@@ -32,6 +32,7 @@ function App() {
   const handleLogout = async () => {
     await apiClient.logoutUser();
     setAppState({});
+    setNavbarName("TerraLearn")
     setIsLoggedIn(false);
   };
 

@@ -9,7 +9,7 @@ import { useAuthContext } from "../contexts/auth"
 
 
 export default function Register(props) {
-  const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
+  const { initialized, appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
 
 
   const navigate = useNavigate();
@@ -158,6 +158,7 @@ export default function Register(props) {
     {
      setAppState(data);
       apiClient.setToken(data.token)
+      setIsLoggedIn(true)
 
     
       navigate("/PostLoginlanding");

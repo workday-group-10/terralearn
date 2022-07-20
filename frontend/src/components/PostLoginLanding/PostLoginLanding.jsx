@@ -24,7 +24,7 @@ export default function PostLoginLanding(props) {
                     <li></li>
             </ul>
 
-            <div class="bg-animation">
+            <div className="bg-animation">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
