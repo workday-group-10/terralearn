@@ -1,9 +1,8 @@
 .game-summary-page{
     display:flex;
-    justify-content: center;
     flex-direction: column;
     background-image: linear-gradient(to right top, #0b131c, #0e1a29, #0f2137, #122745, #162e53, #193663, #1e3d73, #234583, #25509a, #275bb1, #2966c9, #2a72e1);
-    height: 100vh;
+    height: calc(100vh - 100px);
 }
 .game-summary-header{
     text-align: center;
@@ -17,3 +16,52 @@
     width:80%;
     height:70%;
 }
+.playAgain-button {
+    margin-top: 20px;
+    background-color:#C04CFD;
+    margin-left: 10px;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    min-height:50px; 
+    min-width: 150px;
+    font-size: 24px;
+    }
+    .playAgain-button:hover {
+        background-color:#f6f33f;
+        color:#094876;
+        transition: 0.7s;
+    }
+    .mainMenu-button {
+        margin-top: 20px;
+        margin-left: 10px;
+        background-color:black;
+        color: #fff;
+        border:none;
+        border-radius:10px;
+        min-height:50px; 
+        min-width: 150px;
+        font-size: 24px;
+        }
+        .mainMenu-button:hover {
+            background-color:#f6f33f;
+            color:#094876;
+            transition: 0.7s;
+        }
+        .buttons-span{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+           
+        }
+        .TotalPoints{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            margin-bottom: 70px;
+            font-size: 30px;
+            color: yellow;
+
+        }
