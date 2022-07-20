@@ -1,5 +1,7 @@
 import "./GameSummaryPage.css";
+import React from "react";
 import guessImage from "../assets/guess-image.png"
+import ProgressBar from "@ramonak/react-progress-bar";
 export default function GameSummaryPage() {
   return (
     <div className="game-summary-page">
@@ -9,6 +11,7 @@ export default function GameSummaryPage() {
         </div>
         <div className="game-summary-image">
         <img src={guessImage} alt="guess" />
+        <ProgressBar completed={70} bgColor='#6495ed' baseBgColor="#385682" labelColor="#FFFFFF" />
         </div>
     </div>
   );
