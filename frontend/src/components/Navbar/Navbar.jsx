@@ -16,16 +16,13 @@ function Navbar(props) {
       navigate("/")
     }
   }
-  let navUser = "TerraLearn"
-  console.log("This is the props.user", props.user)
+
+  console.log("This is the props.user", props.navbarName)
   console.log("User is loggedin: ", props.loggedIn)
   // useEffect(() => {
     
   // })
-  if (props.loggedIn){
-    navUser = props.user.user.username
-  } 
-  
+ 
   return (
     <div className="Navbar">
       <div className="Navbar_logo" >
@@ -33,7 +30,7 @@ function Navbar(props) {
         <Avatar alt="Guest" src={earthIcon} onClick={navigateLanding}/>
       {/* </IconButton> */}
       <div className='Logo_Name'>
-        <span className="Navbar_optionLineOne">{navUser}</span>
+        <span className="Navbar_optionLineOne">{props.navbarName}</span>
 
       </div>
       
