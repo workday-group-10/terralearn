@@ -29,6 +29,7 @@
         text-align: left;
     }
     .start-button {
+    position: relative;
     margin-top: 20px;
     background-color:#0a0a23;
     color: #fff;
