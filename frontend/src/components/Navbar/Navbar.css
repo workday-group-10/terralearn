@@ -26,6 +26,23 @@
    
 
 }
+
+.profile_logo{
+    width: 50px;
+    object-fit: contain;
+    margin: 2px 5px;
+    margin-top: 18px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-right: 30px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+   
+
+}
 .close{
     display: none;
 }
@@ -38,6 +55,17 @@
     
 
 }
+
+.profile_name{
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    margin:  1px;
+   
+    
+
+}
+
 .Navbar_search{
 display: flex;
 margin-left: 290px;
@@ -63,7 +91,13 @@ border-radius: 24px;
 .Navbar_optionLineOne{
     font-size: 10px;
 }
-.Navbar_optionLineTwo{
+
+
+.nav-user{
+    font-size: 10px;
+    color: white;
+}
+.Navbar_optionLineTwo, .nav-user{
     font-size: 13px;
     cursor: pointer;
     font-weight: 800;
@@ -79,14 +113,14 @@ border-radius: 24px;
           background-clip: text,padding-box;
   transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
 }
-.Navbar_optionLineTwo:hover{
+.Navbar_optionLineTwo:hover, .nav-user:hover{
     --_p: 100%;
   --_s: .3s;
 }
 .Navbar_nav{
     display: flex;
     justify-content: space-evenly;
-    margin-right: 60px;
+    margin-right: 10px;
 }
 .Navbar_option{
     display: flex;
@@ -95,3 +129,4 @@ border-radius: 24px;
     margin-right: 20px;
     color: white;
 }
+

@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { Avatar, IconButton } from '@material-ui/core';
 import { useNavigate, Link } from "react-router-dom"
 import SearchIcon from '@material-ui/icons/Search';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import earthIcon from '../assets/earth-icon.png'
 import { useAuthContext } from "../contexts/auth";
 import apiClient from "../services/apiClient"
@@ -38,20 +39,21 @@ function Navbar(props) {
   //   setIsLoggedIn(false)
   //   setAppState({})
   // }
- 
+ {/* {<AccountCircleIcon className="account_icon"/>} */}
   return (
     <div className="Navbar">
       <div className="Navbar_logo" >
-      {/* <IconButton onClick={navigateLanding}> */}
-        <Avatar alt="Guest" src={earthIcon} onClick={navigateLanding}/>
-      {/* </IconButton> */}
-      <div className='Logo_Name'>
-        <span className="Navbar_optionLineOne">{props.navbarName.toUpperCase()}</span>
+        {/* <IconButton onClick={navigateLanding}> */}
+          <Avatar alt="Guest" src={earthIcon} onClick={navigateLanding}/>
+        {/* </IconButton> */}
+        <div className='Logo_Name'>
+          <span className="Navbar_optionLineOne">TerraLearn</span>
 
-      </div>
+        </div>
       
       </div>
-     
+      
+
       <div className="Navbar_search">
      
         <input className="Navbar_search_input" type="text" />
@@ -69,13 +71,29 @@ function Navbar(props) {
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
-          <span className="Navbar_optionLineTwo">Info</span>
+          <span className="Navbar_optionLineTwo">Favorites</span>
         </div>
         <div className={preNav}>
-          <span className="Navbar_optionLineOne">Your</span>
-          <span className="Navbar_optionLineTwo">Modes</span>
+          <span className="Navbar_optionLineOne">All</span>
+          <span className="Navbar_optionLineTwo">Categories</span>
         </div>
+        
       </div>
+
+      <div className="profile_logo" >
+      
+        <Avatar alt="image of profile icon" className="pro_pic" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" onClick={navigateLanding}/>
+        
+      
+        <div className='profile_name'>
+          <span className="nav-user">{props.navbarName.toUpperCase()}</span>
+        </div>
+      
+      </div>
+
+
+
+
     </div>
   )
 }
