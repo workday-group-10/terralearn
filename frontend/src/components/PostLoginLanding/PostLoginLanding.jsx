@@ -1,9 +1,14 @@
+import React from 'react';
 import Banner from "../Banner/Banner";
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 export default function PostLoginLanding(props) {
-  props.setNavbarName(props.user.firstName)
+  useEffect(() => {
+    props.setNavbarName(props.user.username)
+  }, []);
+  
   return (
     <div className="home">
        <div className="home_container">

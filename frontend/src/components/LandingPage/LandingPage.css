@@ -4,12 +4,12 @@
     margin-left: auto;
     margin-right: auto;
 }
-.landingPage_row{
+/* .landingPage_row{
     display: flex;
     z-index: 1;
     margin-left: 5px;
     margin-right: 5px;
-}
+} */
 .landingPageContainer{
     position: relative;
     align-items: center;
@@ -59,7 +59,7 @@
 
   body{
     background-image: linear-gradient(to right top, #0b131c, #0e1a29, #0f2137, #122745, #162e53, #193663, #1e3d73, #234583, #25509a, #275bb1, #2966c9, #2a72e1);
-    height: 100vh;
+    height: 100%;
   }
   .planet{
     width:700px;

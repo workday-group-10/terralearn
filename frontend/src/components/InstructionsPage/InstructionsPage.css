@@ -29,7 +29,8 @@
     }
     .start-button {
     position: absolute;
-    top: 95%;
+    /* top: 95%; */
+    margin-top: 3em;
     background-color:#0a0a23;
     color: #fff;
     border:none;
