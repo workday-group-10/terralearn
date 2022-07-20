@@ -2,6 +2,8 @@
     display:flex;
     justify-content: center;
     flex-direction: column;
+    background-image: linear-gradient(to right top, #0b131c, #0e1a29, #0f2137, #122745, #162e53, #193663, #1e3d73, #234583, #25509a, #275bb1, #2966c9, #2a72e1);
+    height: 100vh;
 }
 .game-summary-header{
     text-align: center;
@@ -11,4 +13,7 @@
 
 .game-summary-image{
     text-align: center;
+    margin: auto;
+    width:80%;
+    height:70%;
 }
