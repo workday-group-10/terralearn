@@ -1,4 +1,5 @@
 import "./GameSummaryPage.css";
+import guessImage from "../assets/guess-image.png"
 export default function GameSummaryPage() {
   return (
     <div className="game-summary-page">
@@ -6,8 +7,8 @@ export default function GameSummaryPage() {
             <h1>Game Summary</h1>
             <hr></hr>
         </div>
-        <div >
-        <img className="game-summary-image" src="https://preview.redd.it/n2p57d53sxhy.png?auto=webp&s=f622d1914a1e5787f43c8473dc33c56ea7c5dd22" alt="guess"/>
+        <div className="game-summary-image">
+        <img src={guessImage} alt="guess" />
         </div>
     </div>
   );
