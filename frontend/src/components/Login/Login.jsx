@@ -8,7 +8,7 @@ import { useAuthContext } from "../contexts/auth";
 
 export default function Login(props) {
 
-  const { initialized, appState, setAppState } = useAuthContext()
+  const { initialized, appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
 
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
@@ -46,6 +46,7 @@ export default function Login(props) {
     if (data?.user) {
       console.log("data1", data)
       setAppState(data)
+      setIsLoggedIn(true)
       console.log("data.user", initialized)
       apiClient.setToken(data.token)
       navigate("/PostLoginlanding");

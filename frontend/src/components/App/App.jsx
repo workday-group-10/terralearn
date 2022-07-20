@@ -13,6 +13,8 @@ import GameplayScreen from "../GameplayScreen/GameplayScreen";
 import { AuthContextProvider, useAuthContext } from "../contexts/auth";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
+import apiClient from "../services/apiClient"
+
 
 
 export default function AppContainer() {
@@ -32,6 +34,7 @@ function App() {
   const handleLogout = async () => {
     await apiClient.logoutUser();
     setAppState({});
+    setNavbarName("TerraLearn")
     setIsLoggedIn(false);
   };
 
@@ -40,7 +43,7 @@ function App() {
       <React.Fragment>
         <BrowserRouter>
           <main>
-            <Navbar user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+            <Navbar handleLogout={handleLogout} user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route

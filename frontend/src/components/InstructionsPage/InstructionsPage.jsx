@@ -23,7 +23,7 @@ export default function InstructionsPage() {
                     <li></li>
             </ul>
 
-            <div class="bg-animation">
+            <div className="bg-animation">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
@@ -39,7 +39,7 @@ export default function InstructionsPage() {
             <li>Have fun!</li>
             </ol>
         </div>
-        <button className="start-button" onClick={handleSubmit}>Start</button>
+        <div><button className="start-button" onClick={handleSubmit}>Start</button></div>
     </div>
   );
 }
