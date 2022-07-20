@@ -4,13 +4,14 @@ export default function InstructionsPage() {
   const navigate = useNavigate()
 
   const handleSubmit = () =>{
+    console.log("clicked")
     navigate("/countdown")
   }
 
 
   return (
     <div className = "instructions-page">
-            <ul class="circles">
+            <ul className="circles">
                     <li></li>
                     <li></li>
                     <li></li>
