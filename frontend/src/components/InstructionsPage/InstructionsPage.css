@@ -6,6 +6,7 @@
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg');
     background-size: cover;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     }
@@ -28,8 +29,7 @@
         text-align: left;
     }
     .start-button {
-    position: absolute;
-    top: 95%;
+    margin-top: 20px;
     background-color:#0a0a23;
     color: #fff;
     border:none;
