@@ -40,9 +40,6 @@ export default function LandingPage() {
             <button className="btn">Play</button>
         </div>
       </div>
-
-      <div className="landingPage_row">
-      </div>
     </div>
   );
 }
