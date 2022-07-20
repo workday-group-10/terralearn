@@ -4,11 +4,17 @@ import axios from "axios"
 import "./Register.css"
 import { API_BASE_URL } from "../constants"
 
-//import apiClient from "components/services/apiClient"
+import apiClient from "../services/apiClient"
+import { useAuthContext } from "../contexts/auth"
 
 
 export default function Register(props) {
-  const navigate = useNavigate()
+  const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
+
+
+  const navigate = useNavigate();
+
+
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({})
   const [form, setForm] = useState({
@@ -51,46 +57,46 @@ export default function Register(props) {
     setForm((f) => ({ ...f, [event.target.name]: event.target.value }))
   }
 
-  const handleOnSubmit = async () => {
-    setIsLoading(true)
-    setErrors((e) => ({ ...e, form: null }))
+  // const handleOnSubmit = async () => {
+  //   setIsLoading(true)
+  //   setErrors((e) => ({ ...e, form: null }))
 
-    if (form.passwordConfirm !== form.password) {
-      setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }))
-      setIsLoading(false)
-      return
-    } else {
-      setErrors((e) => ({ ...e, passwordConfirm: null }))
-    }
+  //   if (form.passwordConfirm !== form.password) {
+  //     setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }))
+  //     setIsLoading(false)
+  //     return
+  //   } else {
+  //     setErrors((e) => ({ ...e, passwordConfirm: null }))
+  //   }
 
-    try {
-      const res = await axios.post(API_BASE_URL+"/auth/register", {
-        username: form.username,
-        first_name: form.first_name,
-        last_name: form.last_name,
-        email: form.email,
-        password: form.password,
-      })
+  //   try {
+  //     const res = await axios.post(API_BASE_URL+"/auth/register", {
+  //       username: form.username,
+  //       first_name: form.first_name,
+  //       last_name: form.last_name,
+  //       email: form.email,
+  //       password: form.password,
+  //     })
 
-      if (res?.data?.user) {
-        // let nav = "/"
-        // if (redirect){
-        //   nav = "/"+redirectInfo
-        // }
-        // setAppState(res.data)
-        setIsLoading(false)
-        // setNav(true)
-        // setRedirect(false)
-        // setRedirectInfo("")
-        console.log("users data", res.data)
-        props.setUser(res.data)
-        navigate("/PostLoginlanding")
-        props.setLoggedIn(true)
+  //     if (res?.data?.user) {
+  //       // let nav = "/"
+  //       // if (redirect){
+  //       //   nav = "/"+redirectInfo
+  //       // }
+  //       // setAppState(res.data)
+  //       setIsLoading(false)
+  //       // setNav(true)
+  //       // setRedirect(false)
+  //       // setRedirectInfo("")
+  //       console.log("users data", res.data)
+  //       props.setUser(res.data)
+  //       navigate("/PostLoginlanding")
+  //       props.setLoggedIn(true)
         
-      } else {
-        setErrors((e) => ({ ...e, form: "Something went wrong with registration" }))
-        setIsLoading(false)
-      }
+  //     } else {
+  //       setErrors((e) => ({ ...e, form: "Something went wrong with registration" }))
+  //       setIsLoading(false)
+  //     }
     //   const { data, error } = await apiClient.signupUser({
     //     first_name: form.first_name,
     //      last_name: form.last_name,
@@ -114,13 +120,53 @@ export default function Register(props) {
     //     setRedirectInfo("")
     //     navigate("/nutriton")
     //   }
-    } catch (err) {
-      console.log(err)
-      const message = err?.response?.data?.error?.message
-      setErrors((e) => ({ ...e, form: message ? String(message) : String(err) }))
-      setIsLoading(false)
+  //   } catch (err) {
+  //     console.log(err)
+  //     const message = err?.response?.data?.error?.message
+  //     setErrors((e) => ({ ...e, form: message ? String(message) : String(err) }))
+  //     setIsLoading(false)
+  //   }
+  // }
+
+
+  const handleOnSubmit = async () => {
+    setIsLoading(true);
+    setErrors((e) => ({ ...e, form: null }));
+
+    if (form.passwordConfirm !== form.password) {
+      setErrors((e) => ({ ...e, passwordConfirm: "Passwords do not match." }));
+      setIsLoading(false);
+      return;
+    } else {
+      setErrors((e) => ({ ...e, passwordConfirm: null }));
+    }
+
+    const { data, error } = await apiClient.signupUser({
+      username: form.username,
+      first_name: form.first_name,
+      last_name: form.last_name,
+      email: form.email,
+      password: form.password,
+    })
+    
+    if (error)
+    {
+      setErrors((e) => ({ ...e, form: error }))  
+      setIsLoading(false);
+    }
+    if (data?.user)
+    {
+     setAppState(data);
+      apiClient.setToken(data.token)
+
+    
+      navigate("/PostLoginlanding");
+      setIsLoading(false);
+      setIsLoggedIn(true)
+
     }
   }
+
 
   return (
     <div className="Register">
