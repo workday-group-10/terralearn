@@ -7,8 +7,8 @@ export default function GameSummaryPage() {
             <h1>Game Summary</h1>
             <hr></hr>
         </div>
-        <div >
-        <img className="game-summary-image" src={guessImage} alt="guess"/>
+        <div className="game-summary-image">
+        <img src={guessImage} alt="guess" />
         </div>
     </div>
   );
