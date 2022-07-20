@@ -11,6 +11,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@ramonak/react-progress-bar": "^5.0.1",
     "axios": "^0.27.2",
     "react": "^17.0.2",
     "react-countdown": "^2.3.2",
