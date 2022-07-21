@@ -3,6 +3,8 @@ import React from "react";
 import guessImage from "../assets/guess-image.png"
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useNavigate } from "react-router-dom";
+import InformationSlideshow from "../InformationSlideshow/InformationSlideshow";
+
 export default function GameSummaryPage() {
   const navigate = useNavigate()
   const navigateInstructions=()=>{
@@ -23,6 +25,7 @@ export default function GameSummaryPage() {
           Total Points
         </div>
         <ProgressBar className="progressbar" completed={70} bgColor='#6495ed' baseBgColor="#385682" labelColor="#FFFFFF" />
+        <InformationSlideshow/>
         <span className="buttons-span">
           <button className="playAgain-button" onClick={navigateInstructions}>Play Again</button>
           <button className="mainMenu-button" onClick={navigatePostLanding}>Main Menu</button>
