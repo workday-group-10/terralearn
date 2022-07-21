@@ -5,3 +5,4 @@ CREATE DATABASE terralearn;
 \connect terralearn;
 
 \i terralearn_schema.sql
+\i terralearn_seed.sql
