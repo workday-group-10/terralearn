@@ -24,4 +24,14 @@ router.get("/cities", async(req, res, next) => {
     }
 })
 
+router.get("/id/:countryId", async(req, res, next) => {
+    try{
+        const countryId = Number(req.params.countryId);
+        const cities = await Places.fetchCitiesByCountryId(countryId)
+        return res.status(201).json({ cities })
+    } catch(err){
+        next(err)
+    }
+})
+
 module.exports = router

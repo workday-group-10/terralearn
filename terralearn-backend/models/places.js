@@ -25,6 +25,17 @@ class Places{
         return countries
     }
 
+    static async fetchCitiesByCountryId(countryId){
+
+        const query = `SELECT * FROM cities WHERE category_id = $1;`
+
+        const result = await db.query(query, [countryId])
+
+        const cities = result.rows
+
+        return cities
+    }
+
 }
 
 module.exports = Places
