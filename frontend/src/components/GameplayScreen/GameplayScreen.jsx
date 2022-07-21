@@ -78,3 +78,8 @@ function PointPercentage(distance){
      return 70;
   }
 }
+
+function ScorePoints(percentage){
+  let multiplier = percentage / 100;
+  return (5000 * multiplier);
+}
