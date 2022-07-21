@@ -26,7 +26,7 @@ export default function GameplayScreen() {
           
         </div>
         <div className="street-div">
-          <StreetViewMap/>
+        <StreetViewMap/>
         </div>
         
         <div className="user-interact">

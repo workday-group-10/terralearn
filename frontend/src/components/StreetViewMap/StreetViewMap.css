@@ -1,10 +1,16 @@
 .streetview-map{
     width: 100%;
     background-color: lightslategray;
-    height: 500px;
-    margin: auto;
+    height: 100px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     border-radius: 12px;
     z-index: -1;
+    background-color: red;
 }
 .streetPhoto{
     width: 70%;
