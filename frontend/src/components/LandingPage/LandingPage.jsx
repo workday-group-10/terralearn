@@ -6,6 +6,8 @@ import { useNavigate, Link } from "react-router-dom"
 export default function LandingPage() {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const navigate = useNavigate()
+  //function that runs if user clicks on play button, due to protected route, where it navigates ot 
+  //may vary
   const navigatePostLanding = () => {
     
     navigate("/PostLoginlanding")
