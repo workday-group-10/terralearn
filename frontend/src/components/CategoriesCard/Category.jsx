@@ -24,14 +24,17 @@ function Category({continent, Icon}) {
     <div className="category">
           <Card className={classes.root}>
       <CardActionArea >
+        {/* image display in card */}
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
           height="180"
+          // gets icon props
           image={Icon}
           title="Contemplative Reptile"
         />
         <CardContent className="category-color" >
+        {/* Generates a card with title from props and template description */}
           <Typography className='continent' gutterBottom variant="h5" component="h2">
             {continent}
           </Typography>
@@ -45,6 +48,7 @@ function Category({continent, Icon}) {
         </CardContent>
       </CardActionArea >
       <CardActions className='category-color'>
+      {/* when they hit play navigate to instructions */}
         <Button size="small" color="secondary" onClick={handleOnSubmit}>
           Play
         </Button>
