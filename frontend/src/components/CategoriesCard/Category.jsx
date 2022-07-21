@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 
 
 
-function Category({continent}) {
+function Category({continent, Icon}) {
   const navigate = useNavigate();
     const classes = useStyles();
 
@@ -28,7 +28,7 @@ function Category({continent}) {
           component="img"
           alt="Contemplative Reptile"
           height="180"
-          image={earthIcon}
+          image={Icon}
           title="Contemplative Reptile"
         />
         <CardContent className="category-color" >

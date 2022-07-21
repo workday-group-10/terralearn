@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
+import franceIcon from '../assets/France.jpg'
+import japanIcon from '../assets/MountFuji.jpg'
+import capeTownIcon from '../assets/africa-city.jpg'
+import newYorkIcon from '../assets/NewYork.jpg'
 export default function PostLoginLanding(props) {
   useEffect(() => {
     props.setNavbarName(props.user.username)
@@ -47,10 +51,10 @@ export default function PostLoginLanding(props) {
       </div>
       <div className="break">Most Popular Categories</div>
       <div className="home_row">
-      <Category continent="Europe"/>
-        <Category continent="Asia"/>
-          <Category continent="Africa"/>
-        <Category continent="USA"/>
+      <Category continent="Europe" Icon={franceIcon}/>
+        <Category continent="Asia" Icon={japanIcon}/>
+          <Category continent="Africa" Icon={capeTownIcon}/>
+        <Category continent="USA" Icon={newYorkIcon}/>
       </div>
     </div>
   );
