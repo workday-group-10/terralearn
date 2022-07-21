@@ -1,14 +1,17 @@
-.moving-slide{
-    display: flex;
-    margin: auto;
-    justify-content: center;
-}
+/* ---------------------------------- Picture portion of slide ------------------------------------ */
+
 .slide-pic{
     width: 22vw;
     height: 48.5vh;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     /* display: table-cell; */
+}
+/* ---------------------------------- Entire div elements ------------------------------------ */
+.moving-slide{
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
 .slideshow{
     position: relative;
@@ -35,6 +38,18 @@
     transform: translateX(-38x);
     transition: .5s ease;
 }
+.slide{
+    opacity: 0;
+    transition-duration: 1s ease;
+    
+}
+.slide.active{
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+
+/* ---------------------------------- Slide arrows ------------------------------------ */
 
 .left-arrow, .right-arrow{
     position: absolute;
@@ -50,17 +65,8 @@
 .right-arrow{
     right: 1%;
 }
+/* ---------------------------------- Text portion of div ------------------------------------ */
 
-.slide{
-    opacity: 0;
-    transition-duration: 1s ease;
-    
-}
-.slide.active{
-    opacity: 1;
-    transition-duration: 1s;
-    transform: scale(1.08);
-}
 
 .slide-paragraph{
     /* display: table-cell; */

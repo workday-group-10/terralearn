@@ -20,7 +20,12 @@ function Navbar(props) {
     } else{
       navigate("/")
     }
-  }
+  
+   }
+
+    const navigateProfile = () => {
+      navigate("/profile")
+    }
   let logNav = "Navbar_option"
   let preNav = "close"
   
@@ -82,11 +87,11 @@ function Navbar(props) {
 
       <div className="profile_logo" >
       
-        <Avatar alt="image of profile icon" className="pro_pic" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" onClick={navigateLanding}/>
+        <Avatar alt="image of profile icon" className="pro_pic" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" onClick={navigateProfile}/>
         
       
         <div className='profile_name'>
-          <span className="nav-user">{props.navbarName.toUpperCase()}</span>
+          <span className="nav-user" onClick={navigateProfile}>{props.navbarName.toUpperCase()}</span>
         </div>
       
       </div>

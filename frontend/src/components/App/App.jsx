@@ -13,6 +13,7 @@ import GameplayScreen from "../GameplayScreen/GameplayScreen";
 import { AuthContextProvider, useAuthContext } from "../contexts/auth";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
+import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 
 
@@ -28,7 +29,7 @@ export default function AppContainer() {
 function App() {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
 
-
+  // setNavbarName("Guest")
   console.log("appStateApp", appState);
 
   const handleLogout = async () => {
@@ -71,6 +72,16 @@ function App() {
                         user={appState?.user}
                         navbarName={navbarName} setNavbarName={setNavbarName}
                       />
+                    }
+                  />
+                }
+              ></Route>
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute
+                    element={
+                      <ProfilePage/>
                     }
                   />
                 }
