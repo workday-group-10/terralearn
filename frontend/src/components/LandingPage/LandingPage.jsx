@@ -1,7 +1,16 @@
 import React from "react";
 import Banner from "../Banner/Banner";
 import "./LandingPage.css"
+import { useAuthContext } from "../contexts/auth";
+import { useNavigate, Link } from "react-router-dom"
 export default function LandingPage() {
+  const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
+  const navigate = useNavigate()
+  const navigatePostLanding = () => {
+    
+    navigate("/PostLoginlanding")
+    
+  }
 
   return (
     <div className="landingPage">
@@ -37,7 +46,7 @@ export default function LandingPage() {
             <h2 className="title-one">Learn About </h2>
             <h1 className="title-two">Your Home</h1>
             </div>
-            <button className="btn">Play</button>
+            <button className="btn" onClick={navigatePostLanding}>Play</button>
         </div>
       </div>
     </div>
