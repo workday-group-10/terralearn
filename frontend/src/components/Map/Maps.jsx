@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { GOOGLE_API_ } from "../constants";
 import { compose, withProps } from "recompose";
 import {
-  withScriptjs,
   withGoogleMap,
   GoogleMap,
   Marker
@@ -15,10 +14,9 @@ const MyMapComponent = compose(
      * https://console.developers.google.com/apis/dashboard
      * The key "AIzaSyBkNaAGLEVq0YLQMi-PYEMabFeREadYe1Q" can be ONLY used in this sandbox (no forked).
      */
-    googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBGJHXlpUiFcp1N5AV4FMHpuwpYC9xpkVM&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withGoogleMap

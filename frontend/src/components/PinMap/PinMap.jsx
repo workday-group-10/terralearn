@@ -6,9 +6,10 @@ import MyMapComponent from "../Map/Maps"
 
 export default function PinMap() {
   const [isMarkerShown,setisMarkerShown] = useState(true)
+  //set the marker of the google api to true
+
   return (
     <div className="pin-map">
-        <h1>PinMap</h1>
        <MyMapComponent isMarkerShown = {isMarkerShown }/>
     </div>
   )

@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import ReactStreetview from "react-streetview";
+import { GOOGLE_API_ } from "../constants";
+import "./GoogleStreetMaps.css"
 
 class GoogleMapsStreetView extends React.Component {
   render() {
-    const googleMapsApiKey = "AIzaSyBGJHXlpUiFcp1N5AV4FMHpuwpYC9xpkVM";
+    const mapStyles = {
+        width: '100%',
+        height: '86.2vh',
+        backgroundColor: "#eeeeee"
+      };
+ 
 
     const streetViewPanoramaOptions = {
       position: { lat: 46.9171876, lng: 17.8951832 },
@@ -15,18 +22,18 @@ class GoogleMapsStreetView extends React.Component {
     };
 
     return (
-      <div
-        style={{
-          width: "800px",
-          height: "450px",
-          backgroundColor: "#eeeeee"
-        }}
+        <div className="google">
+    <div
+        style={mapStyles}
       >
         <ReactStreetview
-          apiKey={googleMapsApiKey}
+          apiKey={GOOGLE_API_}
           streetViewPanoramaOptions={streetViewPanoramaOptions}
         />
       </div>
+
+        </div>
+    
     );
   }
 }
