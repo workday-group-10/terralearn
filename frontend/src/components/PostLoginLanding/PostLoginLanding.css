@@ -10,8 +10,8 @@
 .home_row{
     display: flex;
     z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 .home .home_container{
     position: relative;

@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
+import franceIcon from '../assets/France.jpg'
+import japanIcon from '../assets/MountFuji.jpg'
+import capeTownIcon from '../assets/africa-city.jpg'
+import newYorkIcon from '../assets/NewYork.jpg'
 export default function PostLoginLanding(props) {
   useEffect(() => {
     props.setNavbarName(props.user.username)
@@ -11,6 +15,7 @@ export default function PostLoginLanding(props) {
   
   return (
     <div className="home">
+    {/* animation stuff ignore this */}
     <ul class="circles">
                     <li></li>
                     <li></li>
@@ -31,6 +36,7 @@ export default function PostLoginLanding(props) {
             <div id="stars4"></div>
             </div>
        <div className="home_container">
+       {/* planet animation */}
        <div className="post-planet"> 
         <div className="wrap">
         <div className="background"></div> 
@@ -38,6 +44,7 @@ export default function PostLoginLanding(props) {
         <div className="mask"></div>
         </div>
         <div className="button-container">
+        {/* the word display */}
         <div className="titles">
             <h2 className="title-one">Learn About </h2>
             <h1 className="title-two">Your Home</h1>
@@ -45,12 +52,14 @@ export default function PostLoginLanding(props) {
             <button className="btn">Play</button>
         </div>
       </div>
+      {/* categories section */}
       <div className="break">Most Popular Categories</div>
       <div className="home_row">
-      <Category continent="Europe"/>
-        <Category continent="Asia"/>
-          <Category continent="Africa"/>
-        <Category continent="USA"/>
+      {/* individual categories cards */}
+      <Category continent="Europe" Icon={franceIcon}/>
+        <Category continent="Asia" Icon={japanIcon}/>
+          <Category continent="Africa" Icon={capeTownIcon}/>
+        <Category continent="USA" Icon={newYorkIcon}/>
       </div>
     </div>
   );
