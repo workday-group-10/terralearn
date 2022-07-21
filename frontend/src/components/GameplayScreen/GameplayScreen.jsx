@@ -55,3 +55,26 @@ function measure(lat1, lon1, lat2, lon2){  // generally used geo measurement fun
   var d = R * c;
   return d * 1000; // meters
 }
+
+function PointPercentage(distance){
+  if (distance < 5000)
+  {
+     return 100;
+  }
+  else if (distance < 10000)
+  {
+     return 95;
+  }
+  else if (distance < 15000)
+  {
+     return 90;
+  }
+  else if (distance < 25000)
+  {
+     return 80;
+  }
+  else
+  {
+     return 70;
+  }
+}
