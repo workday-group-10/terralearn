@@ -1,0 +1,69 @@
+/* -------------Basic styling for background------------ */
+
+.profile-background{
+    /* background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80");
+    */
+    z-index: -1;
+    height: 100vh; 
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    /* width: 50%;
+    height: 100%; */
+    background-color: #283C52;
+    z-index: -1;
+}
+/* .profile-page{
+    text-align: center;
+} */
+.space{
+    margin-bottom: 5vh;
+}
+.space-bottom{
+    margin-top: 5vh;
+}
+/* ------------- Styling for profile card ------------ */
+.profile-card{
+    /* margin-bottom: 5em; */
+    /* position: relative; */
+    margin: auto;
+    background-color: white;
+    border: black solid 2px;
+    border-radius: 13px;
+    height: 70vh; 
+    width: 50vw;
+    z-index: 900;
+    
+}
+.profile_info{
+    width: 20vw;
+    height: 30vh;
+    text-align: center;
+    
+}
+
+.profile_item{
+    margin-top: 5vh;
+}
+
+.prof-title, .game-stats{
+    text-align: center;
+}
+/* -------------Styling for users info------------ */
+
+.profile-name{
+    padding: 10px;
+    color: black;
+}
+.profile-div{
+    display: flex;
+    justify-content: space-around;
+}
+.none{
+    display: none;
+}
+.prof-pic{
+    width: 20%;
+    height: 30%;
+}
