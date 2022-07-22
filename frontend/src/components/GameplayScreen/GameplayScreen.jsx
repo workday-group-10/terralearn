@@ -13,7 +13,17 @@ export default function GameplayScreen() {
   return (
     
     <div className="gameplay-screen">
-        <h1>GAMEPLAYSCREEN</h1>
+        <div className="google_street">
+        <StreetViewMap/>
+        </div>
+        <div className="google_map">
+          <PinMap/>
+        </div>
+       
+
+
+
+        {/* <h1>GAMEPLAYSCREEN</h1>
         <div className="round-div">
           <div className="round-text">
             <span className="title-round">Round</span><br/>
@@ -37,9 +47,9 @@ export default function GameplayScreen() {
             
             <PinMap/>
         </div>
+         */}
         
-        
-        <div className="screen-GP"></div>
+        {/* <div className="screen-GP"></div> */}
     </div>
   )
 }
