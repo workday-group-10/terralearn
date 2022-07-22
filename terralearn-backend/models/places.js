@@ -25,6 +25,7 @@ class Places{
         return countries
     }
 
+    //fetch all cities of a given country id
     static async fetchCitiesByCountryId(countryId){
 
         const query = `SELECT * FROM cities WHERE category_id = $1;`
