@@ -1,6 +1,6 @@
 # Reflection #1
 
-Pod Members: **Add Pod Members Names**
+Pod Members: Folasade Oloye, Evans Asuboah, Andrew Valerio
 
 ## Reflection Questions
 
