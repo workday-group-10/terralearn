@@ -13,12 +13,18 @@ export default function GameplayScreen() {
   return (
     
     <div className="gameplay-screen">
+      
         <div className="google_street">
         <StreetViewMap/>
         </div>
         <div className="google_map">
           <PinMap/>
+
+          <button onClick={()=>{
+           navigate("/gameSummary")
+          }}>Guess</button>
         </div>
+        
        
 
 

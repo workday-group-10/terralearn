@@ -1,5 +1,6 @@
 .gameplay-screen{
 	position:relative;
+	
 
 }
 .google_street{
@@ -18,13 +19,27 @@
 	height: calc(100vh - 80vh );
 	margin-right: 70px;
 	margin-bottom: 30px;
-
+	display: flex;
+	flex-direction: column;
+}
+.google_map button{
+	margin: 10px;
+	border-radius:10px ;
+	height: 25%;
+	font-size: 20px;
+	cursor: pointer;
 }
 .google_map:hover{
 	opacity: 1;
 	height: calc(100vh - 60vh );
 	width: 30%;
+	
 	transition: 0.7s;
 
 	
+}
+.google_map button:hover{
+	background-color:#f6f33f;
+        color:#094876;
+        transition: 0.7s;
 }

@@ -1,3 +1,4 @@
+/* Basic styling for elements in the navbar */
 .Navbar{
     height:90px;
     display: flex;
@@ -97,6 +98,7 @@ border-radius: 24px;
     font-size: 10px;
     color: white;
 }
+/* Hover effect for navbar */
 .Navbar_optionLineTwo, .nav-user{
     font-size: 13px;
     cursor: pointer;
@@ -130,3 +132,59 @@ border-radius: 24px;
     color: white;
 }
 
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #75BDD1;
+    
+    min-width: 10vw;
+    margin-right: 1vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transition-delay: 2s; 
+    z-index: 1;
+    border-radius: 5px;
+  }
+  .dropdown-item {
+    border: #162e53 solid 1px;
+    
+  }
+  .dropdown-content li:hover {
+    background-color: #B3DAE6;
+    border-radius: 5px;
+  }
+  .dropdown-content ul {
+    list-style-type: none;
+  }
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition-delay: 2s; 
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* .dropdown-content:after {
+    content: 'shown after 2 seconds';
+    opacity:0;
+    transition: 2s all;   
+  }
+  
+  .dropdown-content:hover:after {
+    opacity:1;
+    transition-delay: 2s; 
+  } */
