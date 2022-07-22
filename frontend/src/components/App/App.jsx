@@ -29,8 +29,6 @@ export default function AppContainer() {
 function App() {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
 
-  // setNavbarName("Guest")
-  console.log("appStateApp", appState);
 
   const handleLogout = async () => {
     await apiClient.logoutUser();

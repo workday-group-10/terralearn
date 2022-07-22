@@ -10,7 +10,7 @@ export default function ProfilePage() {
     const recent_score = 0;
     const recent_category = "France";
     const highest_score = 0;
-    // console.log("this is the appstate on the profile page", appState)
+   
     return (
     <div className="profile-page">
         <div className="space"></div>
