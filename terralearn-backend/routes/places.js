@@ -6,7 +6,7 @@ const router = express.Router()
 router.get("/", async(req, res, next) => {
     try{
         const countries = await Places.fetchCountries()
-        console.log(countries)
+        // console.log(countries)
         return res.status(201).json({ countries })
     } catch(err){
         next(err)
@@ -17,7 +17,7 @@ router.get("/cities", async(req, res, next) => {
     try{
 
         const cities = await Places.fetchCities()
-        console.log(cities)
+        // console.log(cities)
         return res.status(201).json({ cities })
     } catch(err){
         next(err)
