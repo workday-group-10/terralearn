@@ -1,4 +1,5 @@
 .streetview-map{
+<<<<<<< HEAD
     width: 100%;
     background-color: lightslategray;
     height: 100px;
@@ -15,4 +16,8 @@
 .streetPhoto{
     width: 70%;
     z-index: -1;
+=======
+    height: 100%;
+    background-color: aqua;
+>>>>>>> 4f27e4e333eceb5d57c3aa354767d7d134f535cd
 }

@@ -1,0 +1,48 @@
+<<<<<<< HEAD
+=======
+.gameplay-screen{
+	position:relative;
+	
+
+}
+.google_street{
+	width: 100%;
+	height: calc(100vh - 90px );
+}
+.google_map{
+	position:absolute;
+    bottom:0;
+    right:0;
+	z-index: 1000;
+	width: 20%;
+	opacity: 0.5;
+	transition: 0.7s;
+
+	height: calc(100vh - 80vh );
+	margin-right: 70px;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.google_map button{
+	margin: 10px;
+	border-radius:10px ;
+	height: 25%;
+	font-size: 20px;
+	cursor: pointer;
+}
+.google_map:hover{
+	opacity: 1;
+	height: calc(100vh - 60vh );
+	width: 30%;
+	
+	transition: 0.7s;
+
+	
+}
+.google_map button:hover{
+	background-color:#f6f33f;
+        color:#094876;
+        transition: 0.7s;
+}
+>>>>>>> 4f27e4e333eceb5d57c3aa354767d7d134f535cd
