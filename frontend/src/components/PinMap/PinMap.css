@@ -1,21 +1,15 @@
 .pin-map{
-    width: 50%;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     background-color: lightgray;
     text-align: center;
     float:right;
-    border-radius: 12px;
+    border-radius: 5px;
     right: 0;
+  
     
 }
-.pin-g{
-    width: 1%;
-    margin-top: 7em;
-    left: 860px;
-    position: absolute;
-    z-index: 2;
+.pin-map h1{
+    font-size: 12px
 }
-.pin_pic{
-    width: 80%;
-    z-index: 1;
-}
+
