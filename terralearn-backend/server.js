@@ -4,6 +4,7 @@ const morgan = require("morgan")
 const { PORT } = require("./config")
 const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
+const placesRoutes = require("./routes/places")
 
 
 const { BadRequestError, NotFoundError } = require("./utils/errors")
@@ -19,6 +20,8 @@ app.use(morgan("tiny"))
 app.use(security.extractUserFromJwt)
 
 app.use("/auth", authRoutes)
+//added places routes here
+app.use("/places", placesRoutes)
 
 
 app.use((req, res, next) => {

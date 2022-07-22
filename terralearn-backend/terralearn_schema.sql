@@ -15,6 +15,7 @@ CREATE TABLE category(
 CREATE TABLE cities(
     id          SERIAL PRIMARY KEY,
     city        TEXT NOT NULL,
+    place_id    TEXT NOT NULL,
     category_id INTEGER NOT NULL,
     FOREIGN KEY(category_id) REFERENCES category(id)
 );
