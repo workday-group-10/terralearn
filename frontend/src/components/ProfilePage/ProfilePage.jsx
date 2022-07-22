@@ -3,16 +3,20 @@ import "./ProfilePage.css"
 import { useAuthContext } from "../contexts/auth";
 
 export default function ProfilePage() {
+    //gets users info from usecontext
     const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
+    // dummy data that will represent certain values based on 
+    //users information
     const recent_score = 0;
     const recent_category = "France";
     const highest_score = 0;
-    console.log("this is the appstate on the profile page", appState)
+    // console.log("this is the appstate on the profile page", appState)
     return (
     <div className="profile-page">
         <div className="space"></div>
         <div className="profile-card">
             <h1 className="prof-title">Profile Page</h1>
+            {/* displays generic profile picture, and users first,last, and username */}
             <div className="profile-div">
                 <img alt="image of profile icon" className="prof-pic" src="https://icons-for-free.com/download-icon-profile+profile+page+user+icon-1320186864367220794_512.png" />
                 <div className="profile_info">
@@ -21,6 +25,7 @@ export default function ProfilePage() {
                     <span className="profile-name">{appState.user.lastName}</span>
                 </div>
             </div>
+            {/* displays stats of users last and best played games */}
             <div className="game-stats">
                 <h1>Last Played Category: {recent_category}</h1>
                 <h1>Most Recent Score: {recent_score}</h1>

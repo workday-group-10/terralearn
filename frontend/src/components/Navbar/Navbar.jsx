@@ -13,8 +13,11 @@ import apiClient from "../services/apiClient"
 function Navbar(props) {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const navigate = useNavigate()
+
+  //function that routes user to specific landing page depending on whether
+  // they are logged in or not
   const navigateLanding = () => {
-    console.log("logo being clicked")
+    // console.log("logo being clicked")
     if (loggedIn){
       navigate("/PostLoginlanding")
     } else{
@@ -22,6 +25,7 @@ function Navbar(props) {
     }
   
    }
+   //function that navigates user to profile
 
     const navigateProfile = () => {
       navigate("/profile")
@@ -29,6 +33,8 @@ function Navbar(props) {
   let logNav = "Navbar_option"
   let preNav = "close"
   
+  //logic for displaying different options on navbar depending on if user
+  //is logged in or not
   if(loggedIn){
     logNav = "close";
     preNav = "Navbar_option";
@@ -36,8 +42,8 @@ function Navbar(props) {
     logNav = "Navbar_option";
     preNav = "close";
   }
-  console.log("This is the props.user", props.navbarName)
-  console.log("User is loggedin: ", loggedIn)
+  // console.log("This is the props.user", props.navbarName)
+  // console.log("User is loggedin: ", loggedIn)
 
   // const handleLogout = async () => { 
   //   await apiClient.logoutUser();     
@@ -47,6 +53,7 @@ function Navbar(props) {
  {/* {<AccountCircleIcon className="account_icon"/>} */}
   return (
     <div className="Navbar">
+      {/* logo that routes user back to landing page */}
       <div className="Navbar_logo" >
         {/* <IconButton onClick={navigateLanding}> */}
           <Avatar alt="Guest" src={earthIcon} onClick={navigateLanding}/>
@@ -65,6 +72,7 @@ function Navbar(props) {
            {<SearchIcon className="Navbar_searchIcon"/>}
         {/*Logo*/}
       </div>
+      {/* routes to different pages throughout webpage */}
       <div className="Navbar_nav">
         <div className={logNav}>
           <span className="Navbar_optionLineOne">Hello Guest</span>
@@ -84,6 +92,7 @@ function Navbar(props) {
         </div>
         
       </div>
+      {/* icon of user profile picture and username */}
       <div className='dropdown'>
         <div className="profile_logo" >
           <Avatar alt="image of profile icon" className="pro_pic" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" onClick={navigateProfile}/>
@@ -91,6 +100,7 @@ function Navbar(props) {
             <span className="nav-user" onClick={navigateProfile}>{props.navbarName.toUpperCase()}</span>
           </div>
         </div>
+        {/* dropdown menu of options person can choose when hovering over profile */}
         <div class="dropdown-content">
           <ul>
             <li>

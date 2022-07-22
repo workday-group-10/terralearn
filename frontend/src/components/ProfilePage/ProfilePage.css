@@ -1,3 +1,5 @@
+/* -------------Basic styling for background------------ */
+
 .profile-background{
     /* background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80");
     */
@@ -21,6 +23,7 @@
 .space-bottom{
     margin-top: 5vh;
 }
+/* ------------- Styling for profile card ------------ */
 .profile-card{
     /* margin-bottom: 5em; */
     /* position: relative; */
@@ -47,6 +50,7 @@
 .prof-title, .game-stats{
     text-align: center;
 }
+/* -------------Styling for users info------------ */
 
 .profile-name{
     padding: 10px;
@@ -60,6 +64,6 @@
     display: none;
 }
 .prof-pic{
-    width: 20vw;
-    height: 30vh;
+    width: 20%;
+    height: 30%;
 }

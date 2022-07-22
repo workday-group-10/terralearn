@@ -1,3 +1,4 @@
+/* Basic styling for elements in the navbar */
 .Navbar{
     height:90px;
     display: flex;
@@ -97,6 +98,7 @@ border-radius: 24px;
     font-size: 10px;
     color: white;
 }
+/* Hover effect for navbar */
 .Navbar_optionLineTwo, .nav-user{
     font-size: 13px;
     cursor: pointer;
@@ -157,6 +159,9 @@ border-radius: 24px;
   .dropdown-content li:hover {
     background-color: #B3DAE6;
     border-radius: 5px;
+  }
+  .dropdown-content ul {
+    list-style-type: none;
   }
   /* Links inside the dropdown */
   .dropdown-content a {
