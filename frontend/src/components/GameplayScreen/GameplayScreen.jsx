@@ -21,7 +21,7 @@ export default function GameplayScreen() {
           <PinMap/>
 
           <button onClick={()=>{
-           
+           navigate("/gameSummary")
           }}>Guess</button>
         </div>
         
