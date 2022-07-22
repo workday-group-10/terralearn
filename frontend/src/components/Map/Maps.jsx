@@ -6,6 +6,7 @@ import Woman from '../assets/woman.png'
 
 
 const MyMapComponent = compose(
+    
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
