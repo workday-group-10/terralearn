@@ -8,6 +8,7 @@ export default function PinMap() {
   const [isMarkerShown,setisMarkerShown] = useState(true)
 
   const [positions,setPositions]=useState({})
+  console.log(positions)
   
   //set the marker of the google api to true
 
