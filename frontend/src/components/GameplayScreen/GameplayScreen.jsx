@@ -5,9 +5,9 @@ import StreetViewMap from "../StreetViewMap/StreetViewMap"
 import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 
-export default function GameplayScreen() {
+export default function GameplayScreen({positions ,setPositions}) {
   const [guessed,setGuessed] = useState(false)
-  console.log(guessed)
+
 
 
   const navigate = useNavigate()
@@ -30,7 +30,7 @@ export default function GameplayScreen() {
         <StreetViewMap/>
         </div>
         <div className="google_map">
-          <PinMap guessed={guessed} setGuessed={setGuessed}/>
+          <PinMap guessed={guessed} setGuessed={setGuessed} positions={positions}  setPositions={setPositions}/>
 
           <button onClick={navSummary}>Guess</button>
         </div>
