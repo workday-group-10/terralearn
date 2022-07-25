@@ -60,6 +60,18 @@ class ApiClient {
     this.setToken(null)
     localStorage.setItem(this.tokenName, '')
   }
+
+  //function calls for places 
+  async fetchCountries(){
+    return await this.request({endpoint: `places`, method: 'GET'})
+  }
+  async fetchCities(){
+    return await this.request({endpoint: `places/cities`, method: 'GET'})
+  }
+
+
+
+
 }
 
 const API = new ApiClient(API_BASE_URL)
