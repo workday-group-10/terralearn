@@ -11,24 +11,21 @@ import RoundCountdownPage from "../RoundCountdownPage/RoundCountdownPage";
 import NotFound from "../NotFound/NotFound";
 import GameplayScreen from "../GameplayScreen/GameplayScreen";
 import { AuthContextProvider, useAuthContext } from "../contexts/auth";
-import { CountriesContextProvider, useCountriesContext } from "../contexts/countries";
-import { CitiesContextProvider, useCitiesContext } from "../contexts/cities";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 import { useState } from "react";
+import { CitiesContextProvider } from "../contexts/cities";
 
 
 
 export default function AppContainer() {
   return (
     <AuthContextProvider>
-    <CountriesContextProvider>
-    <CitiesContextProvider>
+    {/* <CitiesContextProvider> */}
       <App />
-    </CitiesContextProvider>
-    </CountriesContextProvider>
+    {/* </CitiesContextProvider> */}
     </AuthContextProvider>
   );
 }

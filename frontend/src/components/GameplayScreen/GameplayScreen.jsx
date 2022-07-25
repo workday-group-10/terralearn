@@ -3,9 +3,17 @@ import "./GameplayScreen.css"
 import PinMap from "../PinMap/PinMap"
 import StreetViewMap from "../StreetViewMap/StreetViewMap"
 import { useNavigate, Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { CitiesContextProvider, useCitiesContext } from "../contexts/cities"
 
-export default function GameplayScreen({positions ,setPositions}) {
+export default function GameplayScreenContainer({positions ,setPositions}){
+  return(
+      <CitiesContextProvider>
+          <GameplayScreen positions={positions} setPositions={setPositions} />
+      </CitiesContextProvider>
+  )
+}
+function GameplayScreen({positions ,setPositions}) {
   const [guessed,setGuessed] = useState(false)
 
 
@@ -27,7 +35,7 @@ export default function GameplayScreen({positions ,setPositions}) {
     <div className="gameplay-screen">
       
         <div className="google_street">
-        <StreetViewMap/>
+        <StreetViewMap />
         </div>
         <div className="google_map">
           <PinMap guessed={guessed} setGuessed={setGuessed} positions={positions}  setPositions={setPositions}/>
