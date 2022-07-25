@@ -20,12 +20,18 @@
     "react-countdown": "^2.3.2",
     "react-dom": "^17.0.2",
     "react-google-map-street-view": "^1.1.0",
+<<<<<<< HEAD
     "react-google-maps": "^9.4.5",
+=======
+>>>>>>> googlestree
     "react-google-streetview": "^0.0.9",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "react-streetview": "^1.1.1",
+<<<<<<< HEAD
     "recompose": "^0.30.0",
+=======
+>>>>>>> googlestree
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
