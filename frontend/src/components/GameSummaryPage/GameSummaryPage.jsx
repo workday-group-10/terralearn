@@ -27,7 +27,9 @@ export default function GameSummaryPage({positions}) {
         <h1>Game Summary</h1>
         <hr></hr>
       </div>
+      
       <div className="game-summary-image">
+        {/*Add the My summary component passing in the pathCoordinates for the two markers and the central Latitude and longitude for the centre of the map */}
      <MySummaryComponent pathCoordinates={pathCoordinates} centLat={centLat} centLng={centLng} isMarkerShown={isMarkerShown} />
         <div className="TotalPoints">
           Total Points
