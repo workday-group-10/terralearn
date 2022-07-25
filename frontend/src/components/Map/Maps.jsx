@@ -15,15 +15,19 @@ const MyMapComponent = compose(
   
   withGoogleMap
 )((props) => (
+  
     
   <GoogleMap
     defaultZoom={8}
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
     onClick={(ev) => {
+  
         // console.log("useState",props.positions);
-        console.log("latitude : " ,ev.latLng.lat())
-        console.log("longitude : " ,ev.latLng.lng())
-        props.setPositions({ lat: ev.latLng.lat(), lng: ev.latLng.lng()});
+        // console.log("latitude : " ,ev.latLng.lat())
+        // console.log("longitude : " ,ev.latLng.lng())
+      props.setPositions({ lat: ev.latLng.lat(), lng: ev.latLng.lng()});
+   
+      
      
     }}
   >
