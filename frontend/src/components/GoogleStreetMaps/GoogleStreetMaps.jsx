@@ -5,6 +5,7 @@ import "./GoogleStreetMaps.css"
 
 class GoogleMapsStreetView extends React.Component {
   render() {
+    console.log(this.props)
     const mapStyles = {
         width: '100%',
         height: '86.2vh',
@@ -13,7 +14,7 @@ class GoogleMapsStreetView extends React.Component {
  
 
     const streetViewPanoramaOptions = {
-      position: { lat: 46.9171876, lng: 17.8951832 },
+      position: { lat: this.props.latitiude, lng: this.props.longitude },
       pov: { heading: 100, pitch: 0 },
       zoom: 1,
       addressControl: false,

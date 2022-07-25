@@ -23,9 +23,9 @@ import { CitiesContextProvider } from "../contexts/cities";
 export default function AppContainer() {
   return (
     <AuthContextProvider>
-    {/* <CitiesContextProvider> */}
+    <CitiesContextProvider>
       <App />
-    {/* </CitiesContextProvider> */}
+    </CitiesContextProvider>
     </AuthContextProvider>
   );
 }
