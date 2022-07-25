@@ -24,7 +24,6 @@ const MyMapComponent = compose(
     
     onClick={(ev) => {
       props.setPositions({ lat: ev.latLng.lat(), lng: ev.latLng.lng()});
-      console.log(ev.latLng.lat(),ev.latLng.lng())
      
     }}
   >
