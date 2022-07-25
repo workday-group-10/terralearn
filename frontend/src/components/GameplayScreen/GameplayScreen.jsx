@@ -7,7 +7,7 @@ import { useState } from "react"
 
 export default function GameplayScreen({positions ,setPositions}) {
   const [guessed,setGuessed] = useState(false)
-  console.log(guessed)
+
 
 
   const navigate = useNavigate()
