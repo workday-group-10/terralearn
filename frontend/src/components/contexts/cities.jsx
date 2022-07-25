@@ -7,7 +7,7 @@ export const CitiesContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchCities = async () => {
             const { data, err } = await apiClient.fetchCities();
-            console.log("From CitiesContext", data)
+            //console.log("From CitiesContext", data)
             if (data) setCities(data.Cities);
             if (err) setError(err);
         }
