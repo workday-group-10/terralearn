@@ -15,6 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
+import { useState } from "react";
 
 
 
@@ -28,6 +29,8 @@ export default function AppContainer() {
 
 function App() {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
+  const [positions, setPositions] = useState({});
+
 
 
   const handleLogout = async () => {
@@ -107,12 +110,12 @@ function App() {
                 path="/gameplayscreen"
                 element={
                   <ProtectedRoute
-                    element={<GameplayScreen appState={appState} />}
+                    element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}/>}
                   />
                 }
               ></Route>
 
-                <Route path="/gameSummary" element={<GameSummaryPage />} />
+                <Route path="/gameSummary" element={<GameSummaryPage  positions={positions}/>} />
 
               {/* <Route path="/instructions" element={<InstructionsPage />} />
               <Route path="/countdown" element={<RoundCountdownPage />} />

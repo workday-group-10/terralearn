@@ -1,8 +1,8 @@
 import React from "react";
 import { GOOGLE_API_ } from "../constants";
 import { compose, withProps } from "recompose";
-import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-import Woman from '../assets/woman.png'
+import { withGoogleMap, GoogleMap, Marker,Polyline } from "react-google-maps";
+
 
 
 const MyMapComponent = compose(
@@ -21,9 +21,9 @@ const MyMapComponent = compose(
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
     onClick={(ev) => {
         // console.log("useState",props.positions);
-        // console.log("latitude : " ,ev.latLng.lat())
-        // console.log("longitude : " ,ev.latLng.lng())
-      props.setPositions({ lat: ev.latLng.lat(), lng: ev.latLng.lng()});
+        console.log("latitude : " ,ev.latLng.lat())
+        console.log("longitude : " ,ev.latLng.lng())
+        props.setPositions({ lat: ev.latLng.lat(), lng: ev.latLng.lng()});
      
     }}
   >
@@ -39,7 +39,11 @@ const MyMapComponent = compose(
 
     }}
     />}
+
+
+
   </GoogleMap>
+
 ));
 
 export default MyMapComponent;

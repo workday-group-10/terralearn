@@ -4,7 +4,7 @@ import PinMap from "../PinMap/PinMap"
 import StreetViewMap from "../StreetViewMap/StreetViewMap"
 import { useNavigate, Link } from "react-router-dom"
 
-export default function GameplayScreen() {
+export default function GameplayScreen({positions,setPositions}) {
   const navigate = useNavigate()
   function navSummary(){
     navigate("/gameSummary")
@@ -18,7 +18,7 @@ export default function GameplayScreen() {
         <StreetViewMap/>
         </div>
         <div className="google_map">
-          <PinMap/>
+          <PinMap positions={positions}  setPositions={setPositions} />
 
           <button onClick={()=>{
            navigate("/gameSummary")
