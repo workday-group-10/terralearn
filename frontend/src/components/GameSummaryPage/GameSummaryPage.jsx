@@ -56,11 +56,11 @@ export default function GameSummaryPage({positions}) {
   }
 
   const distanceKm = measure(positions.lat,positions.lng,guessedPlaceLat,guessedPlaceLng)
-  console.log(distanceKm)
+
   const scores = ScorePoints(distanceKm)
-  console.log(scores)
+
   const percentageDis= PointPercentage(scores)
-  console.log(percentageDis)
+ 
 
  
   
