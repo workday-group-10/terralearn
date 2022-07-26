@@ -20,7 +20,6 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
   // const temp = cities[0].place_id
   // console.log(temp)
 
-
   const navigate = useNavigate()
   function navSummary(){
     if (guessed==true)
@@ -29,20 +28,23 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
     }
   }
   useEffect(() => {
-    setIsFetching(true)
+    setIsFetching(true);
     fetchData();
   }, []);
+
     const fetchData = async () => {
-      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=5&apiKey=${GEOAPIFY_KEY}`)
+      var i =  Math.floor(Math.random() *20);
+
+      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
       //console.log(data);
-      setLatitude(data.features[0].properties.lat)
-      setLongitude(data.features[0].properties.lon)
+      setLatitude(data.features[i].properties.lat)
+      setLongitude(data.features[i].properties.lon)
       setIsFetching(false)
   }
 
-        // console.log("Latitude:", latitude)
-        // console.log("Longitude:", longitude)
+         //console.log("Latitude:", latitude)
+         //console.log("Longitude:", longitude)
 
 
     //   if (res?.data) {
