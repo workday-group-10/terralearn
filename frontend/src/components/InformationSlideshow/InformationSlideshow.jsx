@@ -8,15 +8,19 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 
 export default function InformationSlideshow(props) {
+    // takes in information 
     const input = props.location
     if (input === undefined){
-        input = "Page not found"
+        input = 0
+
     }
+    //use states that take into account 
     const [errors, setErrors] = useState({})
     const [firstResponse, setFirstReponse] = useState()
     const [description, setDescription] = useState(["This is Paris", "Known as the city of love, it attracts millions of tourists a year",
                                                     "Located in Western Europe, it is few hours away by plane","And be sure to fill up on French cuisine!" ])
-
+    const [image, setImage] = useState("")
+    
     const endpoints = "https://en.wikipedia.org/w/api.php?"
     
     const params = {
@@ -50,16 +54,27 @@ export default function InformationSlideshow(props) {
     async function getData(){
         if(input != undefined){
             params.gsrsearch = input
-
-           const response = await axios.get(endpoints, {params})
+            try{
+                const response = await axios.get(endpoints, {params})
         //    console.log(response)
            if (response != undefined){
             // console.log(Object.values(response.data.query.pages)[0])
             setFirstReponse(Object.values(response.data.query.pages)[0])
            }
+            } catch (err){
+                setErrors(err)
+            }
+           
            
         }
     }
+    useEffect(() => {
+        if(input == 0){
+            setDescription(["Unfortunately, this location does not have information available. :("])
+            setImage("https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+        }
+            
+    }, []);
 
     
     useEffect(() => {
@@ -70,8 +85,12 @@ export default function InformationSlideshow(props) {
                 var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
                 // console.log(result)
                 setDescription(result)
+                setImage(firstResponse.thumbnail.source)
             }
             
+        }
+        if(input == 0){
+            setDescription(["Unfortunately, this location does not have information available. :("])
         }
     }, [input]);
     useEffect(() => {
@@ -81,7 +100,15 @@ export default function InformationSlideshow(props) {
             var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
             // console.log(result)
             setDescription(result)
+            
+            setImage(firstResponse.thumbnail.source)
         }
+        if(input == 0){
+        
+            setImage("https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+            setDescription(["Unfortunately, this location does not have information available. :("])
+        }
+
     }, [firstResponse]);
 
 
@@ -120,7 +147,7 @@ export default function InformationSlideshow(props) {
             {description.map((item, index) => (
                 <div className={index === current ? 'slide active' : 'slide'} key={index}>
                     {index === current && (<div class="moving-slide">
-                        <img className="slide-pic" src={firstResponse.thumbnail.source} alt="img of effiel tower"/>
+                        <img className="slide-pic" src={image} alt="img of effiel tower"/>
                         <div className="slide-paragraph">
                             <h2 className="paragraph-text">{item}</h2>
                         </div>
