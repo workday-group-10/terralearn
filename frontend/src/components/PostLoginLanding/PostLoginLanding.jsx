@@ -11,6 +11,7 @@ import newYorkIcon from '../assets/NewYork.jpg'
 export default function PostLoginLanding(props) {
   useEffect(() => {
     props.setNavbarName(props.user.username)
+    window.scrollTo(0, 0);
   }, []);
 
   //after user clicks main play button, page scrolls down to various cards

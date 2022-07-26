@@ -1,10 +1,60 @@
 import React from "react"
+import axios from "axios";
 import {useState} from "react"
 import "./InformationSlideshow.css"
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
-export default function InformationSlideshow() {
+export default function InformationSlideshow(props) {
+    const input = props.location
+    const [errors, setErrors] = useState({})
+
+    const endpoints = "https://en.wikipedia.org/w/api.php?"
+    const params = {
+        origin: '*',
+        format: 'json',
+        action: 'query',
+        prop: 'extracts',
+        exsentences: 5,
+        exintro: true,
+        generator: 'search',
+        explaintext: true,
+        prop: 'imageinfo',
+        iiprop: 'url'|'size',
+        imlimit: 5,
+
+    }
+
+    const isInputEmpty = input => {
+        if (!input || input === ''){
+           return true; 
+        } 
+        return false;
+    }
+
+    console.log(input)
+    async function getData(){
+        params.gsrsearch = input;
+        if (isInputEmpty){
+            try{
+                const response = await axios.get(endpoints, {params})
+                console.log(endpoints, {params})
+                console.log(response.data.query)
+                // console.log(Object.values(response.data.query.pages)[0])
+            } catch (err) {
+                setErrors({"error": err})
+            }
+            
+
+            
+        }
+        
+    }
+    getData();
+
+    
+
+
     //dummy data of location person guessed, will change to wiki data information
     const sliderData = [
     {image: "https://danaberez.com/wp-content/uploads/2018/11/paris-eiffel-tower.jpg", text: "This is Paris"},

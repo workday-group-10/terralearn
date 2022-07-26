@@ -5,11 +5,16 @@ import { useNavigate } from "react-router-dom";
 import InformationSlideshow from "../InformationSlideshow/InformationSlideshow";
 import MySummaryComponent from "../SummaryMap/SumMap";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function GameSummaryPage({positions}) {
   const navigate = useNavigate()
   const guessedPlaceLat =  15.508457
   const guessedPlaceLng= 32.522854
+  const [location, setLocation] = useState("")
+  useEffect(() => {
+    setLocation("Khartoum")
+  }, []);
 
   const navigateInstructions=()=>{
     navigate("/instructions")
@@ -85,7 +90,7 @@ export default function GameSummaryPage({positions}) {
           </div>
         </div>
         <div className="information-slideshow">
-        <InformationSlideshow/>
+        <InformationSlideshow location = {location}/>
         </div>
        
        

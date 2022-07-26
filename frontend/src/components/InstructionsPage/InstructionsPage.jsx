@@ -1,13 +1,16 @@
 import "./InstructionsPage.css";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export default function InstructionsPage() {
   const navigate = useNavigate()
 
   const handleSubmit = () =>{
-    console.log("clicked")
+    // console.log("clicked")
     navigate("/countdown")
   }
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className = "instructions-page">
