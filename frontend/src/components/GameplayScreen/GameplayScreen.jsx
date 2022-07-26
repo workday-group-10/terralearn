@@ -40,6 +40,7 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
     setIsFetching(true);
     filterCities();
     fetchData();
+    setData([])
   }, []);
 
     const fetchData = async () => {
