@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from "../Banner/Banner";
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 import franceIcon from '../assets/France.jpg'
@@ -12,7 +12,14 @@ export default function PostLoginLanding(props) {
   useEffect(() => {
     props.setNavbarName(props.user.username)
   }, []);
-  
+
+  //after user clicks main play button, page scrolls down to various cards
+  const cardRef = useRef(null)
+  function scrollToCard(){
+    cardRef.current.scrollIntoView() 
+  }
+
+
   return (
     <div className="home">
     {/* animation stuff ignore this */}
@@ -49,12 +56,12 @@ export default function PostLoginLanding(props) {
             <h2 className="title-one">Learn About </h2>
             <h1 className="title-two">Your Home</h1>
             </div>
-            <button className="btn">Play</button>
+            <button onClick={scrollToCard} className="play-btn">Play</button>
         </div>
       </div>
       {/* categories section */}
       <div className="break">Most Popular Categories</div>
-      <div className="home_row">
+      <div ref={cardRef} className="home_row">
       {/* individual categories cards */}
       <Category continent="Europe" Icon={franceIcon}/>
         <Category continent="Asia" Icon={japanIcon}/>
