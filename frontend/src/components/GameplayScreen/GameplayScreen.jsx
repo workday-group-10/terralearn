@@ -16,8 +16,8 @@ export default function GameplayScreen({positions ,setPositions}) {
   const [latitude, setLatitude] = useState(0)
   const [isFetching, setIsFetching] = useState(false)
   console.log("Data for cities", cities)
-  const temp = cities[0].place_id
-  console.log(temp)
+  // const temp = cities[0].place_id
+  // console.log(temp)
 
 
   const navigate = useNavigate()
@@ -31,40 +31,28 @@ export default function GameplayScreen({positions ,setPositions}) {
   useEffect(() => {
     const fetchData = async () => {
       setIsFetching(true)
-        //try{
-      const res = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${temp}&limit=5&apiKey=b85c900cef3a4e65bc26bc65b8b647c4`)
-      .then( function(res){
-        if (res?.data?.features) {
-        console.log("response", res)
+      try{
+      const res = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=5&apiKey=b85c900cef3a4e65bc26bc65b8b647c4`)
+      if (res?.data?.features) {
+        console.log("res:", res)
+        console.log("Latitude:", res.data.features[0].properties.lat)
+        console.log("Longitude:", res.data.features[0].properties.lon)
         setLatitude(res.data.features[0].properties.lat)
         setLongitude(res.data.features[0].properties.lon)
-        }
-        else{
-          setError("Error fetching.")
-        }
-      })
+      } else {
+        setError("Error fetching products.")
+      }
+    }
+    catch (err) {
+      console.log(err)
+      const message = err?.response?.data?.error?.message
+      setError(message ?? String(err))
+    } finally {
+      setIsFetching(false)
     }
     fetchData()
-  }, [])
-  //     if (res?.data?.features) {
-  //       console.log("res:", res)
-  //       console.log("Latitude:", res.data.features[0].properties.lat)
-  //       console.log("Longitude:", res.data.features[0].properties.lon)
-  //       setLatitude(res.data.features[0].properties.lat)
-  //       setLongitude(res.data.features[0].properties.lon)
-  //     } else {
-  //       setError("Error fetching products.")
-  //     }
-  //   }
-  //   catch (err) {
-  //     console.log(err)
-  //     const message = err?.response?.data?.error?.message
-  //     setError(message ?? String(err))
-  //   } finally {
-  //     setIsFetching(false)
-  //   }
-  //   fetchData()
-  // }
+  }
+},[])
 
 
   
@@ -74,7 +62,8 @@ export default function GameplayScreen({positions ,setPositions}) {
     <div className="gameplay-screen">
       
         <div className="google_street">
-        <StreetViewMap latitude={latitude} longitude={longitude}/>
+        {/* <StreetViewMap latitude={latitude} longitude={longitude}/> */}
+        <StreetViewMap/>
         </div>
         <div className="google_map">
           <PinMap guessed={guessed} setGuessed={setGuessed} positions={positions}  setPositions={setPositions}/>
