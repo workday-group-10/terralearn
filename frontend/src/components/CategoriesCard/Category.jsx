@@ -2,7 +2,7 @@ import React from 'react'
 import earthIcon from '../assets/earth-icon.png'
 import {useNavigate } from "react-router-dom"
 import "./Category.css"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles
 import { Card,CardActionArea,CardMedia,CardActions,Button,Typography ,CardContent} from '@material-ui/core';
 const useStyles = makeStyles({
     root: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 
 
 
-function Category({continent, Icon}) {
+function Category({continent, Icon ,description}) {
   const navigate = useNavigate();
     const classes = useStyles();
 
@@ -40,8 +40,10 @@ function Category({continent, Icon}) {
           </Typography>
           <div >
           <Typography variant="body2" className='description'  component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            <p>
+            {description}
+            </p>
+          
           </Typography>
           </div>
         
@@ -49,7 +51,7 @@ function Category({continent, Icon}) {
       </CardActionArea >
       <CardActions className='category-color'>
       {/* when they hit play navigate to instructions */}
-        <Button size="small" color="secondary" onClick={handleOnSubmit}>
+        <Button size="small" color="secondary" onClick={handleOnSubmit} className="buttons">
           Play
         </Button>
         
