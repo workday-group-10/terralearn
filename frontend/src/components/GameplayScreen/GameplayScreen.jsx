@@ -7,17 +7,26 @@ import { useState, useEffect } from "react"
 import { CitiesContextProvider, useCitiesContext } from "../contexts/cities"
 import axios from "axios";
 import { GEOAPIFY_KEY } from "../constants";
+import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 
-export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude}) {
+export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude, country_id}) {
   const [guessed,setGuessed] = useState(false)
   const {cities, setCities} = useCitiesContext();
+  var categorizedCities = [];
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
-  // console.log("Data for cities", cities)
-  // console.log(cities[0].place_id)
-  // const temp = cities[0].place_id
-  // console.log(temp)
+
+  //console.log(cities)
+  //console.log(country_id)
+  function filterCities(){
+  for(var i = 0; i < cities.length; i++){
+  if(cities[i].category_id == country_id){
+  categorizedCities.push(cities[i])
+  }
+  }
+  //console.log(categorizedCities)
+}
 
 
   const navigate = useNavigate()
@@ -28,20 +37,24 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
     }
   }
   useEffect(() => {
-    setIsFetching(true)
+    setIsFetching(true);
+    filterCities();
     fetchData();
   }, []);
+
     const fetchData = async () => {
-      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=5&apiKey=b85c900cef3a4e65bc26bc65b8b647c4`)
+      var i =  Math.floor(Math.random() *20);
+
+      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
       //console.log(data);
-      setLatitude(data.features[0].properties.lat)
-      setLongitude(data.features[0].properties.lon)
+      setLatitude(data.features[i].properties.lat)
+      setLongitude(data.features[i].properties.lon)
       setIsFetching(false)
   }
 
-        // console.log("Latitude:", latitude)
-        // console.log("Longitude:", longitude)
+         //console.log("Latitude:", latitude)
+         //console.log("Longitude:", longitude)
 
 
     //   if (res?.data) {
@@ -62,7 +75,7 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
 
   return (
     <div className="gameplay-screen">
-      {isFetching && <p>loading...</p>}
+      {isFetching && <LoadingSpinner/>}
       {!isFetching && (
         <div className="google_street">
         <StreetViewMap latitude={latitude} longitude={longitude}/>
