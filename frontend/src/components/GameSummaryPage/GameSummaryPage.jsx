@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom";
 import InformationSlideshow from "../InformationSlideshow/InformationSlideshow";
 import MySummaryComponent from "../SummaryMap/SumMap";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function GameSummaryPage({positions, longitude, latitude}) {
   //console.log(longitude)
   //console.log(latitude)
+  const[location, setLocation] = useState("Paris")
   var stringLat = JSON.stringify(latitude);
     var lat = parseFloat(stringLat);
     var stringLon = JSON.stringify(longitude);
@@ -91,7 +93,7 @@ export default function GameSummaryPage({positions, longitude, latitude}) {
           </div>
         </div>
         <div className="information-slideshow">
-        <InformationSlideshow/>
+        <InformationSlideshow location = {location}/>
         </div>
        
        

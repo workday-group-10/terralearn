@@ -1,4 +1,5 @@
 import "./InstructionsPage.css";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export default function InstructionsPage({id}) {
   const navigate = useNavigate()
@@ -8,7 +9,9 @@ export default function InstructionsPage({id}) {
     console.log("clicked")
     navigate("/countdown", { country_id: id })
   }
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className = "instructions-page">

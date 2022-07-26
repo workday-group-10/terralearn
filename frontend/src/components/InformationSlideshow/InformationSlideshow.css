@@ -17,7 +17,7 @@
     position: relative;
     display: flex;
     margin: auto;
-    width: 47vw;
+    width: 65vw;
     height: 50vh;
     justify-content: center;
     margin-top: 3em;
@@ -27,12 +27,12 @@
 }
 .slideshow:hover{
     box-shadow:
-    1px 1px #373737,
-    2px 2px #373737,
-    3px 3px #373737,
-    4px 4px #373737,
-    5px 5px #373737,
-    10px 10px #373737;
+    1px 1px #f9dec8,
+    2px 2px #f9dec8,
+    3px 3px #f9dec8,
+    4px 4px #f9dec8,
+    5px 5px #f9dec8,
+    10px 10px #f1b27e;
     border-radius: 12px;
     -webkit-transform: translateX(-8px);
     transform: translateX(-38x);
@@ -51,6 +51,12 @@
 
 /* ---------------------------------- Slide arrows ------------------------------------ */
 
+/* .arrowbg{
+    background-color: white;
+    position: relative;
+    height: 50px;
+    width: 50px;
+} */
 .left-arrow, .right-arrow{
     position: absolute;
     top: 50%;
@@ -58,19 +64,25 @@
     z-index: 10;
     cursor: pointer;
     user-select: none;
+    border-radius: 8px;
+    background-color: white;
+}
+.left-arrow:hover, .right-arrow:hover{
+    background-color: lightgray;
+    
 }
 .left-arrow{
-    left: 1%;
+    left: 0%;
 }
 .right-arrow{
-    right: 1%;
+    right: 0%;
 }
 /* ---------------------------------- Text portion of div ------------------------------------ */
 
 
 .slide-paragraph{
     /* display: table-cell; */
-    width: 22vw;
+    width: 40vw;
     height: 48.5vh;
     background-color: #FBE9DA;
     justify-content: center;
