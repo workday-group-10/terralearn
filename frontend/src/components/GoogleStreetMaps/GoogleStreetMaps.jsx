@@ -7,13 +7,13 @@ class GoogleMapsStreetView extends React.Component {
   render() {
     console.log("lat/lon in googlemapsstreetview", this.props)
     const data = this.props;
-    console.log(data)
+    // console.log(data)
     var stringLat = JSON.stringify(data.latitude);
     var latitude = parseFloat(stringLat);
     var stringLon = JSON.stringify(data.longitude);
     var longitude = parseFloat(stringLon);
-    console.log("parseFloat lat", latitude)
-    console.log("parseFloat lon", longitude)
+    //console.log("parseFloat lat", latitude)
+    //console.log("parseFloat lon", longitude)
     const mapStyles = {
         width: '100%',
         height: '86.2vh',

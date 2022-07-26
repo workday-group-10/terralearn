@@ -7,7 +7,13 @@ import InformationSlideshow from "../InformationSlideshow/InformationSlideshow";
 import MySummaryComponent from "../SummaryMap/SumMap";
 import { useState } from "react";
 
-export default function GameSummaryPage({positions}) {
+export default function GameSummaryPage({positions, longitude, latitude}) {
+  console.log(longitude)
+  console.log(latitude)
+  var stringLat = JSON.stringify(latitude);
+    var lat = parseFloat(stringLat);
+    var stringLon = JSON.stringify(longitude);
+    var lng = parseFloat(stringLon);
   const navigate = useNavigate()
   const navigateInstructions=()=>{
     navigate("/instructions")
@@ -15,7 +21,7 @@ export default function GameSummaryPage({positions}) {
   const navigatePostLanding=()=>{
     navigate("/PostLoginlanding")
   }
-  const pathCoordinates = [{ lat: positions.lat, lng: positions.lng },{ lat:  15.508457, lng:  32.522854},
+  const pathCoordinates = [{ lat: positions.lat, lng: positions.lng },{ lat:  lat, lng:  lng},
   ];
   const [isMarkerShown, setisMarkerShown] = useState(true);
   const centLat = (pathCoordinates[0].lat +pathCoordinates[1].lat)/2

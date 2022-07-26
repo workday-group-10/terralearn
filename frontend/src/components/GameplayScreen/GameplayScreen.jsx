@@ -8,16 +8,14 @@ import { CitiesContextProvider, useCitiesContext } from "../contexts/cities"
 import axios from "axios";
 import { GEOAPIFY_KEY } from "../constants";
 
-export default function GameplayScreen({positions ,setPositions}) {
+export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude}) {
   const [guessed,setGuessed] = useState(false)
   const {cities, setCities} = useCitiesContext();
   const[error, setError] = useState("")
-  const [longitude, setLongitude] = useState(0)
-  const [latitude, setLatitude] = useState(0)
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
-  console.log("Data for cities", cities)
-  console.log(cities[0].place_id)
+  // console.log("Data for cities", cities)
+  // console.log(cities[0].place_id)
   // const temp = cities[0].place_id
   // console.log(temp)
 
@@ -42,8 +40,8 @@ export default function GameplayScreen({positions ,setPositions}) {
       setIsFetching(false)
   }
 
-        console.log("Latitude:", latitude)
-        console.log("Longitude:", longitude)
+        // console.log("Latitude:", latitude)
+        // console.log("Longitude:", longitude)
 
 
     //   if (res?.data) {

@@ -33,6 +33,8 @@ export default function AppContainer() {
 function App() {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const [positions, setPositions] = useState({});
+  const [longitude, setLongitude] = useState(0)
+  const [latitude, setLatitude] = useState(0)
 
 
 
@@ -113,12 +115,14 @@ function App() {
                 path="/gameplayscreen"
                 element={
                   <ProtectedRoute
-                    element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}/>}
+                    element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}
+                      longitude={longitude} setLongitude={setLongitude} latitude={latitude} setLatitude={setLatitude}
+                    />}
                   />
                 }
               ></Route>
 
-                <Route path="/gameSummary" element={<GameSummaryPage  positions={positions}/>} />
+                <Route path="/gameSummary" element={<GameSummaryPage  positions={positions} longitude={longitude} latitude={latitude} />} />
 
               {/* <Route path="/instructions" element={<InstructionsPage />} />
               <Route path="/countdown" element={<RoundCountdownPage />} />
