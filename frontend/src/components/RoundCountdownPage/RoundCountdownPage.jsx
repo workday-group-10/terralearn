@@ -12,7 +12,7 @@ function RoundCountdownPage() {
 
 
     useEffect(() => {
-            setTimeout(() => navigate("/gameplayscreen"), 5000);
+            setTimeout(() => navigate("/gameplayscreen"), 5000)
         }, []);
   // Random component
   const Completionist = () => <div>
