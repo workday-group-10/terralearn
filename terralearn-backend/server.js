@@ -10,9 +10,15 @@ const placesRoutes = require("./routes/places")
 const { BadRequestError, NotFoundError } = require("./utils/errors")
 
 const app = express()
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+
 
 //enables cross-origin resource sharing for all origins
-app.use(cors())
+app.use(cors(corsOptions))
 //parse incoming request bodies with JSON payloads
 app.use(express.json())
 // log request info
