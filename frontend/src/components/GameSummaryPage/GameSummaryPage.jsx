@@ -7,8 +7,8 @@ import MySummaryComponent from "../SummaryMap/SumMap";
 import { useState } from "react";
 
 export default function GameSummaryPage({positions, longitude, latitude}) {
-  console.log(longitude)
-  console.log(latitude)
+  //console.log(longitude)
+  //console.log(latitude)
   var stringLat = JSON.stringify(latitude);
     var lat = parseFloat(stringLat);
     var stringLon = JSON.stringify(longitude);
