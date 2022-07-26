@@ -12,11 +12,11 @@ import data from "../data.json"
 export default function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
+  console.log(props)
  
 
   useEffect(() => {
     props.setNavbarName(props.user.username)
-    console.log(values)
    
     
   }, []);
@@ -33,7 +33,7 @@ export default function PostLoginLanding(props) {
   return (
     <div className="home">
     {/* animation stuff ignore this */}
-    <ul class="circles">
+    <ul className="circles">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -73,7 +73,10 @@ export default function PostLoginLanding(props) {
       <div className="break">Most Popular Categories</div>
       <div ref={cardRef} className="home_row">
         {values.map((datum)=>(
-        <Category continent={datum.country_name} Icon={franceIcon} description={datum.country_description}/>
+        <Category 
+        country_id={props.country_id}
+        setCountry_id={props.setCountry_id}
+        key={datum.country_name} continent={datum.country_name} Icon={franceIcon} description={datum.country_description} id={datum.country_id}/>
         )
          
 

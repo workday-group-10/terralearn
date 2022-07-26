@@ -2,7 +2,7 @@ import React from 'react'
 import earthIcon from '../assets/earth-icon.png'
 import {useNavigate } from "react-router-dom"
 import "./Category.css"
-import { makeStyles } from '@material-ui/core/styles
+import { makeStyles } from '@material-ui/core/styles'
 import { Card,CardActionArea,CardMedia,CardActions,Button,Typography ,CardContent} from '@material-ui/core';
 const useStyles = makeStyles({
     root: {
@@ -12,11 +12,13 @@ const useStyles = makeStyles({
 
 
 
-function Category({continent, Icon ,description}) {
+function Category({continent, Icon ,description,id,country_id,setCountry_id}) {
   const navigate = useNavigate();
     const classes = useStyles();
 
     const handleOnSubmit =()=>{
+      // console.log("country_id",id)
+      setCountry_id(id)
       navigate("/instructions");
 
     }
@@ -40,9 +42,8 @@ function Category({continent, Icon ,description}) {
           </Typography>
           <div >
           <Typography variant="body2" className='description'  component="p">
-            <p>
+            
             {description}
-            </p>
           
           </Typography>
           </div>

@@ -35,6 +35,7 @@ function App() {
   const [positions, setPositions] = useState({});
   const [longitude, setLongitude] = useState(0)
   const [latitude, setLatitude] = useState(0)
+  const [country_id,setCountryId]= useState(null)
 
 
 
@@ -77,6 +78,8 @@ function App() {
                         appState={appState}
                         user={appState?.user}
                         navbarName={navbarName} setNavbarName={setNavbarName}
+                        country_id={country_id}
+                        setCountry_id={setCountryId}
                       />
                     }
                   />
@@ -116,6 +119,9 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}
+                        country_id={country_id}
+                        setCountry_id={setCountryId}
+
                       longitude={longitude} setLongitude={setLongitude} latitude={latitude} setLatitude={setLatitude}
                     />}
                   />

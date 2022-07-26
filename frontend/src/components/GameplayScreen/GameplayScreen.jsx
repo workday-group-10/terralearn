@@ -9,12 +9,13 @@ import axios from "axios";
 import { GEOAPIFY_KEY } from "../constants";
 import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 
-export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude}) {
+export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude,country_id}) {
   const [guessed,setGuessed] = useState(false)
   const {cities, setCities} = useCitiesContext();
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
+  // console.log(country_id)
   // console.log("Data for cities", cities)
   // console.log(cities[0].place_id)
   // const temp = cities[0].place_id
