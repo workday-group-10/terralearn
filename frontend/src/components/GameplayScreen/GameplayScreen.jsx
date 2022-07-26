@@ -7,6 +7,7 @@ import { useState, useEffect } from "react"
 import { CitiesContextProvider, useCitiesContext } from "../contexts/cities"
 import axios from "axios";
 import { GEOAPIFY_KEY } from "../constants";
+import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 
 export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude}) {
   const [guessed,setGuessed] = useState(false)
@@ -62,7 +63,7 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
 
   return (
     <div className="gameplay-screen">
-      {isFetching && <p>loading...</p>}
+      {isFetching && <LoadingSpinner/>}
       {!isFetching && (
         <div className="google_street">
         <StreetViewMap latitude={latitude} longitude={longitude}/>
