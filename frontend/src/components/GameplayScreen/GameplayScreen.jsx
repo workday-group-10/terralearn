@@ -32,7 +32,7 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
     fetchData();
   }, []);
     const fetchData = async () => {
-      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=5&apiKey=b85c900cef3a4e65bc26bc65b8b647c4`)
+      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=5&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
       //console.log(data);
       setLatitude(data.features[0].properties.lat)
