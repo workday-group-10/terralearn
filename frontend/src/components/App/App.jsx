@@ -36,6 +36,7 @@ function App() {
   const [longitude, setLongitude] = useState(0)
   const [latitude, setLatitude] = useState(0)
   const [country_id,setCountryId]= useState(null)
+  const [location, setLocation] = useState("")
 
 
 
@@ -118,7 +119,7 @@ function App() {
                 path="/gameplayscreen"
                 element={
                   <ProtectedRoute
-                    element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}
+                    element={<GameplayScreen location={location} setLocation={setLocation} appState={appState}  positions={positions} setPositions={setPositions}
                         country_id={country_id}
                         setCountry_id={setCountryId}
 
@@ -128,7 +129,7 @@ function App() {
                 }
               ></Route>
 
-                <Route path="/gameSummary" element={<GameSummaryPage  positions={positions} longitude={longitude} latitude={latitude} />} />
+                <Route path="/gameSummary" element={<GameSummaryPage location={location} setLocation={setLocation}  positions={positions} longitude={longitude} latitude={latitude} />} />
 
               {/* <Route path="/instructions" element={<InstructionsPage />} />
               <Route path="/countdown" element={<RoundCountdownPage />} />
