@@ -15,12 +15,6 @@ export default function GameSummaryPage({positions, longitude, latitude}) {
     var stringLon = JSON.stringify(longitude);
     var lng = parseFloat(stringLon);
   const navigate = useNavigate()
-  const guessedPlaceLat =  15.508457
-  const guessedPlaceLng= 32.522854
-  const [location, setLocation] = useState("")
-  useEffect(() => {
-    setLocation("Khartoum")
-  }, []);
 
   const navigateInstructions=()=>{
     navigate("/instructions")
@@ -68,7 +62,7 @@ export default function GameSummaryPage({positions, longitude, latitude}) {
     return Math.round((5000 * Math.exp(-1 * (6.707329 ** -5)* distance) ))
   }
 
-  const distanceKm = measure(positions.lat,positions.lng,guessedPlaceLat,guessedPlaceLng)
+  const distanceKm = measure(positions.lat,positions.lng, lat, lng)
 
   const scores = ScorePoints(distanceKm)
 
