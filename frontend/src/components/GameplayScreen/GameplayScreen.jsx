@@ -12,18 +12,21 @@ import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude, country_id}) {
   const [guessed,setGuessed] = useState(false)
   const {cities, setCities} = useCitiesContext();
-  var [categorizedCities, setCategorizedCities] = useState([])
+  var categorizedCities = [];
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
 
-  console.log(cities)
-  console.log(country_id)
-  // for(the size of cities array){
-  // if(cities[i].country_id == country_id){
-  // categorizedCities.push(cities[i])
-  // }
-  // }
+  //console.log(cities)
+  //console.log(country_id)
+  function filterCities(){
+  for(var i = 0; i < cities.length; i++){
+  if(cities[i].category_id == country_id){
+  categorizedCities.push(cities[i])
+  }
+  }
+  //console.log(categorizedCities)
+}
 
 
   const navigate = useNavigate()
@@ -35,13 +38,14 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
   }
   useEffect(() => {
     setIsFetching(true);
+    filterCities();
     fetchData();
   }, []);
 
     const fetchData = async () => {
       var i =  Math.floor(Math.random() *20);
 
-      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${cities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
+      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
       //console.log(data);
       setLatitude(data.features[i].properties.lat)
