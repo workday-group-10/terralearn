@@ -11,24 +11,21 @@ import RoundCountdownPage from "../RoundCountdownPage/RoundCountdownPage";
 import NotFound from "../NotFound/NotFound";
 import GameplayScreen from "../GameplayScreen/GameplayScreen";
 import { AuthContextProvider, useAuthContext } from "../contexts/auth";
-import { CountriesContextProvider, useCountriesContext } from "../contexts/countries";
-import { CitiesContextProvider, useCitiesContext } from "../contexts/cities";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 import { useState } from "react";
+import { CitiesContextProvider } from "../contexts/cities";
 
 
 
 export default function AppContainer() {
   return (
     <AuthContextProvider>
-    <CountriesContextProvider>
     <CitiesContextProvider>
       <App />
     </CitiesContextProvider>
-    </CountriesContextProvider>
     </AuthContextProvider>
   );
 }
@@ -36,6 +33,8 @@ export default function AppContainer() {
 function App() {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const [positions, setPositions] = useState({});
+  const [longitude, setLongitude] = useState(0)
+  const [latitude, setLatitude] = useState(0)
 
 
 
@@ -116,12 +115,14 @@ function App() {
                 path="/gameplayscreen"
                 element={
                   <ProtectedRoute
-                    element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}/>}
+                    element={<GameplayScreen appState={appState}  positions={positions} setPositions={setPositions}
+                      longitude={longitude} setLongitude={setLongitude} latitude={latitude} setLatitude={setLatitude}
+                    />}
                   />
                 }
               ></Route>
 
-                <Route path="/gameSummary" element={<GameSummaryPage  positions={positions}/>} />
+                <Route path="/gameSummary" element={<GameSummaryPage  positions={positions} longitude={longitude} latitude={latitude} />} />
 
               {/* <Route path="/instructions" element={<InstructionsPage />} />
               <Route path="/countdown" element={<RoundCountdownPage />} />

@@ -4,6 +4,7 @@ import ReactStreetview from "react-streetview";
 class GoogleMapsStreetView extends React.Component {
   render() {
    const { latitude, longitude } = this.props;
+   
 
     const googleMapsApiKey = "AIzaSyBGJHXlpUiFcp1N5AV4FMHpuwpYC9xpkVM";
 

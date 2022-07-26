@@ -10,9 +10,10 @@ function RoundCountdownPage() {
     const [move,setMove]=useState(false)
 
 
+
     useEffect(() => {
-        setTimeout(() => navigate("/gameplayscreen"), 5000);
-      }, []);
+            setTimeout(() => navigate("/gameplayscreen"), 5000);
+        }, []);
   // Random component
   const Completionist = () => <div>
      <span>You are good to go!</span>
