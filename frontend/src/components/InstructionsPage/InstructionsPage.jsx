@@ -1,11 +1,12 @@
 import "./InstructionsPage.css";
 import { useNavigate } from "react-router-dom";
-export default function InstructionsPage() {
+export default function InstructionsPage({id}) {
   const navigate = useNavigate()
+  console.log("Instructions")
 
   const handleSubmit = () =>{
     console.log("clicked")
-    navigate("/countdown")
+    navigate("/countdown", { country_id: id })
   }
 
 

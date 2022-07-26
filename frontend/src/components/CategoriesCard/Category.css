@@ -1,7 +1,6 @@
 .category{
     display: flex;
     flex-direction: column;
-    background-color: white;
     z-index: 1;
     align-items: center;
     justify-content: flex-end;
@@ -14,15 +13,28 @@
 .category-info{
     height: 100px;
     color: white;
-    margin-bottom: 15px; 
+    margin-bottom: 25px; 
+    
+   
    
 }
 .description{
     color: white;
+    line-height: 1.6;
+    height: 100px;
+   
+}
+.description p{
+    line-height: 1.6;
+   
 }
 .continent{
     color: yellow;
 }
 .category-color{
     background-color: #0b0a32;
+   
+}
+.category-color .buttons{
+    margin-top: 5px;
 }

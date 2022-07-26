@@ -8,10 +8,20 @@ import franceIcon from '../assets/France.jpg'
 import japanIcon from '../assets/MountFuji.jpg'
 import capeTownIcon from '../assets/africa-city.jpg'
 import newYorkIcon from '../assets/NewYork.jpg'
+import data from "../data.json"
 export default function PostLoginLanding(props) {
+  var dat= data.countries
+  var values = dat
+  console.log(props)
+ 
+
   useEffect(() => {
     props.setNavbarName(props.user.username)
+   
+    
   }, []);
+  
+  
 
   //after user clicks main play button, page scrolls down to various cards
   const cardRef = useRef(null)
@@ -23,7 +33,7 @@ export default function PostLoginLanding(props) {
   return (
     <div className="home">
     {/* animation stuff ignore this */}
-    <ul class="circles">
+    <ul className="circles">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -62,11 +72,20 @@ export default function PostLoginLanding(props) {
       {/* categories section */}
       <div className="break">Most Popular Categories</div>
       <div ref={cardRef} className="home_row">
-      {/* individual categories cards */}
-      <Category continent="Europe" Icon={franceIcon}/>
-        <Category continent="Asia" Icon={japanIcon}/>
-          <Category continent="Africa" Icon={capeTownIcon}/>
-        <Category continent="USA" Icon={newYorkIcon}/>
+        {values.map((datum)=>(
+        <Category 
+        country_id={props.country_id}
+        setCountry_id={props.setCountry_id}
+        key={datum.country_name} continent={datum.country_name} Icon={franceIcon} description={datum.country_description} id={datum.country_id}/>
+        )
+         
+
+        )
+}
+      {/* // <Category continent="Europe" Icon={franceIcon}/>
+      //   <Category continent="Asia" Icon={japanIcon}/>
+      //     <Category continent="Africa" Icon={capeTownIcon}/>
+      //   <Category continent="USA" Icon={newYorkIcon}/> */}
       </div>
     </div>
   );

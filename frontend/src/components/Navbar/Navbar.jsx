@@ -101,7 +101,7 @@ function Navbar(props) {
           </div>
         </div>
         {/* dropdown menu of options person can choose when hovering over profile */}
-        <div class="dropdown-content">
+        <div className="dropdown-content">
           <ul>
             <li>
               <a className="dropdown-item" href="/profile">Profile</a>
