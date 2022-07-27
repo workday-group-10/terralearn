@@ -16,7 +16,6 @@ const corsOptions ={
     optionSuccessStatus:200
 }
 
-
 //enables cross-origin resource sharing for all origins
 app.use(cors(corsOptions))
 //parse incoming request bodies with JSON payloads

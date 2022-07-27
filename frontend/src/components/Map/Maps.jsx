@@ -19,7 +19,7 @@ const MyMapComponent = compose(
     
   <GoogleMap
    options={{ draggableCursor: 'crosshair' }}
-    defaultZoom={8}
+    defaultZoom={1}
     defaultCenter={{ lat: -34.397, lng: 150.644 }}
     
     onClick={(ev) => {

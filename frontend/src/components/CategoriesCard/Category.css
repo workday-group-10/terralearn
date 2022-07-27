@@ -10,22 +10,16 @@
     max-width: 325px;
 }
 
-.category-info{
-    height: 100px;
-    color: white;
-    margin-bottom: 25px; 
-    
-   
-   
-}
 .description{
     color: white;
     line-height: 1.6;
     height: 100px;
    
+   
 }
 .description p{
     line-height: 1.6;
+    margin-top: 5px;
    
 }
 .continent{
@@ -33,8 +27,34 @@
 }
 .category-color{
     background-color: #0b0a32;
+    justify-content: space-between;
+   
    
 }
-.category-color .buttons{
-    margin-top: 5px;
+
+
+.category-but{
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #0b0a32;
+    
+    
+}
+.buttons-below{
+    display: flex;
+    flex-direction: column;
+}
+.material-icons .Fav{
+    color: grey;
+}
+.material-icons .FavBor{
+    color: red;
+ 
+}
+.material-icons .FavBorHide{
+    display: none;
+}
+
+.material-icons .FavHide{
+    display: none;
 }
