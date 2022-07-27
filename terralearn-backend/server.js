@@ -6,6 +6,8 @@ const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
 
+const favoritesRoutes = require("./routes/favorites")
+
 
 const { BadRequestError, NotFoundError } = require("./utils/errors")
 
@@ -27,6 +29,8 @@ app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
 //added places routes here
 app.use("/places", placesRoutes)
+
+app.use("/favorites",favoritesRoutes)
 
 
 app.use((req, res, next) => {
