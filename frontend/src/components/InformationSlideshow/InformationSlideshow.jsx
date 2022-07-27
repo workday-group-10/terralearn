@@ -104,7 +104,7 @@ export default function InformationSlideshow(props) {
                 var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
                 // console.log(result)
                 setDescription(result)
-                if (firstResponse.thumbnail.source != undefined){
+                if (firstResponse.thumbnail != undefined){
                     setImage(firstResponse.thumbnail.source)
                 }
                 
@@ -125,7 +125,7 @@ export default function InformationSlideshow(props) {
             // console.log(result)
             setDescription(result)
             
-            if (firstResponse.thumbnail.source != undefined){
+            if (firstResponse.thumbnail != undefined){
                 setImage(firstResponse.thumbnail.source)
             }
         }
