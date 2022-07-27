@@ -38,7 +38,7 @@ function App() {
   const [country_id,setCountryId]= useState(null)
   const [location, setLocation] = useState("")
   const [currInfo, setCurrInfo] = useState("");
-  const [userPlacesInfo, setUserPlacesInfo] = useState([]);
+  const [userPlacesInfo, setUserPlacesInfo] = useState({});
 
 
 

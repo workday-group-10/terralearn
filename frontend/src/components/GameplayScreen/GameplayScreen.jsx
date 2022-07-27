@@ -17,8 +17,8 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
-  var stringSpace = ""
-  var newString = ""
+  // var stringSpace = ""
+  // var newString = ""
   
   // filters city context based on where the user chose their category
   function filterCities(){
@@ -28,7 +28,6 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   }
   }
 }
-
 
   const navigate = useNavigate()
   function navSummary(){
@@ -42,13 +41,6 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
     setIsFetching(true);
     filterCities();
     fetchData();
-    console.log("stringSpace", stringSpace)
-    console.log("newString", newString)
-    console.log(currInfo)
-    console.log(location)
-    console.log(userPlacesInfo)
-    setData([])
-    console.log(userPlacesInfo)
   }, []);
 
     //API call to geoapify to get places given the place_id from our filtered city context
@@ -57,19 +49,19 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
 
       const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
-      console.log(data)
       //sets location, latitude, longtitude of place guessed
       setLocation(data.features[i].properties.name);
       setLatitude(data.features[i].properties.lat);
       setLongitude(data.features[i].properties.lon);
       
-      stringSpace = data.features[i].properties.address_line1;
+      //New Feature commented not done yet
+      // stringSpace = data.features[i].properties.address_line1;
      
-      newString = stringSpace.replace(/\s/g, '%20')
+      // newString = stringSpace.replace(/\s/g, '%20')
       
-      setCurrInfo("https://www.google.com/search?q=" + newString);
+      // setCurrInfo("https://www.google.com/search?q=" + newString);
 
-      setUserPlacesInfo(oldArray => [...oldArray, {location, currInfo}])
+      // setUserPlacesInfo({location, currInfo})
       
       setIsFetching(false)
   }
