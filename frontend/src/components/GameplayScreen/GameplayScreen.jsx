@@ -65,9 +65,9 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       
       stringSpace = data.features[i].properties.address_line1;
      
-      newString = stringSpace.replace(/\s/g, '')
+      newString = stringSpace.replace(/\s/g, '%20')
       
-      setCurrInfo("https://en.wikipedia.org/wiki/" + newString);
+      setCurrInfo("https://www.google.com/search?q=" + newString);
 
       setUserPlacesInfo(oldArray => [...oldArray, {location, currInfo}])
       
