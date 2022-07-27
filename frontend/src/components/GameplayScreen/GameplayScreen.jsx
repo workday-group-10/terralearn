@@ -9,13 +9,14 @@ import axios from "axios";
 import { GEOAPIFY_KEY } from "../constants";
 import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 
-export default function GameplayScreen({positions ,setPositions, latitude, setLatitude, longitude, setLongitude, country_id}) {
+export default function GameplayScreen({location, setLocation, positions ,setPositions, latitude, setLatitude, longitude, setLongitude, country_id}) {
   const [guessed,setGuessed] = useState(false)
   const {cities, setCities} = useCitiesContext();
   var categorizedCities = [];
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
+  
 
   //console.log(cities)
   //console.log(country_id)
@@ -48,7 +49,8 @@ export default function GameplayScreen({positions ,setPositions, latitude, setLa
 
       const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
-      //console.log(data);
+      //sets location, latitude, longtitude of place guessed
+      setLocation(data.features[i].properties.name);
       setLatitude(data.features[i].properties.lat)
       setLongitude(data.features[i].properties.lon)
       setIsFetching(false)
