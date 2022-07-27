@@ -45,21 +45,17 @@ class Places{
     }
     //add a place a person guessed to guessed table in db
     static async addGuess(guess){
-        const requiredFields = ["user_id", "location", "link"]
+        //guess now has guess.userId
+        const requiredFields = ["location", "link"]
         requiredFields.forEach(field => {
             if(!guess.hasOwnProperty(field)){
                 throw new BadRequestError(`missing ${field} in request body.`)
             }
         })
-        const result = await db.query(`
-            INSERT INTO guess (
-                user_id,
-                location,
-                link
-            )
-            VALUES ($1, $2, $3)
-            RETURNING user_id, location, link;
-       `, [ guess.user_id, guess.location, guess.link])
+
+       const query = `INSERT INTO guess (user_id, location, link) VALUES ($1, $2, $3) RETURNING user_id, location, link;`
+
+        const result = await db.query(query, [guess.userId, guess.location, guess.link])
 
        const guessUser = result.rows
         
@@ -77,6 +73,17 @@ class Places{
         return guesses
     }
 
+    static async fetchGuessesByUserId(user_id) {
+        const query = `SELECT location,link 
+        FROM guess
+        JOIN users
+        ON users.id = guess.user_id
+        WHERE users.id= $1;`;
+        const result = await db.query(query, [user_id]);
+        const guesses = result.rows;
+        return guesses;
+      }
+    
 }
 
 module.exports = Places

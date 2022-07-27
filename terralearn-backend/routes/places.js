@@ -17,7 +17,6 @@ router.get("/cities", async(req, res, next) => {
     try{
 
         const cities = await Places.fetchCities()
-        // console.log(cities)
         return res.status(201).json({ cities })
     } catch(err){
         next(err)
@@ -38,19 +37,26 @@ router.get("/id/:countryId", async(req, res, next) => {
 router.get("/guess", async(req, res, next) => {
     try{
         const guesses = await Places.fetchGuesses()
-        // console.log(countries)
+        return res.status(201).json({ guesses })
+    } catch(err){
+        next(err)
+    }
+})
+router.get("/guess/id/:userId", async(req, res, next) => {
+    try{
+        const userId = Number(req.params.userId);
+        const guesses = await Places.fetchGuessesByUserId(userId)
         return res.status(201).json({ guesses })
     } catch(err){
         next(err)
     }
 })
 
-router.post("/addGuess", async(req, res, next) => {
+router.post("/addGuess/:userId", async(req, res, next) => {
     try{
-        console.log(req.body)
-        const guess = await Places.addGuess({ ...req.body })
-        // console.log(countries)
-        return res.status(201).json({ guess })
+        const userId = Number(req.params.userId);
+        const guesses = await Places.addGuess({ userId, ...req.body})
+        return res.status(201).json({ guesses })
     } catch(err){
         next(err)
     }
