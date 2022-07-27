@@ -14,15 +14,18 @@ export default function InformationSlideshow(props) {
     //usestates
     const [errors, setErrors] = useState({})
     const [firstResponse, setFirstReponse] = useState()
-    const [description, setDescription] = useState(["This is Paris", "Known as the city of love, it attracts millions of tourists a year",
-                                                        "Located in Western Europe, it is few hours away by plane","And be sure to fill up on French cuisine!" ])
-    const [image, setImage] = useState("")
-
+    const [description, setDescription] = useState(["Unfortunately, this location does not have information available. :("])
+    const [image, setImage] = useState("https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+    var [infoTitle, setInfoTitle] = useState("Information Slideshow!")
     // takes in information 
-    if (input === undefined){
+    
+    if (props.location === undefined){
         input = 0
+        
+        infoTitle = "Information Slideshow!"
 
     }
+    
     
     
     //endpoints and parameters for mediawiki api call
@@ -63,11 +66,14 @@ export default function InformationSlideshow(props) {
             params.gsrsearch = input
             try{
                 const response = await axios.get(endpoints, {params})
-        //    console.log(response)
+                
                 //checks if api call returns undefined
-           if (response != undefined){
-            // console.log(Object.values(response.data.query.pages)[0])
-            setFirstReponse(Object.values(response.data.query.pages)[0])
+                if (response.data.query == undefined){
+                    input = 0;
+                }
+                if (response != undefined){
+                // console.log(Object.values(response.data.query.pages)[0])
+                setFirstReponse(Object.values(response.data.query.pages)[0])
            }
             } catch (err){
                 setErrors(err)
@@ -78,6 +84,9 @@ export default function InformationSlideshow(props) {
     }
     //is not relevant at the moment, but necessary for error handling later on
     useEffect(() => {
+        if (input != undefined ) {
+            setInfoTitle(input)
+        }
         if(input == 0){
             setDescription(["Unfortunately, this location does not have information available. :("])
             setImage("https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
@@ -88,12 +97,14 @@ export default function InformationSlideshow(props) {
     //sets useStates to certain values from api call, only when input changes
     useEffect(() => {
         if(input != undefined){
+
             getData();
             if (firstResponse != undefined){
                 // console.log("print first resposnse", firstResponse)
                 var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
                 // console.log(result)
                 setDescription(result)
+                
                 setImage(firstResponse.thumbnail.source)
             }
             
@@ -149,7 +160,8 @@ export default function InformationSlideshow(props) {
 
     return (
     <div className="information-slideshow">
-        <h1>Information Slideshow!</h1>
+        <h2>The location you guessed is:</h2>
+        <h1>{infoTitle}</h1>
         <div className="slideshow">
             <div className="arrowbg">
                 <ChevronLeftIcon className="left-arrow" onClick={prevSlide}/>
