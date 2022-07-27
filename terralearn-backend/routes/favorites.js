@@ -17,23 +17,12 @@ router.get("/id/:userId", async(req, res, next) => {
 })
 
 
-router.get("/", async(req, res, next) => {
-    try{
-        const favorites = await Favorites.fetchFavoriteCategory()
-      
-        return res.status(201).json({ favorites })
-    } catch(err){
-        next(err)
-    }
-})
 
-
-router.post("/addFavorites", async(req, res, next) => {
+router.post("/add/:userId", async(req, res, next) => {
     try{
-        console.log(req.body)
-        const guess = await Places.addGuess({ ...req.body })
-        // console.log(countries)
-        return res.status(201).json({ guess })
+        const userId = Number(req.params.userId);
+        const favorite = await Favorites.addFavorite({ userId, ...req.body})
+        return res.status(201).json({ favorite})
     } catch(err){
         next(err)
     }
