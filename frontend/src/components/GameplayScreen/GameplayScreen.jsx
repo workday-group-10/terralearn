@@ -17,6 +17,8 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
+  var stringSpace = ""
+  var newString = ""
   
   // filters city context based on where the user chose their category
   function filterCities(){
@@ -40,6 +42,11 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
     setIsFetching(true);
     filterCities();
     fetchData();
+    console.log("stringSpace", stringSpace)
+    console.log("newString", newString)
+    console.log(currInfo)
+    console.log(location)
+    console.log(userPlacesInfo)
     setData([])
     console.log(userPlacesInfo)
   }, []);
@@ -55,13 +62,18 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       setLocation(data.features[i].properties.name);
       setLatitude(data.features[i].properties.lat);
       setLongitude(data.features[i].properties.lon);
-      setCurrInfo("https://en.wikipedia.org/wiki/" + data.features[i].properties.address_line1);
-      console.log(currInfo)
-      console.log(location)
+      
+      stringSpace = data.features[i].properties.address_line1;
+     
+      newString = stringSpace.replace(/\s/g, '')
+      
+      setCurrInfo("https://en.wikipedia.org/wiki/" + newString);
+
       setUserPlacesInfo(oldArray => [...oldArray, {location, currInfo}])
-      console.log(userPlacesInfo)
+      
       setIsFetching(false)
   }
+  
 
   return (
     <div className="gameplay-screen">
