@@ -21,7 +21,7 @@ export default function InformationSlideshow(props) {
     
     if (props.location === undefined){
         input = 0
-        console.log("info title", infoTitle)
+        
         infoTitle = "Information Slideshow!"
 
     }
@@ -66,7 +66,7 @@ export default function InformationSlideshow(props) {
             params.gsrsearch = input
             try{
                 const response = await axios.get(endpoints, {params})
-                console.log(response)
+                
                 //checks if api call returns undefined
                 if (response.data.query == undefined){
                     input = 0;
