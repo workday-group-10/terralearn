@@ -9,6 +9,8 @@ import japanIcon from '../assets/MountFuji.jpg'
 import capeTownIcon from '../assets/africa-city.jpg'
 import newYorkIcon from '../assets/NewYork.jpg'
 import data from "../data.json"
+
+
 export default function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
@@ -67,6 +69,8 @@ export default function PostLoginLanding(props) {
             <h1 className="title-two">Your Home</h1>
             </div>
             <button onClick={scrollToCard} className="play-btn">Play</button>
+           
+        
         </div>
       </div>
       {/* categories section */}
