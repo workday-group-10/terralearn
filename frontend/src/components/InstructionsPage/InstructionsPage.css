@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 .instructions-page {
-    height: 100vh;
+    height: 92vh;
     width: 100%;
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg');
     background-size: cover;
@@ -14,10 +14,12 @@
     background-color: #0b85dc;
     color: aliceblue;
     width: 40%;
-    height: 65%;
+    height: inherit;
     text-align: center;
     font-size: 28px;
     border-radius: 15%;
+    margin-top: 20px;
+    padding: 25px;
     }
     .header{
         text-align: center;
@@ -27,6 +29,8 @@
         margin-right: 35px;
         display: inline-block;
         text-align: left;
+        font-size: 2vw;
+        padding: 20px;
     }
     .start-button {
     position: relative;
