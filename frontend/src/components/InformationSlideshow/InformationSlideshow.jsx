@@ -16,13 +16,14 @@ export default function InformationSlideshow(props) {
     const [firstResponse, setFirstReponse] = useState()
     const [description, setDescription] = useState(["Unfortunately, this location does not have information available. :("])
     const [image, setImage] = useState("https://images.unsplash.com/photo-1584824486509-112e4181ff6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
-    var [infoTitle, setInfoTitle] = useState("Information Slideshow!")
+    const [infoTitle, setInfoTitle] = useState("Information Slideshow!")
+    const [link, setLink] = useState("https://www.google.com/")
     // takes in information 
     
     if (props.location === undefined){
         input = 0
         
-        infoTitle = "Information Slideshow!"
+        infoTitle = setInfoTitle("Information Slideshow!")
 
     }
     
@@ -64,6 +65,7 @@ export default function InformationSlideshow(props) {
     async function getData(){
         if(input != undefined){
             params.gsrsearch = input
+            setInfoTitle(input)
             try{
                 const response = await axios.get(endpoints, {params})
                 
@@ -97,13 +99,16 @@ export default function InformationSlideshow(props) {
     //sets useStates to certain values from api call, only when input changes
     useEffect(() => {
         if(input != undefined){
-
+            setInfoTitle(input)
             getData();
             if (firstResponse != undefined){
                 // console.log("print first resposnse", firstResponse)
                 var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
                 // console.log(result)
                 setDescription(result)
+                let newVar = "http://en.wikipedia.org/?curid=" + firstResponse.pageid
+                // console.log("first response", newVar)
+                setLink(newVar)
                 if (firstResponse.thumbnail != undefined){
                     setImage(firstResponse.thumbnail.source)
                 }
@@ -124,7 +129,9 @@ export default function InformationSlideshow(props) {
             var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
             // console.log(result)
             setDescription(result)
-            
+            let newVar = "http://en.wikipedia.org/?curid=" + firstResponse.pageid
+                // console.log("first response", newVar)
+                setLink(newVar)
             if (firstResponse.thumbnail != undefined){
                 setImage(firstResponse.thumbnail.source)
             }
@@ -182,11 +189,15 @@ export default function InformationSlideshow(props) {
                     
                 </div>
             ))}
+            
             <div className="arrowbg">
                 <ChevronRightIcon className="right-arrow" onClick={nextSlide} />
       
             </div>
+            
         </div>
+        
+        <h2 className="wikiLink">To learn more about {infoTitle}, click <a href={link} target="_blank">here</a>.</h2>
     </div>
   )
 }

@@ -17,6 +17,8 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 import { useState } from "react";
 import { CitiesContextProvider } from "../contexts/cities";
+import YourInformation from "../YourInformation/YourInformation";
+import Feedback from "../Feedback/Feedback";
 
 
 
@@ -102,6 +104,22 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={<InstructionsPage appState={appState} />}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/yourinfo"
+                element={
+                  <ProtectedRoute
+                    element={<YourInformation/>}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/feedback"
+                element={
+                  <ProtectedRoute
+                    element={<Feedback/>}
                   />
                 }
               ></Route>

@@ -107,7 +107,10 @@ function Navbar(props) {
               <a className="dropdown-item" href="/profile">Profile</a>
             </li>
             <li>
-              <a className="dropdown-item" href="/profile">Your Favorites</a>
+              <a className="dropdown-item" href="/yourinfo">Your Favorites</a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="/feedback">Feedback</a>
             </li>
           </ul>
           </div>

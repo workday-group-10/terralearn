@@ -1,0 +1,43 @@
+.center-title{
+    text-align: center;
+}
+.login-btn:hover{
+    cursor: pointer;
+    border-color: #4A6F96;
+    background-color: #4A6F96;
+}
+/* input[type="text"]{
+    margin: auto;
+} */
+
+
+.input-bar {
+    /* background-color: gray; */
+    height: 5vh;
+    width: 40vw;
+    border-radius: 10px;
+    border: solid black 1px;
+
+}
+.paragraph {
+    /* background-color: gray; */
+    height: 25vh;
+    width: 40vw;
+    border-radius: 10px;
+    border: solid black 1px;
+
+}
+
+.feedback-form{
+    margin-top: 2em;
+    /* position: relative; */
+    margin: auto;
+    background-color: white;
+    border: black solid 2px;
+    border-radius: 13px;
+    width: 50vw;
+    height: 70vh;
+    z-index: 900;
+    text-align: center;
+    margin-top: 5vh;
+}
