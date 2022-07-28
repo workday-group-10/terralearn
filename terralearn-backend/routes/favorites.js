@@ -9,7 +9,7 @@ router.post("/add",security.requireAuthenticatedUser,async (req, res, next) => {
     try {
       //take user email and password and authenticate
       const { user } = res.locals;
-      console.log(user);
+      // console.log(user);
       const favorites = await Favorites.addFavorite({ favorite: req.body });
       return res.status(201).json({ favorites });
     } catch (err) {
