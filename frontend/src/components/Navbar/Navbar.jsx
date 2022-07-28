@@ -90,6 +90,10 @@ function Navbar(props) {
           <span className="Navbar_optionLineOne">All</span>
           <span className="Navbar_optionLineTwo">Categories</span>
         </div>
+        <div className={preNav}>
+          <span className="Navbar_optionLineOne">Your</span>
+          <span className="Navbar_optionLineTwo">Info</span>
+        </div>
         
       </div>
       {/* icon of user profile picture and username */}

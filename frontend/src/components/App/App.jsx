@@ -39,6 +39,8 @@ function App() {
   const [latitude, setLatitude] = useState(0)
   const [country_id,setCountryId]= useState(null)
   const [location, setLocation] = useState("")
+  const [currInfo, setCurrInfo] = useState("");
+  const [userPlacesInfo, setUserPlacesInfo] = useState({});
 
 
 
@@ -140,7 +142,10 @@ function App() {
                     element={<GameplayScreen location={location} setLocation={setLocation} appState={appState}  positions={positions} setPositions={setPositions}
                         country_id={country_id}
                         setCountry_id={setCountryId}
-
+                        userPlacesInfo={userPlacesInfo}
+                        currInfo={currInfo}
+                        setCurrInfo={setCurrInfo}
+                        setUserPlacesInfo={setUserPlacesInfo}
                       longitude={longitude} setLongitude={setLongitude} latitude={latitude} setLatitude={setLatitude}
                     />}
                   />

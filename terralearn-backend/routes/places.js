@@ -1,6 +1,8 @@
 const express = require("express")
 const Places = require("../models/places")
 const router = express.Router()
+const security = require("../middleware/security")
+const User = require("../models/user")
 
 //route to get all countries in db
 router.get("/", async(req, res, next) => {
@@ -17,7 +19,6 @@ router.get("/cities", async(req, res, next) => {
     try{
 
         const cities = await Places.fetchCities()
-        // console.log(cities)
         return res.status(201).json({ cities })
     } catch(err){
         next(err)
@@ -29,6 +30,36 @@ router.get("/id/:countryId", async(req, res, next) => {
         const countryId = Number(req.params.countryId);
         const cities = await Places.fetchCitiesByCountryId(countryId)
         return res.status(201).json({ cities })
+    } catch(err){
+        next(err)
+    }
+})
+
+
+router.get("/guess", async(req, res, next) => {
+    try{
+        const {email} = res.locals.user;
+        const user = await User.fetchUserByEmail(email)
+        const guesses = await Places.fetchGuessesForUser(user)
+        return res.status(201).json({ guesses })
+    } catch(err){
+        next(err)
+    }
+})
+router.get("/guess/id/:userId", async(req, res, next) => {
+    try{
+        const userId = Number(req.params.userId);
+        const guesses = await Places.fetchGuessesByUserId(userId)
+        return res.status(201).json({ guesses })
+    } catch(err){
+        next(err)
+    }
+})
+
+router.post("/addGuess", security.requireAuthenticatedUser, async(req, res, next) => {
+    try{
+       const guesses = await Places.addGuess({guess: req.body})
+        return res.status(201).json({ guesses })
     } catch(err){
         next(err)
     }
