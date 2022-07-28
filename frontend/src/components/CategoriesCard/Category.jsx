@@ -3,7 +3,7 @@ import earthIcon from "../assets/earth-icon.png";
 import { useNavigate } from "react-router-dom";
 import "./Category.css";
 import { makeStyles } from "@material-ui/core/styles";
-import apiClient from "../services/apiClient";
+import apiClient from "../services/apiClient"
 
 import Favorite from "@material-ui/icons/FavoriteOutlined";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
@@ -16,13 +16,17 @@ import {
   Typography,
   CardContent,
 } from "@material-ui/core";
+
 import { useState } from "react";
+import { useFavoritesContext } from "../contexts/favorites";
+import { useEffect } from "react";
 import { useAuthContext } from "../contexts/auth";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
 });
+
 
 function Category({
   continent,
@@ -34,7 +38,9 @@ function Category({
 }) {
   const navigate = useNavigate();
   const classes = useStyles();
-
+  const {favorites,setFavorites} = useFavoritesContext() 
+  console.log("Cat",favorites)
+  const { appState} = useAuthContext();
   const handleOnSubmit = () => {
     // console.log("country_id",id)
     setCountry_id(id);
@@ -43,21 +49,20 @@ function Category({
   const [show, setShow] = useState(true);
   const [FavBor,setFavBor]=useState("FavBorHide")
   const [Fav,setFav]= useState("Fav")
-  const [error,setErrors] = useState(null)
 
-  const { appState} = useAuthContext();
-  
+  useEffect(() => {
+    
+
+  },[favorites]);
 
 
-  const handleFavorite = async () => {
+  const handleFavorite= async ()=>{
   setShow(prev => !prev)
-
   if (show)
   {
+    
      setFavBor("FavBor")
      setFav("FavHide")
-
-
      const { data, error } = await apiClient.createFavorite({
       category_id : id,
       userId: appState.user.id
@@ -68,17 +73,13 @@ function Category({
     setErrors(error)  
     console.error(error)
   }
-  
- 
-
-
   }
   if(!show)
   {
     setFavBor("FavBorHide")
     setFav("Fav")
 
-
+    
     const { data, error } = await apiClient.deleteFavorite({
       category_id : id,
       userId: appState.user.id
@@ -137,7 +138,7 @@ function Category({
             Play
           </Button>
           <span className="material-icons">
-            <Button className={Fav}  onClick={handleFavorite} >
+            <Button className={Fav}  onClick={handleFavorite}>
               <FavoriteBorder  />
             </Button>
             <Button   className={FavBor}  onClick={handleFavorite}>
