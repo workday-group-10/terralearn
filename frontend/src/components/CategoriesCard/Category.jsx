@@ -39,7 +39,7 @@ function Category({
   const navigate = useNavigate();
   const classes = useStyles();
   const {favorites,setFavorites} = useFavoritesContext() 
-  console.log("Cat",favorites)
+  // console.log("Cat",favorites)
   const { appState} = useAuthContext();
   const handleOnSubmit = () => {
     // console.log("country_id",id)
@@ -71,7 +71,7 @@ function Category({
   {
 
     setErrors(error)  
-    console.error(error)
+    // console.error(error)
   }
   }
   if(!show)

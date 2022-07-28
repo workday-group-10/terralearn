@@ -32,7 +32,7 @@ export default function PostLoginLandingContainer(props)
   function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
-  console.log(props)
+  // console.log(props)
   const { appState} = useAuthContext();
   const [favArray, setFavArray]= useState([])
   props= props.props
