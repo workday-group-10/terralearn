@@ -40,7 +40,6 @@ router.get("/guess", async(req, res, next) => {
     try{
         const {email} = res.locals.user;
         const user = await User.fetchUserByEmail(email)
-        console.log(user)
         const guesses = await Places.fetchGuessesForUser(user)
         return res.status(201).json({ guesses })
     } catch(err){
