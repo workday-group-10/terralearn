@@ -3,6 +3,7 @@ import earthIcon from "../assets/earth-icon.png";
 import { useNavigate } from "react-router-dom";
 import "./Category.css";
 import { makeStyles } from "@material-ui/core/styles";
+import apiClient from "../services/apiClient";
 
 import Favorite from "@material-ui/icons/FavoriteOutlined";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
@@ -16,6 +17,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 import { useState } from "react";
+import { useAuthContext } from "../contexts/auth";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -41,19 +43,61 @@ function Category({
   const [show, setShow] = useState(true);
   const [FavBor,setFavBor]=useState("FavBorHide")
   const [Fav,setFav]= useState("Fav")
+  const [error,setErrors] = useState(null)
+
+  const { appState} = useAuthContext();
+  console.log("Cat",appState)
 
 
-  const handleFavorite=()=>{
+  const handleFavorite = async () => {
   setShow(prev => !prev)
   if (show)
   {
      setFavBor("FavBor")
      setFav("FavHide")
+     console.log(show)
+     console.log("app",appState.user.id)
+
+     const { data, error } = await apiClient.createFavorite({
+      category_id : id,
+      userId: appState.user.id
+  })
+  if (error)
+  {
+    console.log("What is happening")
+    console.log(error)
+    setErrors(error)  
+  }
+  
+  if (data)
+  {
+    console.log("I worked")
+  }
+
+
   }
   if(!show)
   {
     setFavBor("FavBorHide")
     setFav("Fav")
+    console.log(show)
+
+    const { data, error } = await apiClient.deleteFavorite({
+      category_id : id,
+      userId: appState.user.id
+  })
+  if (error)
+  {
+    console.log("What is happening")
+    console.log(error)
+    setErrors(error)  
+  }
+  
+  if (data)
+  {
+    console.log("I deleted")
+  }
+
   }
 
   }
@@ -100,7 +144,7 @@ function Category({
             Play
           </Button>
           <span className="material-icons">
-            <Button className={Fav}  onClick={handleFavorite}>
+            <Button className={Fav}  onClick={handleFavorite} >
               <FavoriteBorder  />
             </Button>
             <Button   className={FavBor}  onClick={handleFavorite}>

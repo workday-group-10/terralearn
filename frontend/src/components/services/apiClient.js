@@ -71,6 +71,30 @@ class ApiClient {
   async fetchCitiesByCountryId(countryId){
     return await this.request({endpoint: `places/id/${countryId}`, method: 'GET'})
   }
+  async createFavorite(favorite) {
+    console.log(favorite)
+    return await this.request({
+      endpoint: `favorites/add`,
+      method: `POST`,
+      data: favorite,
+    })
+   
+
+  }
+  async deleteFavorite(favorite)
+  
+  {
+    console.log(favorite)
+      return await this.request({
+      endpoint:`favorites/delete`,
+      method:`DELETE`,
+      data:favorite
+    })
+  }
+  
+
+
+  
 }
 
 const API = new ApiClient(API_BASE_URL)
