@@ -66,6 +66,7 @@ function Category({
   {
 
     setErrors(error)  
+    console.error(error)
   }
   
  
@@ -87,6 +88,7 @@ function Category({
    
 
     setErrors(error)  
+    console.error(error)
   }
 
   }
