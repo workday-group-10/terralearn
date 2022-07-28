@@ -17,8 +17,13 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 import { useState } from "react";
 import { CitiesContextProvider } from "../contexts/cities";
+
+import { FavoritesContextProvider } from "../contexts/favorites";
+import PostLoginLandingContainer from "../PostLoginLanding/PostLoginLanding";
+
 import YourInformation from "../YourInformation/YourInformation";
 import Feedback from "../Feedback/Feedback";
+
 
 
 
@@ -26,7 +31,10 @@ export default function AppContainer() {
   return (
     <AuthContextProvider>
     <CitiesContextProvider>
+  
       <App />
+     
+      
     </CitiesContextProvider>
     </AuthContextProvider>
   );
@@ -78,7 +86,7 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={
-                      <PostLoginLanding
+                      <PostLoginLandingContainer
                         setAppState={setAppState}
                         appState={appState}
                         user={appState?.user}
