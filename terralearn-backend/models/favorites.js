@@ -28,8 +28,28 @@ WHERE users.id= $1;`;
   //fetch counties in table db
  
 
+  static async delete({favorite}){
+    const requiredFields = ["category_id"]
+      requiredFields.forEach(field => {
+        if(!favorite.hasOwnProperty(field)){
+            throw new BadRequestError(`missing ${field} in request body.`)
+        }
+    })
+    const result = await db.query(`
+    DELETE FROM  favorities
+    WHERE  user_id = ($1) and category_id = ($2)
+    RETURNING  category_id, user_id
+   `, [favorite.userId,favorite.category_id])
 
-  static async addFavorite(favorite){
+   const deletedResults = result.rows
+    
+   return  deletedResults
+}
+
+  //fetch all cities of a given country id
+
+
+  static async addFavorite({favorite}){
     const requiredFields = ["category_id"]
     requiredFields.forEach(field => {
         if(!favorite.hasOwnProperty(field)){
@@ -47,7 +67,6 @@ WHERE users.id= $1;`;
    return  favoriteResults
 }
 
-  //fetch all cities of a given country id
-}
 
+}
 module.exports = Favorites;
