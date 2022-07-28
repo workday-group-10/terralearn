@@ -1,15 +1,4 @@
-.center-title{
-    text-align: center;
-}
-.login-btn:hover{
-    cursor: pointer;
-    border-color: #4A6F96;
-    background-color: #4A6F96;
-}
-/* input[type="text"]{
-    margin: auto;
-} */
-
+/* ---------------------------------- Input bars for page, and response ------------------------------------ */
 
 .input-bar {
     /* background-color: gray; */
@@ -27,7 +16,7 @@
     border: solid black 1px;
 
 }
-
+/* ---------------------------------- Card that has form on it ------------------------------------ */
 .feedback-form{
     margin-top: 2em;
     /* position: relative; */

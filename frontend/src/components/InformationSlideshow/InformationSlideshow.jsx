@@ -23,7 +23,7 @@ export default function InformationSlideshow(props) {
     if (props.location === undefined){
         input = 0
         
-        infoTitle = setInfoTitle("Information Slideshow!")
+        setInfoTitle("Information Slideshow!")
 
     }
     

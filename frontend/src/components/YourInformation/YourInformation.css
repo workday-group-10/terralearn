@@ -1,14 +1,16 @@
-.bank-activity {
+/* ---------------------------------- References entire page ------------------------------------ */
+.info-activity {
   display: flex;
   flex-direction: column;
 }
-.bank-activity h2 {
+.info-activity h2 {
   color: black;
   margin-bottom: 24px;
   font-size: 28px;
   margin-top: 40px;
 }
-.bank-activity .table {
+/* ---------------------------------- References table and table rows ------------------------------------ */
+.info-activity .table {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -16,7 +18,7 @@
   border: 1px solid rgba(196, 196, 196, 0.3);
 }
 
-.bank-activity .table .table-row {
+.info-activity .table .table-row {
   display: flex;
   flex-direction: row;
   height: 80px;
@@ -26,22 +28,14 @@
   transition: all 0.2s ease;
   cursor: pointer;
 }
-.bank-activity .table .table-row:hover {
-  background: #f3fffb;
-}
-.bank-activity .table .table-row.table-header .col {
+
+.info-activity .table .table-row.table-header .col {
   background: rgba(44, 64, 71, 1);
   color: white;
 }
-.bank-activity .table .table-row .col .arrow {
-  margin-right: 10px;
-  min-width: 20px;
-}
-.bank-activity .table .table-row .col .arrow.flip {
-  transform: rotate(180deg);
-}
 
-.bank-activity .table .table-row .col {
+
+.info-activity .table .table-row .col {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -50,38 +44,26 @@
   color: rgba(44, 65, 71, 1);
   font-weight: 600;
 }
-.bank-activity .table .table-row .col.x1 {
-  flex: 1;
-}
-.bank-activity .table .table-row .col.x15 {
-  flex: 1.5;
-}
-.bank-activity .table .table-row .col.x2 {
+
+
+.info-activity .table .table-row .col.x2 {
   flex: 2;
 }
-.bank-activity .table .table-row .col.x2 {
-  flex: 2;
-}
-.bank-activity .table .table-row .col.x3 {
-  flex: 3;
-}
-.bank-activity .table .table-row .col.x4 {
+
+.info-activity .table .table-row .col.x4 {
   flex: 4;
 }
 
-.bank-activity .table .table-row .col.x2 a{
+.info-activity .table .table-row .col.x2 a{
   transition: transform .2s; /* Animation */
 }
-.bank-activity .table .table-row .col.x2 a:hover {
+
+/* ---------------------------------- Hover instances ------------------------------------ */
+.info-activity .table .table-row:hover {
+  background: #f3fffb;
+}
+.info-activity .table .table-row .col.x2 a:hover {
   background-color: #EBFFF8;
   transform: scale(1.05);
-  /* padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 0px;
-  padding-bottom: 0px; */
+  
 }
-/* .bank-activity .table .table-row .table-header .col.x2:hover { */
-  /* background-color: lightgray; */
-  /* padding: 25px; */
- 
-/* } */

@@ -4,24 +4,30 @@ import "./Feedback.css"
 import { useAuthContext } from "../contexts/auth";
 
 export default function Feedback() {
-  // const navigate = useNavigate()
+  //use states that will be relevant for connecting to backend
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({})
   const [feedbackForm, setFeedbackForm] = useState({
     page: "",
     paragraph: "",
   })
+  
+  // function that is setting up feedbackform usestate
   const handleOnInputChange = (event) => {
     setFeedbackForm((f) => ({ ...f, [event.target.name]: event.target.value }))
   }
   
+  //will encorporate api connection here
+
   return (
     
     <div className="feedback">
-        
+        {/* {renders feedback form card} */}
         <div className="feedback-form">
           <h1 className="center-title">Feedback</h1>
+          {/* {renders form} */}
             <form>
+              {/* {input field for page that user is leaving feedback for} */}
               <div className="input-field">
               <label htmlFor="page">Page You're Leaving Feedback On:</label><br/>
               <input
@@ -37,6 +43,7 @@ export default function Feedback() {
               </div>
             </form>
             <form>
+              {/* {input field for feedback user is leaving} */}
               <div className="input-field">
                 <label htmlFor="paragraph">Feedback for Page:</label><br/>
                 <input
@@ -53,7 +60,7 @@ export default function Feedback() {
             
 
             
-          
+          {/* submit button */}
           <button  className="login-btn">Submit</button>
           
           </div>
