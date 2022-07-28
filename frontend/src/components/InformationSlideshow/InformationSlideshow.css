@@ -1,5 +1,12 @@
 /* ---------------------------------- Picture portion of slide ------------------------------------ */
-
+.wikiLink{
+    background-color: #FBE9DA;
+    width: 65vw;
+    margin: auto;
+}
+.wikiLink a{
+    text-decoration: none;
+}
 .slide-pic{
     width: 22vw;
     height: 48.5vh;

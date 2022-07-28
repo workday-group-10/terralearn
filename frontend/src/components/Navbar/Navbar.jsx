@@ -30,6 +30,11 @@ function Navbar(props) {
     const navigateProfile = () => {
       navigate("/profile")
     }
+
+    //navigates user to your information page
+    const navigateInfo = () => {
+      navigate("/yourinfo")
+    }
   let logNav = "Navbar_option"
   let preNav = "close"
   
@@ -92,7 +97,7 @@ function Navbar(props) {
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
-          <span className="Navbar_optionLineTwo">Info</span>
+          <span className="Navbar_optionLineTwo" onClick={navigateInfo}>Info</span>
         </div>
         
       </div>
@@ -111,7 +116,10 @@ function Navbar(props) {
               <a className="dropdown-item" href="/profile">Profile</a>
             </li>
             <li>
-              <a className="dropdown-item" href="/profile">Your Favorites</a>
+              <a className="dropdown-item" href="/yourinfo">Your Guesses</a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="/feedback">Feedback</a>
             </li>
           </ul>
           </div>
