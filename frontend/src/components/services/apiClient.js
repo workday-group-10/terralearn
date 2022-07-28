@@ -82,6 +82,11 @@ class ApiClient {
   async fetchCitiesByCountryId(countryId){
     return await this.request({endpoint: `places/id/${countryId}`, method: 'GET'})
   }
+
+  async fetchFavorites(){
+    return await this.request({endpoint:`favorites`, method: `GET`})
+}
+
   async createFavorite(favorite) {
     // console.log(favorite)
     return await this.request({
