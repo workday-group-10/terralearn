@@ -25,8 +25,19 @@
     border: black solid 2px;
     border-radius: 13px;
     width: 50vw;
-    height: 70vh;
+    height: 75vh;
     z-index: 900;
     text-align: center;
     margin-top: 5vh;
+}
+
+
+/* ---------------------------------- Thank you message for feedback ------------------------------------ */
+.feedback-close{
+    display: none;
+}
+
+.thanks-feedback{
+    display: block;
+    margin-top: 10px;
 }

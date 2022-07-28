@@ -55,4 +55,11 @@ CREATE TABLE guess(
     user_id  INTEGER NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
+CREATE TABLE feedback(
+    id          SERIAL PRIMARY KEY,
+    page        TEXT NOT NULL,
+    paragraph   TEXT NOT NULL,
+    user_id     INTEGER NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
 

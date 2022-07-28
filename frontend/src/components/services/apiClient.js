@@ -53,6 +53,17 @@ class ApiClient {
   async fetchUserFromToken() {
     return await this.request({ endpoint: `auth/me`, method: 'GET' })
   }
+
+  //functions call feedback endpoints from feedback routes file
+  async fetchFeedback() {
+    return await this.request({ endpoint: `feedback`, method: 'GET' })
+  }
+  async fetchFeedbackForUser(userId) {
+    return await this.request({ endpoint: `feedback/id/${userId}`, method: 'GET' })
+  }
+  async addFeedback(feedback) {
+    return await this.request({ endpoint: `feedback`, method: 'POST', data: feedback})
+  }
   // async fetchNutrition() {
   //   return await this.request({ endpoint: `nutrition`, method: `GET` })
   // }
