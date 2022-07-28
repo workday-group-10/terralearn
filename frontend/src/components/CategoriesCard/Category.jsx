@@ -46,17 +46,17 @@ function Category({
   const [error,setErrors] = useState(null)
 
   const { appState} = useAuthContext();
-  console.log("Cat",appState)
+  
 
 
   const handleFavorite = async () => {
   setShow(prev => !prev)
+
   if (show)
   {
      setFavBor("FavBor")
      setFav("FavHide")
-     console.log(show)
-     console.log("app",appState.user.id)
+
 
      const { data, error } = await apiClient.createFavorite({
       category_id : id,
@@ -64,15 +64,11 @@ function Category({
   })
   if (error)
   {
-    console.log("What is happening")
-    console.log(error)
+
     setErrors(error)  
   }
   
-  if (data)
-  {
-    console.log("I worked")
-  }
+ 
 
 
   }
@@ -80,7 +76,7 @@ function Category({
   {
     setFavBor("FavBorHide")
     setFav("Fav")
-    console.log(show)
+
 
     const { data, error } = await apiClient.deleteFavorite({
       category_id : id,
@@ -88,14 +84,9 @@ function Category({
   })
   if (error)
   {
-    console.log("What is happening")
-    console.log(error)
+   
+
     setErrors(error)  
-  }
-  
-  if (data)
-  {
-    console.log("I deleted")
   }
 
   }
