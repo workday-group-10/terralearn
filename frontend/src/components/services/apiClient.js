@@ -24,7 +24,7 @@ class ApiClient {
       const res = await axios({ url, method, data, headers })
       return { data: res.data, error: null }
     } catch (error) {
-      console.error({ errorResponse: error.response })
+      // console.error({ errorResponse: error.response })
       const message = error?.response?.data?.error?.message
       return { data: null, error: message || String(error) }
     }
@@ -71,6 +71,30 @@ class ApiClient {
   async fetchCitiesByCountryId(countryId){
     return await this.request({endpoint: `places/id/${countryId}`, method: 'GET'})
   }
+  async createFavorite(favorite) {
+    // console.log(favorite)
+    return await this.request({
+      endpoint: `favorites/add`,
+      method: `POST`,
+      data: favorite,
+    })
+   
+
+  }
+  async deleteFavorite(favorite)
+  
+  {
+   
+      return await this.request({
+      endpoint:`favorites/delete`,
+      method:`DELETE`,
+      data:favorite
+    })
+  }
+  
+
+
+  
 }
 
 const API = new ApiClient(API_BASE_URL)
