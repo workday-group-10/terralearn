@@ -1,6 +1,8 @@
 const express = require("express")
 const Places = require("../models/places")
 const router = express.Router()
+const security = require("../middleware/security")
+const User = require("../models/user")
 
 //route to get all countries in db
 router.get("/", async(req, res, next) => {
@@ -36,7 +38,10 @@ router.get("/id/:countryId", async(req, res, next) => {
 
 router.get("/guess", async(req, res, next) => {
     try{
-        const guesses = await Places.fetchGuesses()
+        const {email} = res.locals.user;
+        const user = await User.fetchUserByEmail(email)
+        console.log(user)
+        const guesses = await Places.fetchGuessesForUser(user)
         return res.status(201).json({ guesses })
     } catch(err){
         next(err)
@@ -52,10 +57,9 @@ router.get("/guess/id/:userId", async(req, res, next) => {
     }
 })
 
-router.post("/addGuess/:userId", async(req, res, next) => {
+router.post("/addGuess", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
-        const userId = Number(req.params.userId);
-        const guesses = await Places.addGuess({ userId, ...req.body})
+       const guesses = await Places.addGuess({guess: req.body})
         return res.status(201).json({ guesses })
     } catch(err){
         next(err)
