@@ -59,7 +59,7 @@ export default function InformationSlideshow(props) {
     // }
 
     
-    // console.log(isInputEmpty(input), input)
+    // 
 
     //function that calls mediawiki api
     async function getData(){
@@ -74,7 +74,7 @@ export default function InformationSlideshow(props) {
                     input = 0;
                 }
                 if (response != undefined){
-                // console.log(Object.values(response.data.query.pages)[0])
+                // 
                 setFirstReponse(Object.values(response.data.query.pages)[0])
            }
             } catch (err){
@@ -102,12 +102,12 @@ export default function InformationSlideshow(props) {
             setInfoTitle(input)
             getData();
             if (firstResponse != undefined){
-                // console.log("print first resposnse", firstResponse)
+                // 
                 var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
-                // console.log(result)
+                // 
                 setDescription(result)
                 let newVar = "http://en.wikipedia.org/?curid=" + firstResponse.pageid
-                // console.log("first response", newVar)
+                // 
                 setLink(newVar)
                 if (firstResponse.thumbnail != undefined){
                     setImage(firstResponse.thumbnail.source)
@@ -125,12 +125,12 @@ export default function InformationSlideshow(props) {
     useEffect(() => {
     
         if (firstResponse != undefined){
-            // console.log("print first resposnse", firstResponse)
+            // 
             var result = firstResponse.extract.match( /[^\.!\?]+[\.!\?]+/g );
-            // console.log(result)
+            // 
             setDescription(result)
             let newVar = "http://en.wikipedia.org/?curid=" + firstResponse.pageid
-                // console.log("first response", newVar)
+                // 
                 setLink(newVar)
             if (firstResponse.thumbnail != undefined){
                 setImage(firstResponse.thumbnail.source)

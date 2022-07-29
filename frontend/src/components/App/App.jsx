@@ -1,6 +1,6 @@
 import "./App.css";
 import * as React from "react";
-import Navbar from "../Navbar/Navbar";
+import NavBarContainer from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../Register/Register";
 import LoginPage from "../Login/Login";
@@ -17,8 +17,8 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 import { useState } from "react";
 import { CitiesContextProvider } from "../contexts/cities";
+import { useNavigate } from "react-router-dom";
 
-import { FavoritesContextProvider } from "../contexts/favorites";
 import PostLoginLandingContainer from "../PostLoginLanding/PostLoginLanding";
 
 import YourInformation from "../YourInformation/YourInformation";
@@ -27,14 +27,12 @@ import Feedback from "../Feedback/Feedback";
 
 
 
+
 export default function AppContainer() {
   return (
     <AuthContextProvider>
     <CitiesContextProvider>
-  
       <App />
-     
-      
     </CitiesContextProvider>
     </AuthContextProvider>
   );
@@ -52,19 +50,16 @@ function App() {
 
 
 
-  const handleLogout = async () => {
-    await apiClient.logoutUser();
-    setAppState({});
-    setNavbarName("Guest")
-    setIsLoggedIn(false);
-  };
+
+ 
 
   return (
     <div className="App">
       <React.Fragment>
         <BrowserRouter>
           <main>
-            <Navbar handleLogout={handleLogout} user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+            <Navbar user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route

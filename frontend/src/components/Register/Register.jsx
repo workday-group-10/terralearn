@@ -88,7 +88,7 @@ export default function Register(props) {
   //       // setNav(true)
   //       // setRedirect(false)
   //       // setRedirectInfo("")
-  //       console.log("users data", res.data)
+  //       
   //       props.setUser(res.data)
   //       navigate("/PostLoginlanding")
   //       props.setLoggedIn(true)
@@ -121,7 +121,7 @@ export default function Register(props) {
     //     navigate("/nutriton")
     //   }
   //   } catch (err) {
-  //     console.log(err)
+  //     
   //     const message = err?.response?.data?.error?.message
   //     setErrors((e) => ({ ...e, form: message ? String(message) : String(err) }))
   //     setIsLoading(false)
@@ -160,8 +160,8 @@ export default function Register(props) {
       apiClient.setToken(data.token)
       setIsLoggedIn(true)
 
-    
-      navigate("/PostLoginlanding");
+      navigate('/PostLoginlanding', {replace: true});
+      
       setIsLoading(false);
       setIsLoggedIn(true)
 

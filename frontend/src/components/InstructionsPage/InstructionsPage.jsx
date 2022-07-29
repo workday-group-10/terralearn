@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 export default function InstructionsPage({id}) {
   const navigate = useNavigate()
-  console.log("Instructions")
+  
 
   const handleSubmit = () =>{
-    console.log("clicked")
+    
     navigate("/countdown", { country_id: id })
   }
   useEffect(() => {

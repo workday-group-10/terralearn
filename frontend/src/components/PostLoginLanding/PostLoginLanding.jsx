@@ -5,13 +5,10 @@ import { useEffect, useRef } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 import franceIcon from '../assets/France.jpg'
-import japanIcon from '../assets/MountFuji.jpg'
-import capeTownIcon from '../assets/africa-city.jpg'
-import newYorkIcon from '../assets/NewYork.jpg'
 import data from "../data.json"
+import { Navigate } from "react-router-dom";
 import apiClient from "../services/apiClient"
 import axios from 'axios';
-import { useAuthContext } from '../contexts/auth';
 import { useState } from 'react';
 import { FavoritesContextProvider } from '../contexts/favorites';
 
@@ -21,10 +18,8 @@ import { FavoritesContextProvider } from '../contexts/favorites';
 
 export default function PostLoginLandingContainer(props)
 {
-  return(
-   <FavoritesContextProvider>
+  return(   
     <PostLoginLanding props={props}/>
-   </FavoritesContextProvider>
   )
 
 }
@@ -32,24 +27,17 @@ export default function PostLoginLandingContainer(props)
   function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
-  // console.log(props)
-  const { appState} = useAuthContext();
-  const [favArray, setFavArray]= useState([])
   props= props.props
-
-
-
-
-
+  
+  
  
 
   
 
   useEffect(() => {
     props.setNavbarName(props.user.username)
-    
-   
-    
+   { <Navigate replace to="/PostLoginlanding" />}
+  
   }, []);
   
   

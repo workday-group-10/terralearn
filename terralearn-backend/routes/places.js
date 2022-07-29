@@ -8,7 +8,7 @@ const User = require("../models/user")
 router.get("/", async(req, res, next) => {
     try{
         const countries = await Places.fetchCountries()
-        // console.log(countries)
+        // 
         return res.status(201).json({ countries })
     } catch(err){
         next(err)
@@ -36,7 +36,7 @@ router.get("/id/:countryId", async(req, res, next) => {
 })
 
 
-router.get("/guess", async(req, res, next) => {
+router.get("/guess", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
         const {email} = res.locals.user;
         const user = await User.fetchUserByEmail(email)

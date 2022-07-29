@@ -9,15 +9,34 @@ import SearchIcon from '@material-ui/icons/Search';
 import earthIcon from '../assets/earth-icon.png'
 import { useAuthContext } from "../contexts/auth";
 import apiClient from "../services/apiClient"
+import {GuessContextProvider} from "../contexts/guess"
+
+export default function NavBarContainer(props){
+  return (
+    <GuessContextProvider loggedIn={props.loggedIn}>
+      <Navbar props={props}/>
+    </GuessContextProvider>
+  )
+}
 
 function Navbar(props) {
+  props = props.props
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const navigate = useNavigate()
+
+  const handleLogout = async () => {
+    await apiClient.logoutUser();
+    setAppState({});
+    setNavbarName("Guest")
+    setIsLoggedIn(false);
+    navigate("/login")
+   
+  };
 
   //function that routes user to specific landing page depending on whether
   // they are logged in or not
   const navigateLanding = () => {
-    // console.log("logo being clicked")
+    // 
     if (loggedIn){
       navigate("/PostLoginlanding")
     } else{
@@ -47,8 +66,8 @@ function Navbar(props) {
     logNav = "Navbar_option";
     preNav = "close";
   }
-  // console.log("This is the props.user", props.navbarName)
-  // console.log("User is loggedin: ", loggedIn)
+  // 
+  // 
 
   // const handleLogout = async () => { 
   //   await apiClient.logoutUser();     
@@ -85,7 +104,7 @@ function Navbar(props) {
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Hello {navbarName},</span>
-          <span className="Navbar_optionLineTwo" onClick={props.handleLogout}>Sign Out</span>
+          <span className="Navbar_optionLineTwo" onClick={handleLogout}>Sign Out</span>
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
@@ -132,4 +151,3 @@ function Navbar(props) {
   )
 }
 
-export default Navbar
