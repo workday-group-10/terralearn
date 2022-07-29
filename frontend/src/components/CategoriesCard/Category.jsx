@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Category.css";
 import { makeStyles } from "@material-ui/core/styles";
 import apiClient from "../services/apiClient";
-import Heart from "react-heart" 
-
+import Heart from "react-heart"
 import Favorite from "@material-ui/icons/FavoriteOutlined";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import {
@@ -17,19 +16,15 @@ import {
   Typography,
   CardContent,
 } from "@material-ui/core";
-
 import { useState } from "react";
 import { useFavoritesContext } from "../contexts/favorites";
 import { useEffect } from "react";
 import { useAuthContext } from "../contexts/auth";
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
 });
-
-
 function Category({
   continent,
   Icon,
@@ -40,16 +35,15 @@ function Category({
 }) {
   const navigate = useNavigate();
   const classes = useStyles();
-  const {favorites ,setFavorites } = useFavoritesContext() 
+  const {favorites ,setFavorites } = useFavoritesContext()
   const { appState} = useAuthContext();
   const handleOnSubmit = () => {
-    // 
+    //
     setCountry_id(id);
     navigate("/instructions");
   };
   const [active, setActive] = useState(false)
   const [datum,setData]= useState()
-
   const handleOnclick = async ()=>{
     if(active)
     {
@@ -59,15 +53,9 @@ function Category({
       });
       if (data)
       {
-        
-
       }
       else{
-        
       }
-      
-
-
     }
     else{
       if(!active)
@@ -78,39 +66,26 @@ function Category({
         });
         if(data)
         {
-          
-
         }
         else{
-          
         }
       }
     }
     setActive(!active)
   }
-
   useEffect( ()=>{
     const fetchData = async () => {
       const { data, err } = await apiClient.fetchCategory(id);
       setData(data)
     }
-
     fetchData()
-   
   },[])
-
   useEffect (()=>{
   if (datum?.favorite)
   {
-    
     setActive(true)
   }
-
   },[datum])
-
- 
-
-
   return (
     <div className="category">
       <Card className={classes.root}>
@@ -140,7 +115,6 @@ function Category({
               </Typography>
             </div>
           </CardContent>
-       
         </CardActionArea>
         <div className="buttons-below">
         <CardActions className="category-but">
@@ -153,13 +127,12 @@ function Category({
             Play
           </Button>
           <div style={{ width: "2rem" }}>
-			<Heart isActive={active} onClick={handleOnclick}/>
-		</div>
+      <Heart isActive={active} onClick={handleOnclick}/>
+    </div>
         </CardActions>
         </div>
       </Card>
     </div>
   );
 }
-
 export default Category;

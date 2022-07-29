@@ -99,7 +99,10 @@ export default function Navbar(props) {
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
-          <span className="Navbar_optionLineTwo">Favorites</span>
+          <span className="Navbar_optionLineTwo"><Link className="nav-u" to="/favorites">
+            Favorites
+            </Link>
+            </span>
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">All</span>
