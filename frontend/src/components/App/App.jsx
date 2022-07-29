@@ -26,9 +26,6 @@ import Feedback from "../Feedback/Feedback";
 import { FavoritesContextProvider } from "../contexts/favorites";
 
 
-
-
-
 export default function AppContainer() {
   return (
     <AuthContextProvider>
