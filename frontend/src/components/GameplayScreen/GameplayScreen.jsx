@@ -79,13 +79,13 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   }
   //sets useState that goes to backend, then calls api
   useEffect(() => {
-    if(location){
+    if(isFetching == false){
     setGuessBack({user_id: appState.user.id, location, link: currInfo});
     }
     if(guessBack != undefined){
       addGuess();
     }
-  }, [location]);
+  }, [isFetching]);
 
   return (
     <div className="gameplay-screen">
