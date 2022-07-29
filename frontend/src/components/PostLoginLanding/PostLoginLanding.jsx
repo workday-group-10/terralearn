@@ -9,16 +9,20 @@ import japanIcon from '../assets/MountFuji.jpg'
 import capeTownIcon from '../assets/africa-city.jpg'
 import newYorkIcon from '../assets/NewYork.jpg'
 import data from "../data.json"
+import { Navigate } from "react-router-dom";
 
 
 export default function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
   console.log(props)
+  
  
 
   useEffect(() => {
     props.setNavbarName(props.user.username)
+   { <Navigate replace to="/PostLoginlanding" />}
+     
    
     
   }, []);

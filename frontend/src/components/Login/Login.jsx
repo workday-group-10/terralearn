@@ -8,6 +8,7 @@ import { useAuthContext } from "../contexts/auth";
 
 export default function Login(props) {
 
+
   const { initialized, appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
 
   const navigate = useNavigate()
@@ -121,8 +122,9 @@ export default function Login(props) {
         setIsLoading(false)
         props.setUser(res.data)
         console.log("users data", res.data)
-        navigate("/PostLoginlanding");
+    
         props.setLoggedIn(true)
+        navigate("/PostLoginlanding",{refresh:true});
         
       } else {
         setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))

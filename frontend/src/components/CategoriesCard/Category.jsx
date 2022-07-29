@@ -51,7 +51,10 @@ function Category({
   const handleOnclick = async ()=>{
     if(active)
     {
-      const { data, err } = await apiClient.deleteFavorite(datum);
+      const { data, error } = await apiClient.deleteFavorite({
+        category_id: id,
+        userId: appState.user.id,
+      });
       if (data)
       {
         console.log("deleted",data)
@@ -67,7 +70,10 @@ function Category({
     else{
       if(!active)
       {
-        const {data,err}= await apiClient.createFavorite(id)
+        const { data, error } = await apiClient.createFavorite({
+          category_id: id,
+          userId: appState.user.id,
+        });
         if(data)
         {
           console.log("Yes added",data)
@@ -95,6 +101,7 @@ function Category({
   if (datum?.favorite)
   {
     console.log(datum)
+    setActive(true)
   }
 
   },[datum])

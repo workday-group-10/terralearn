@@ -1,7 +1,10 @@
 import axios from 'axios'
 import { API_BASE_URL } from '../constants'
 
+
+
 class ApiClient {
+  
   constructor(remoteHostUrl) {
     this.remoteHostUrl = remoteHostUrl
     this.token = null
@@ -59,6 +62,8 @@ class ApiClient {
   async logoutUser() {
     this.setToken(null)
     localStorage.setItem(this.tokenName, '')
+   
+    
   }
 
   //function calls for places 

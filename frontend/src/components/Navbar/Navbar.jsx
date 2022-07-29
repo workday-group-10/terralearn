@@ -14,6 +14,15 @@ function Navbar(props) {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const navigate = useNavigate()
 
+  const handleLogout = async () => {
+    await apiClient.logoutUser();
+    setAppState({});
+    setNavbarName("Guest")
+    setIsLoggedIn(false);
+    navigate("/login")
+   
+  };
+
   //function that routes user to specific landing page depending on whether
   // they are logged in or not
   const navigateLanding = () => {
@@ -80,7 +89,7 @@ function Navbar(props) {
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Hello {navbarName},</span>
-          <span className="Navbar_optionLineTwo" onClick={props.handleLogout}>Sign Out</span>
+          <span className="Navbar_optionLineTwo" onClick={handleLogout}>Sign Out</span>
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
