@@ -21,7 +21,7 @@ function Favorite() {
 
     
     const { favorites } = useFavoritesContext();
-    console.log(data)
+ 
     
 
 
@@ -37,7 +37,7 @@ function Favorite() {
 
     
 
-    console.log(data)
+    
 
 
 
