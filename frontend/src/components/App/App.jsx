@@ -24,6 +24,7 @@ import PostLoginLandingContainer from "../PostLoginLanding/PostLoginLanding";
 import YourInformation from "../YourInformation/YourInformation";
 import Feedback from "../Feedback/Feedback";
 import { FavoritesContextProvider } from "../contexts/favorites";
+import FavoriteContainer from "../FavoritesPage/Favorite";
 
 
 
@@ -138,6 +139,15 @@ function App() {
                   />
                 }
               ></Route>
+              <Route
+                path="/favorites"
+                element={
+                  <ProtectedRoute
+                    element={<FavoriteContainer appState={appState} />}
+                  />
+                }
+              ></Route>
+      
 
               <Route
                 path="/gameplayscreen"

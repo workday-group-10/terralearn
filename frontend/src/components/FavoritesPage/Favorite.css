@@ -1,0 +1,8 @@
+.favorite-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 30px;
+    color: white;
+}
