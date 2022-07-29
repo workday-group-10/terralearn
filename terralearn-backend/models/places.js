@@ -44,9 +44,9 @@ class Places{
         return cities
     }
     //add a place a person guessed to guessed table in db
-    static async addGuess({guess}){
+    static async addGuess(guess){
         //guess now has guess.userId
-        const requiredFields = ["location", "link"]
+        const requiredFields = ["user_id", "location", "link"]
         requiredFields.forEach(field => {
             if(!guess.hasOwnProperty(field)){
                 throw new BadRequestError(`missing ${field} in request body.`)
@@ -59,7 +59,7 @@ class Places{
 
        const guessUser = result.rows
         
-       return Places.makeGuessUser(guessUser)
+       return guessUser
     }
 
     static async fetchGuessesForUser(user){

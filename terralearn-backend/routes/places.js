@@ -55,10 +55,10 @@ router.get("/guess/id/:userId", async(req, res, next) => {
         next(err)
     }
 })
-
+//route to add guess to guesstable
 router.post("/addGuess", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
-       const guesses = await Places.addGuess({guess: req.body})
+       const guesses = await Places.addGuess(req.body)
         return res.status(201).json({ guesses })
     } catch(err){
         next(err)
