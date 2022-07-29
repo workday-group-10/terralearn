@@ -41,10 +41,10 @@ function Category({
   const navigate = useNavigate();
   const classes = useStyles();
   const {favorites,setFavorites} = useFavoritesContext() 
-  // console.log("Cat",favorites)
+  // 
   const { appState} = useAuthContext();
   const handleOnSubmit = () => {
-    // console.log("country_id",id)
+    // 
     setCountry_id(id);
     navigate("/instructions");
   };
@@ -63,11 +63,11 @@ function Category({
       });
       if (data)
       {
-        console.log("deleted",data)
+        
 
       }
       else{
-        console.log("couldn't delete",err)
+        
       }
       
 
@@ -82,11 +82,11 @@ function Category({
         });
         if(data)
         {
-          console.log("Yes added",data)
+          
 
         }
         else{
-          console.log("Error",err)
+          
         }
       }
     }
@@ -106,7 +106,7 @@ function Category({
   useEffect (()=>{
   if (datum?.favorite)
   {
-    console.log(datum)
+    
     setActive(true)
   }
 

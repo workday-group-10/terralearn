@@ -8,8 +8,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export default function GameSummaryPage({location, positions, longitude, latitude}) {
-  //console.log(longitude)
-  //console.log(latitude)
+  //
+  //
   // const[location, setLocation] = useState("Paris")
   var stringLat = JSON.stringify(latitude);
     var lat = parseFloat(stringLat);

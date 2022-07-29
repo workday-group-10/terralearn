@@ -7,8 +7,8 @@ import "./StreetViewMap.css"
 // import { GEOAPIFY_KEY } from "../constants";
 
 export default function StreetViewMap({latitude, longitude}) {
-  // console.log("latitude in street view:", latitude)
-  // console.log("longitude in street view:", longitude)
+  // 
+  // 
   return (
     <div className="streetview-map">
        <GoogleMapsStreetView latitude={latitude} longitude={longitude} />

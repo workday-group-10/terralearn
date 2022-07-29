@@ -45,13 +45,13 @@ export default function Login(props) {
 
 
     if (data?.user) {
-      console.log("data1", data)
+      
       setAppState(data)
       setIsLoggedIn(true)
-      console.log("data.user", initialized)
+      
       apiClient.setToken(data.token)
       navigate("/PostLoginlanding");
-      console.log("This is appState", appState)
+      
     }
     setIsLoading(false);
 
@@ -69,7 +69,7 @@ export default function Login(props) {
     //     setIsLoading(false);
     //   }
     // } catch (err) {
-    //   console.log(err);
+    //   
     //   const message = err?.response?.data?.error?.message;
     //   setErrors((e) => ({
     //     ...e,
@@ -121,7 +121,7 @@ export default function Login(props) {
         // navigate(nav)
         setIsLoading(false)
         props.setUser(res.data)
-        console.log("users data", res.data)
+        
     
         props.setLoggedIn(true)
         navigate("/PostLoginlanding",{refresh:true});
@@ -131,7 +131,7 @@ export default function Login(props) {
         setIsLoading(false)
       }
     } catch (err) {
-      console.log(err)
+      
       const message = err?.response?.data?.error?.message
       setErrors((e) => ({ ...e, form: message ? String(message) : String(err) }))
       setIsLoading(false)

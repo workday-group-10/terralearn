@@ -26,7 +26,7 @@ function Navbar(props) {
   //function that routes user to specific landing page depending on whether
   // they are logged in or not
   const navigateLanding = () => {
-    // console.log("logo being clicked")
+    // 
     if (loggedIn){
       navigate("/PostLoginlanding")
     } else{
@@ -56,8 +56,8 @@ function Navbar(props) {
     logNav = "Navbar_option";
     preNav = "close";
   }
-  // console.log("This is the props.user", props.navbarName)
-  // console.log("User is loggedin: ", loggedIn)
+  // 
+  // 
 
   // const handleLogout = async () => { 
   //   await apiClient.logoutUser();     

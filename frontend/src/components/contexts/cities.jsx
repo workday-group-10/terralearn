@@ -7,7 +7,7 @@ export const CitiesContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchCities = async () => {
             const { data, err } = await apiClient.fetchCities();
-            //console.log("From CitiesContext", data)
+            //
             if (data) setCities(data.cities);
             if (err) setError(err);
         }
@@ -29,7 +29,7 @@ export function useCitiesContext() {
     if (context === undefined) {
       throw new Error("Context must be used within a Provider");
     }
-    //console.log("context", context)
+    //
     return context;
     
 }

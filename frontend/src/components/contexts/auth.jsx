@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchUserFromToken = async () => {
       const { data, error } = await apiClient.fetchUserFromToken()
-      console.log('From Authcontext', data)
+      
       if (data) {
         setAppState(data)
 

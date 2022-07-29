@@ -93,7 +93,7 @@ class ApiClient {
 }
 
   async createFavorite(favorite) {
-    // console.log(favorite)
+    // 
     return await this.request({
       endpoint: `favorites/add`,
       method: `POST`,
