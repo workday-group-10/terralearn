@@ -1,7 +1,8 @@
-import react from "react"
+import react, { useState } from "react"
 import "./YourInformation.css"
 import { useEffect } from "react"
 import { GuessContextProvider, useGuessContext } from "../contexts/guess"
+import apiClient from "../services/apiClient"
 
 export default function YourInformationContainer(){
   return (
@@ -11,8 +12,17 @@ export default function YourInformationContainer(){
   )
 }
 function YourInformation({}) {
-  const {guesses} = useGuessContext()
-  console.log("guess in info tab: ", guesses)
+  const [guesses, setGuesses] = useState([]);
+  const [error, setError] = useState({ guess: "" });
+  useEffect(() => {
+    fetchGuesses()
+  }, []);
+  const fetchGuesses = async () => {
+    const { data, err } = await apiClient.fetchGuesses();
+    if (data) setGuesses(data.guesses);
+    if (err) setError(err);
+}
+  
 
   return (
     <div className="your-info">

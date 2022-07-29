@@ -5,16 +5,8 @@ import { useEffect, useRef } from 'react';
 import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 import franceIcon from '../assets/France.jpg'
-import japanIcon from '../assets/MountFuji.jpg'
-import capeTownIcon from '../assets/africa-city.jpg'
-import newYorkIcon from '../assets/NewYork.jpg'
 import data from "../data.json"
-import apiClient from "../services/apiClient"
-import axios from 'axios';
-import { useAuthContext } from '../contexts/auth';
-import { useState } from 'react';
-import { FavoritesContextProvider } from '../contexts/favorites';
-import { GuessContextProvider } from '../contexts/guess';
+
 
 
 
@@ -22,10 +14,8 @@ import { GuessContextProvider } from '../contexts/guess';
 
 export default function PostLoginLandingContainer(props)
 {
-  return(
-    
+  return(   
     <PostLoginLanding props={props}/>
-  
   )
 
 }
@@ -34,23 +24,9 @@ export default function PostLoginLandingContainer(props)
   var dat= data.countries
   var values = dat
   // console.log(props)
-  const { appState} = useAuthContext();
-  const [favArray, setFavArray]= useState([])
   props= props.props
-
-
-
-
-
- 
-
-  
-
   useEffect(() => {
     props.setNavbarName(props.user.username)
-    
-   
-    
   }, []);
   
   
