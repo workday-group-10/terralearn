@@ -8,7 +8,6 @@ export const GuessContextProvider = ({ children, loggedIn }) => {
         if(loggedIn){
         const fetchGuess = async () => {
             const { data, err } = await apiClient.fetchGuesses();
-            console.log("From guess context", data.guesses)
             if (data) setGuess(data.guesses);
             if (err) setError(err);
         }
