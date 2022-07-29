@@ -65,6 +65,7 @@
     /* background-color: gray; */
     height: 40px;
     width: 575px;
+    padding-left: 5px;
     border-radius: 10px;
     border: solid black 1px;
 
