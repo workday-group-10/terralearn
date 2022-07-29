@@ -39,7 +39,7 @@ class User{
         throw new UnauthorizedError("Invalid email/ password combo")
     }
     static async register(credentials){
-        console.log(credentials)
+        
        //user should submit their email, pw, first and last name,  
        // if any of these fields are missing, throw an error
         const requiredFields = ["email", "password", "first_name", "last_name", "username"]

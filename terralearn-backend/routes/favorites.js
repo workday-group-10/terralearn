@@ -11,10 +11,10 @@ const User = require("../models/user")
 
 router.get("/", security.requireAuthenticatedUser, async(req, res, next) => {
   try{
-      console.log("this is favorites user", res.locals.user)
+      
       const {email} = res.locals.user;
       const user = await User.fetchUserByEmail(email)
-      console.log(user)
+      
       const favorite = await Favorites.listFavoritesForUser(user)
       return res.status(201).json({ favorite })
   } catch(err){
@@ -26,13 +26,13 @@ router.get("/category/:id", security.requireAuthenticatedUser, async(req, res, n
   try{
     const id = Number(req.params.id);
 
-      console.log("this is favorites user", res.locals.user)
+      
       const {email} = res.locals.user;
       const user = await User.fetchUserByEmail(email)
      
-      console.log("isssds",id)
+      
       const favorite = await Favorites.listCategoryId(user,id)
-      console.log("Isaw",favorite)
+      
      
       return res.status(201).json({ favorite })
 
@@ -49,7 +49,7 @@ router.post("/add",security.requireAuthenticatedUser,async (req, res, next) => {
     try {
       //take user email and password and authenticate
       const { user } = res.locals;
-      // console.log(user);
+      // 
       const favorites = await Favorites.addFavorite({ favorite: req.body });
       return res.status(201).json({ favorites });
     } catch (err) {

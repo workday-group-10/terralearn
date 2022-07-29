@@ -97,8 +97,8 @@ WHERE users.id= $1;`;
     const result = await db.query(query, [id, category_id]);
     
     const favorites = result.rows[0];
-    console.log("His",category_id)
-    console.log("favor",favorites)
+    
+    
 
     return favorites;
   }

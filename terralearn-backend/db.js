@@ -6,9 +6,9 @@ const db = new Client({ connectionString : getDatabaseUri() })
 
 db.connect((err) => {
     if (err) {
-        console.log("connection error".red, err.stack)
+        
     } else {
-        console.log("Sucessfully connected to postgres db!".blue)
+        
     }
 })
 
