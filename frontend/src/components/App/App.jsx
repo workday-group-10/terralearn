@@ -27,9 +27,6 @@ import { FavoritesContextProvider } from "../contexts/favorites";
 import FavoriteContainer from "../FavoritesPage/Favorite";
 
 
-
-
-
 export default function AppContainer() {
   return (
     <AuthContextProvider>
