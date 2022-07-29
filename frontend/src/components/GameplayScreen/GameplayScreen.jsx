@@ -43,11 +43,9 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   //adds location and link to information about place to backend 
   async function addGuess(){
     try{
-      console.log("in try")
       const {data, error} = await apiClient.addGuess(guessBack)
     } catch(error){
       setError(error)
-      console.log(error)
     }
   }
 
