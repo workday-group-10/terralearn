@@ -93,7 +93,9 @@ class ApiClient {
   }
   
 
-
+  async fetchCategory(id) {
+    return await this.request({ endpoint: `favorites/category/${id}`, method: `GET` })
+  }
   
 }
 

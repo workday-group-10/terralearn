@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Category.css";
 import { makeStyles } from "@material-ui/core/styles";
 import apiClient from "../services/apiClient";
+import Heart from "react-heart" 
 
 import Favorite from "@material-ui/icons/FavoriteOutlined";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
@@ -18,6 +19,7 @@ import {
 } from "@material-ui/core";
 import { useState } from "react";
 import { useAuthContext } from "../contexts/auth";
+import { useEffect } from "react";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -40,60 +42,65 @@ function Category({
     setCountry_id(id);
     navigate("/instructions");
   };
-  const [show, setShow] = useState(true);
-  const [FavBor,setFavBor]=useState("FavBorHide")
-  const [Fav,setFav]= useState("Fav")
-  const [error,setErrors] = useState(null)
+  
 
   const { appState} = useAuthContext();
-  
+  const [active, setActive] = useState(false)
+  const [datum,setData]= useState()
+
+  const handleOnclick = async ()=>{
+    if(active)
+    {
+      const { data, err } = await apiClient.deleteFavorite(datum);
+      if (data)
+      {
+        console.log("deleted",data)
+
+      }
+      else{
+        console.log("couldn't delete",err)
+      }
+      
 
 
-  const handleFavorite = async () => {
-  setShow(prev => !prev)
+    }
+    else{
+      if(!active)
+      {
+        const {data,err}= await apiClient.createFavorite(id)
+        if(data)
+        {
+          console.log("Yes added",data)
 
-  if (show)
-  {
-     setFavBor("FavBor")
-     setFav("FavHide")
-
-
-     const { data, error } = await apiClient.createFavorite({
-      category_id : id,
-      userId: appState.user.id
-  })
-  if (error)
-  {
-
-    setErrors(error)  
-    console.error(error)
+        }
+        else{
+          console.log("Error",err)
+        }
+      }
+    }
+    setActive(!active)
   }
-  
+
+  useEffect( ()=>{
+    const fetchData = async () => {
+      const { data, err } = await apiClient.fetchCategory(id);
+      setData(data)
+    }
+
+    fetchData()
+   
+  },[])
+
+  useEffect (()=>{
+  if (datum?.favorite)
+  {
+    console.log(datum)
+  }
+
+  },[datum])
+
  
 
-
-  }
-  if(!show)
-  {
-    setFavBor("FavBorHide")
-    setFav("Fav")
-
-
-    const { data, error } = await apiClient.deleteFavorite({
-      category_id : id,
-      userId: appState.user.id
-  })
-  if (error)
-  {
-   
-
-    setErrors(error)  
-    console.error(error)
-  }
-
-  }
-
-  }
 
   return (
     <div className="category">
@@ -136,14 +143,9 @@ function Category({
           >
             Play
           </Button>
-          <span className="material-icons">
-            <Button className={Fav}  onClick={handleFavorite} >
-              <FavoriteBorder  />
-            </Button>
-            <Button   className={FavBor}  onClick={handleFavorite}>
-              <Favorite   />
-            </Button>
-          </span>
+          <div style={{ width: "2rem" }}>
+			<Heart isActive={active} onClick={handleOnclick}/>
+		</div>
         </CardActions>
         </div>
       </Card>
