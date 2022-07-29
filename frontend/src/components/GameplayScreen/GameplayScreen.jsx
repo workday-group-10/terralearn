@@ -19,10 +19,10 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   const[error, setError] = useState("")
   const [isFetching, setIsFetching] = useState(false)
   const [data, setData] = useState([]);
-  const [guessBack, setGuessBack] = useState({})
+  const [guessBack, setGuessBack] = useState()
   const {appState} = useAuthContext();
-  // var stringSpace = ""
-  // var newString = ""
+  var stringSpace = ""
+  var newString = ""
   
   // filters city context based on where the user chose their category
   function filterCities(){
@@ -68,29 +68,24 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       setLongitude(data.features[i].properties.lon);
       
       //New Feature commented not done yet
-      // stringSpace = data.features[i].properties.address_line1;
+       stringSpace = data.features[i].properties.address_line1;
      
-      // newString = stringSpace.replace(/\s/g, '%20')
+       newString = stringSpace.replace(/\s/g, '%20')
       
-      // setCurrInfo("https://www.google.com/search?q=" + newString);
-
-      // setUserPlacesInfo({location, currInfo})
+       setCurrInfo("https://www.google.com/search?q=" + newString);
       
       setIsFetching(false)
       
   }
   //sets useState that goes to backend, then calls api
   useEffect(() => {
-    if (location){
-      setGuessBack({
-        user_id: appState.user.id,
-        location: location,
-        link: "https://www.google.com"
-      })
-     addGuess();
+    if(location){
+    setGuessBack({user_id: appState.user.id, location, link: currInfo});
     }
-    
-  }, [location])
+    if(guessBack != undefined){
+      addGuess();
+    }
+  }, [location]);
 
   return (
     <div className="gameplay-screen">
