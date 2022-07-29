@@ -52,6 +52,7 @@
 
 .info-activity .table .table-row .col.x4 {
   flex: 4;
+  color: black;
 }
 
 .info-activity .table .table-row .col.x2 a{

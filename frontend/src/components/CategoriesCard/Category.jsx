@@ -41,16 +41,12 @@ function Category({
   const navigate = useNavigate();
   const classes = useStyles();
   const {favorites,setFavorites} = useFavoritesContext() 
-  // 
   const { appState} = useAuthContext();
   const handleOnSubmit = () => {
     // 
     setCountry_id(id);
     navigate("/instructions");
   };
-  
-
-
   const [active, setActive] = useState(false)
   const [datum,setData]= useState()
 
