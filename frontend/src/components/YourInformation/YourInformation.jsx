@@ -1,13 +1,18 @@
 import react from "react"
 import "./YourInformation.css"
+import { useEffect } from "react"
+import { GuessContextProvider, useGuessContext } from "../contexts/guess"
 
-export default function YourInformation() {
-  //dummy info that will be changed when connected to back end
-  //array of objects that contain location user guessed and link to info
-  const testArr = [{description: "Paris, France", link: "https://en.wikipedia.org/wiki/Paris"},
-  {description: "Paris, France", link: "https://en.wikipedia.org/wiki/Paris"},
-  {description: "Paris, France", link: "https://en.wikipedia.org/wiki/Paris"}]
-
+export default function YourInformationContainer(){
+  return (
+    <GuessContextProvider >
+      <YourInformation />
+    </GuessContextProvider>
+  )
+}
+function YourInformation({}) {
+  const {guesses} = useGuessContext()
+  console.log("guess in info tab: ", guesses)
 
   return (
     <div className="your-info">
@@ -20,9 +25,9 @@ export default function YourInformation() {
               <span className="col x4">Location</span>
               <span className="col x2">Link to Information</span>
             </div>
-            {testArr.map((item, index) => (
+            {guesses.map((item, index) => (
               <div className="table-row" key={index}>
-                <span className="col x4">{item.description}</span>
+                <span className="col x4">{item.location}</span>
                 <span className="col x2"><a href={item.link} target="__blank">{item.link}</a></span>
               </div>
             ))}

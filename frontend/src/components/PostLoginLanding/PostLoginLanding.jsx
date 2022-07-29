@@ -14,6 +14,7 @@ import axios from 'axios';
 import { useAuthContext } from '../contexts/auth';
 import { useState } from 'react';
 import { FavoritesContextProvider } from '../contexts/favorites';
+import { GuessContextProvider } from '../contexts/guess';
 
 
 
@@ -22,9 +23,9 @@ import { FavoritesContextProvider } from '../contexts/favorites';
 export default function PostLoginLandingContainer(props)
 {
   return(
-   <FavoritesContextProvider>
+    
     <PostLoginLanding props={props}/>
-   </FavoritesContextProvider>
+  
   )
 
 }

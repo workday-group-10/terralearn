@@ -36,7 +36,7 @@ router.get("/id/:countryId", async(req, res, next) => {
 })
 
 
-router.get("/guess", async(req, res, next) => {
+router.get("/guess", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
         const {email} = res.locals.user;
         const user = await User.fetchUserByEmail(email)
