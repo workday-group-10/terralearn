@@ -7,7 +7,7 @@ export const FavoritesContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchFav = async () => {
             const { data, err } = await apiClient.fetchFavorites();
-            console.log("From context", data)
+            
             if (data) setFavorites(data);
             if (err) setError(err);
         }

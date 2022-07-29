@@ -1,7 +1,10 @@
 import axios from 'axios'
 import { API_BASE_URL } from '../constants'
 
+
+
 class ApiClient {
+  
   constructor(remoteHostUrl) {
     this.remoteHostUrl = remoteHostUrl
     this.token = null
@@ -70,6 +73,8 @@ class ApiClient {
   async logoutUser() {
     this.setToken(null)
     localStorage.setItem(this.tokenName, '')
+   
+    
   }
 
   //function calls for places 
@@ -88,7 +93,7 @@ class ApiClient {
 }
 
   async createFavorite(favorite) {
-    // console.log(favorite)
+    // 
     return await this.request({
       endpoint: `favorites/add`,
       method: `POST`,
@@ -112,7 +117,9 @@ class ApiClient {
     return await this.request({endpoint: `places/guess`, method: 'GET'})
   }
 
-
+  async fetchCategory(id) {
+    return await this.request({ endpoint: `favorites/category/${id}`, method: `GET` })
+  }
   
 }
 

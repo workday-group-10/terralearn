@@ -17,6 +17,7 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
 import { useState } from "react";
 import { CitiesContextProvider } from "../contexts/cities";
+import { useNavigate } from "react-router-dom";
 
 import PostLoginLandingContainer from "../PostLoginLanding/PostLoginLanding";
 
@@ -49,19 +50,16 @@ function App() {
 
 
 
-  const handleLogout = async () => {
-    await apiClient.logoutUser();
-    setAppState({});
-    setNavbarName("Guest")
-    setIsLoggedIn(false);
-  };
+
+ 
 
   return (
     <div className="App">
       <React.Fragment>
         <BrowserRouter>
           <main>
-            <NavBarContainer handleLogout={handleLogout} user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+            <Navbar user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route

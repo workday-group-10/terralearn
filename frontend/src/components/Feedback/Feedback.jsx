@@ -28,7 +28,7 @@ export default function Feedback() {
   async function addFeedback(form){
     try{
       const {data, error} = await apiClient.addFeedback(form)
-      // console.log("data from feedback", data)
+      // 
       if (error) {
         setErrors((e) => ({ ...e, form: "Invalid username/password combination" }))
       }

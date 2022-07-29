@@ -6,7 +6,11 @@ import "./PostLoginLanding.css";
 import Category from "../CategoriesCard/Category";
 import franceIcon from '../assets/France.jpg'
 import data from "../data.json"
-
+import { Navigate } from "react-router-dom";
+import apiClient from "../services/apiClient"
+import axios from 'axios';
+import { useState } from 'react';
+import { FavoritesContextProvider } from '../contexts/favorites';
 
 
 
@@ -23,10 +27,17 @@ export default function PostLoginLandingContainer(props)
   function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
-  // console.log(props)
   props= props.props
+  
+  
+ 
+
+  
+
   useEffect(() => {
     props.setNavbarName(props.user.username)
+   { <Navigate replace to="/PostLoginlanding" />}
+  
   }, []);
   
   

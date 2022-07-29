@@ -7,7 +7,7 @@ export const CountriesContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchCountries = async () => {
             const { data, err } = await apiClient.fetchCountries();
-            //console.log("From CountriesContext", data)
+            //
             if (data) setCountries(data.Countries);
             if (err) setError(err);
         }

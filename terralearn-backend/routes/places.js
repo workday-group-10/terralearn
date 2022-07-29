@@ -8,7 +8,7 @@ const User = require("../models/user")
 router.get("/", async(req, res, next) => {
     try{
         const countries = await Places.fetchCountries()
-        // console.log(countries)
+        // 
         return res.status(201).json({ countries })
     } catch(err){
         next(err)
