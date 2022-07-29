@@ -58,7 +58,7 @@ function App() {
       <React.Fragment>
         <BrowserRouter>
           <main>
-            <Navbar user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+            <NavBarContainer user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
 
             <Routes>
               <Route path="/" element={<LandingPage />} />
