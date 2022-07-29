@@ -64,6 +64,10 @@ class ApiClient {
   async addFeedback(feedback) {
     return await this.request({ endpoint: `feedback`, method: 'POST', data: feedback})
   }
+  //function calls places endpoint to add guess to guess table
+  async addGuess(guess){
+    return await this.request({ endpoint: `places/addGuess`, method: 'POST', data: guess})
+  }
   // async fetchNutrition() {
   //   return await this.request({ endpoint: `nutrition`, method: `GET` })
   // }
