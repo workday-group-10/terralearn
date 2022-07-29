@@ -19,7 +19,9 @@ import { FavoritesContextProvider } from '../contexts/favorites';
 export default function PostLoginLandingContainer(props)
 {
   return(   
+    <FavoritesContextProvider>
     <PostLoginLanding props={props}/>
+    </FavoritesContextProvider>
   )
 
 }

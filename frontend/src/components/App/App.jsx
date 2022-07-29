@@ -1,6 +1,6 @@
 import "./App.css";
 import * as React from "react";
-import NavBarContainer from "../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "../Register/Register";
 import LoginPage from "../Login/Login";
@@ -23,6 +23,7 @@ import PostLoginLandingContainer from "../PostLoginLanding/PostLoginLanding";
 
 import YourInformation from "../YourInformation/YourInformation";
 import Feedback from "../Feedback/Feedback";
+import { FavoritesContextProvider } from "../contexts/favorites";
 
 
 
@@ -58,7 +59,7 @@ function App() {
       <React.Fragment>
         <BrowserRouter>
           <main>
-            <NavBarContainer user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
+            <Navbar user={appState?.user} loggedIn={loggedIn} navbarName={navbarName}  />
 
             <Routes>
               <Route path="/" element={<LandingPage />} />
