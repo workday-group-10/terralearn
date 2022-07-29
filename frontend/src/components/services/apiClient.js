@@ -98,16 +98,19 @@ class ApiClient {
 
   }
   async deleteFavorite(favorite)
-  
   {
-   
       return await this.request({
       endpoint:`favorites/delete`,
       method:`DELETE`,
       data:favorite
     })
   }
-  
+  async addGuess(guess){
+    return await this.request({endpoint: `places/addGuess`, method: `POST`, data: guess})
+  }
+  async fetchGuesses(){
+    return await this.request({endpoint: `places/guess`, method: 'GET'})
+  }
 
 
   

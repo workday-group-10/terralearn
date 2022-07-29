@@ -38,7 +38,7 @@ function Category({
 }) {
   const navigate = useNavigate();
   const classes = useStyles();
-  const {favorites,setFavorites} = useFavoritesContext() 
+  //const {favorites,setFavorites} = useFavoritesContext() 
   // console.log("Cat",favorites)
   const { appState} = useAuthContext();
   const handleOnSubmit = () => {
@@ -53,7 +53,7 @@ function Category({
   useEffect(() => {
     
 
-  },[favorites]);
+  },[]);
 
 
   const handleFavorite= async ()=>{
