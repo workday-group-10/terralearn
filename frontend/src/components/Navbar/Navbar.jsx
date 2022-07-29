@@ -9,18 +9,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import earthIcon from '../assets/earth-icon.png'
 import { useAuthContext } from "../contexts/auth";
 import apiClient from "../services/apiClient"
-import {GuessContextProvider} from "../contexts/guess"
 
-export default function NavBarContainer(props){
-  return (
-    <GuessContextProvider loggedIn={props.loggedIn}>
-      <Navbar props={props}/>
-    </GuessContextProvider>
-  )
-}
 
-function Navbar(props) {
-  props = props.props
+export default function Navbar(props) {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const navigate = useNavigate()
 

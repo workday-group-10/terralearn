@@ -19,9 +19,10 @@ function getDatabaseUri () {
 
 const dbBcrypt = process.env.BCRYPT_WORK_FACTOR || 13
 
-
-
-
+console.log("TerraLearn Registration Config:".red)
+console.log("PORT:".blue, PORT)
+console.log("Database URI".blue, getDatabaseUri())
+console.log("---")
 
 
 module.exports = {
