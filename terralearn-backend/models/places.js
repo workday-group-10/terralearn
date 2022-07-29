@@ -73,6 +73,8 @@ class Places{
         return guesses
     }
 
+    
+
     static async fetchGuessesByUserId(user_id) {
         const query = `SELECT location,link 
         FROM guess
