@@ -68,7 +68,7 @@ const handleOnSubmits = async (e) => {
               <div className="input-field">
               <label htmlFor="page">Page You're Leaving Feedback On:</label><br/>
               <input
-                className="input-bar"
+                className="input-bar-feedback"
                 type="text"
                 name="page"
                 placeholder="Gameplay Screen"
