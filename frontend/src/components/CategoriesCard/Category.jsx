@@ -17,14 +17,18 @@ import {
   Typography,
   CardContent,
 } from "@material-ui/core";
+
 import { useState } from "react";
-import { useAuthContext } from "../contexts/auth";
+import { useFavoritesContext } from "../contexts/favorites";
 import { useEffect } from "react";
+import { useAuthContext } from "../contexts/auth";
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
 });
+
 
 function Category({
   continent,
@@ -36,7 +40,9 @@ function Category({
 }) {
   const navigate = useNavigate();
   const classes = useStyles();
-
+  const {favorites,setFavorites} = useFavoritesContext() 
+  // console.log("Cat",favorites)
+  const { appState} = useAuthContext();
   const handleOnSubmit = () => {
     // console.log("country_id",id)
     setCountry_id(id);
@@ -44,7 +50,7 @@ function Category({
   };
   
 
-  const { appState} = useAuthContext();
+
   const [active, setActive] = useState(false)
   const [datum,setData]= useState()
 

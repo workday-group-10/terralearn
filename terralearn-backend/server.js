@@ -7,6 +7,7 @@ const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
 
 const favoritesRoutes = require("./routes/favorites")
+const feedbackRoutes = require("./routes/feedback")
 
 
 const { BadRequestError, NotFoundError } = require("./utils/errors")
@@ -31,6 +32,8 @@ app.use("/auth", authRoutes)
 app.use("/places", placesRoutes)
 
 app.use("/favorites",favoritesRoutes)
+//feedback routes
+app.use("/feedback",feedbackRoutes)
 
 
 app.use((req, res, next) => {

@@ -44,7 +44,7 @@ class Places{
         return cities
     }
     //add a place a person guessed to guessed table in db
-    static async addGuess(guess){
+    static async addGuess({guess}){
         //guess now has guess.userId
         const requiredFields = ["location", "link"]
         requiredFields.forEach(field => {
@@ -55,18 +55,30 @@ class Places{
 
        const query = `INSERT INTO guess (user_id, location, link) VALUES ($1, $2, $3) RETURNING user_id, location, link;`
 
-        const result = await db.query(query, [guess.userId, guess.location, guess.link])
+        const result = await db.query(query, [guess.user_id, guess.location, guess.link])
 
        const guessUser = result.rows
         
        return Places.makeGuessUser(guessUser)
     }
 
-    static async fetchGuesses(){
+    static async fetchGuessesForUser(user){
+        if(!user){
+            throw new BadRequestError("No email provided")
+        }
 
-        const query = `SELECT * FROM guess;`
+        const userId = await db.query( `SELECT id 
+        FROM users
+        WHERE email = $1;
+        `,
+        [user.email]
+        )
 
-        const result = await db.query(query)
+        const id = userId.rows[0].id
+
+        const query = `SELECT * FROM guess WHERE user_id = $1;`
+
+        const result = await db.query(query, [id])
 
         const guesses = result.rows
 

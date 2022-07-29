@@ -56,6 +56,17 @@ class ApiClient {
   async fetchUserFromToken() {
     return await this.request({ endpoint: `auth/me`, method: 'GET' })
   }
+
+  //functions call feedback endpoints from feedback routes file
+  async fetchFeedback() {
+    return await this.request({ endpoint: `feedback`, method: 'GET' })
+  }
+  async fetchFeedbackForUser(userId) {
+    return await this.request({ endpoint: `feedback/id/${userId}`, method: 'GET' })
+  }
+  async addFeedback(feedback) {
+    return await this.request({ endpoint: `feedback`, method: 'POST', data: feedback})
+  }
   // async fetchNutrition() {
   //   return await this.request({ endpoint: `nutrition`, method: `GET` })
   // }
@@ -76,6 +87,11 @@ class ApiClient {
   async fetchCitiesByCountryId(countryId){
     return await this.request({endpoint: `places/id/${countryId}`, method: 'GET'})
   }
+
+  async fetchFavorites(){
+    return await this.request({endpoint:`favorites`, method: `GET`})
+}
+
   async createFavorite(favorite) {
     // console.log(favorite)
     return await this.request({

@@ -19,13 +19,23 @@ import { useState } from "react";
 import { CitiesContextProvider } from "../contexts/cities";
 import { useNavigate } from "react-router-dom";
 
+import { FavoritesContextProvider } from "../contexts/favorites";
+import PostLoginLandingContainer from "../PostLoginLanding/PostLoginLanding";
+
+import YourInformation from "../YourInformation/YourInformation";
+import Feedback from "../Feedback/Feedback";
+
+
 
 
 export default function AppContainer() {
   return (
     <AuthContextProvider>
     <CitiesContextProvider>
+  
       <App />
+     
+      
     </CitiesContextProvider>
     </AuthContextProvider>
   );
@@ -73,7 +83,7 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={
-                      <PostLoginLanding
+                      <PostLoginLandingContainer
                         setAppState={setAppState}
                         appState={appState}
                         user={appState?.user}
@@ -101,6 +111,22 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={<InstructionsPage appState={appState} />}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/yourinfo"
+                element={
+                  <ProtectedRoute
+                    element={<YourInformation/>}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/feedback"
+                element={
+                  <ProtectedRoute
+                    element={<Feedback/>}
                   />
                 }
               ></Route>

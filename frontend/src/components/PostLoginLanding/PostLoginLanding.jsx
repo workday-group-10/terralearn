@@ -10,14 +10,35 @@ import capeTownIcon from '../assets/africa-city.jpg'
 import newYorkIcon from '../assets/NewYork.jpg'
 import data from "../data.json"
 import { Navigate } from "react-router-dom";
+import apiClient from "../services/apiClient"
+import axios from 'axios';
+
+import { useState } from 'react';
+import { FavoritesContextProvider } from '../contexts/favorites';
 
 
-export default function PostLoginLanding(props) {
+
+
+
+export default function PostLoginLandingContainer(props)
+{
+  return(
+   <FavoritesContextProvider>
+    <PostLoginLanding props={props}/>
+   </FavoritesContextProvider>
+  )
+
+}
+
+  function PostLoginLanding(props) {
   var dat= data.countries
   var values = dat
+  props= props.props
   console.log(props)
   
  
+
+  
 
   useEffect(() => {
     props.setNavbarName(props.user.username)
@@ -90,10 +111,7 @@ export default function PostLoginLanding(props) {
 
         )
 }
-      {/* // <Category continent="Europe" Icon={franceIcon}/>
-      //   <Category continent="Asia" Icon={japanIcon}/>
-      //     <Category continent="Africa" Icon={capeTownIcon}/>
-      //   <Category continent="USA" Icon={newYorkIcon}/> */}
+  
       </div>
     </div>
   );
