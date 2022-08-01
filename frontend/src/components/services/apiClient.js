@@ -71,6 +71,18 @@ class ApiClient {
   async addGuess(guess){
     return await this.request({ endpoint: `places/addGuess`, method: 'POST', data: guess})
   }
+  //function calls game endpoint to get all games for certain user
+  async fetchGamesForUser(userId) {
+    return await this.request({ endpoint: `game/id/${userId}/user`, method: 'GET' })
+  }
+  //function calls game endpoint to get all games for certain country
+  async addGame(game) {
+    return await this.request({ endpoint: `game`, method: 'POST', data: game})
+  }
+  //function calls game endpoint to get all games for certain country
+  async fetchGamesForCountry(countryId){
+    return await this.request({ endpoint: `game/id/${countryId}/country`, method: 'GET' })
+  }
   // async fetchNutrition() {
   //   return await this.request({ endpoint: `nutrition`, method: `GET` })
   // }
