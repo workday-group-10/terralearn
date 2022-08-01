@@ -6,11 +6,14 @@ import InformationSlideshow from "../InformationSlideshow/InformationSlideshow";
 import MySummaryComponent from "../SummaryMap/SumMap";
 import { useState } from "react";
 import { useEffect } from "react";
+import apiClient from "../services/apiClient";
+import { useAuthContext } from "../contexts/auth";
 
-export default function GameSummaryPage({location, positions, longitude, latitude}) {
+export default function GameSummaryPage({location, positions, longitude, latitude, country_id}) {
   //
   //
   // const[location, setLocation] = useState("Paris")
+  const [scores, setScore] = useState()
   var stringLat = JSON.stringify(latitude);
     var lat = parseFloat(stringLat);
     var stringLon = JSON.stringify(longitude);
@@ -64,13 +67,52 @@ export default function GameSummaryPage({location, positions, longitude, latitud
   }
 
   const distanceKm = measure(positions.lat,positions.lng, lat, lng)
-
-  const scores = ScorePoints(distanceKm)
+  //as soon as distanceKM finishes, setScore takes place
+  useEffect(() => {
+    setScore(ScorePoints(distanceKm))
+  }, [distanceKm])
+  
 
   const percentageDis= PointPercentage(scores)
  
+  const {appState} = useAuthContext()
+  const [game, setGame] = useState()
+  const [error, setErrors] = useState()
+  //after setScore is changed and is not null, game is set
+  useEffect(() =>{
 
- 
+   if (scores != undefined){
+    setGame({
+    user_id: appState.user.id,
+    final_score: scores,
+    category_id: country_id,
+    guess_id: 1
+  
+    })
+   }
+  }, [scores])
+
+  //after game is set and is not undefined, apicall sends game to backend
+  useEffect(() => {
+    if (game != undefined){
+      
+      sendGame()
+    } 
+    
+  }, [game])
+  async function sendGame(){
+    try{
+      const {data, error} = await apiClient.addGame(game)
+      // console.log("data sent to backend", data)
+      if (error) {
+        setErrors(error)
+       
+      }
+    } catch(error){
+      setErrors(error)
+    
+    }
+  }
   
 
   return (
