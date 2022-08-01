@@ -45,7 +45,6 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   async function addGuessB(){
     try{
       const {data, error} = await apiClient.addGuess(guessBack)
-      console.log(data)
     } catch(error){
       setError(error)
     }
@@ -82,10 +81,8 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   useEffect(() => {
     if(isFetching == false){
     setGuessBack({user_id: appState.user.id, location, link: currInfo});
-    console.log("setting guess:", guessBack)
     if (guessBack != undefined){
     addGuessB();
-    console.log("adding guess:", guessBack)
     }
     }
   }, [isFetching]);
