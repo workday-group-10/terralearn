@@ -78,14 +78,21 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       setIsFetching(false)      
   }
   //sets useState that goes to backend, then calls api
-  useEffect(() => {
+   //sets useState that goes to backend, then calls api
+   useEffect(() => {
     if(isFetching == false){
-    setGuessBack({user_id: appState.user.id, location, link: currInfo});
-    if (guessBack != undefined){
-    addGuessB();
-    }
+      if (location!="" && currInfo!="")
+      {
+        setGuessBack({user_id: appState.user.id, location: location, link: currInfo});
+      }
     }
   }, [isFetching]);
+  useEffect(()=>{
+    if (guessBack?.location != "" && guessBack?.link != "")
+    {
+      addGuessB();
+    }
+  },[guessBack])
 
   return (
     <div className="gameplay-screen">
