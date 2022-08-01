@@ -1,15 +1,28 @@
 import react from "react"
 import "./ProfilePage.css"
 import { useAuthContext } from "../contexts/auth";
+import {useState, useEffect} from "react"
 
 export default function ProfilePage() {
     //gets users info from usecontext
-    const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
-    // dummy data that will represent certain values based on 
-    //users information
-    const recent_score = 0;
-    const recent_category = "France";
-    const highest_score = 0;
+    const { appState, pastGameInfo } = useAuthContext();
+  
+    // useStates that will reference users past games
+    const [recent_score, setRecentScore] = useState(0)
+    const [recent_category, setRecentCategory] = useState("USA")
+    const [best_country, setBestCountry] = useState("USA")
+    const [highest_score, setHighestScore] = useState(0)
+    
+    //as soon as pastGameInfo loads, it sets the stats to the correct values for the user
+    useEffect(() => {
+        if(pastGameInfo){
+            setRecentScore(pastGameInfo.recentScore.final_score)
+            setRecentCategory(pastGameInfo.recentScore.country)
+            setBestCountry(pastGameInfo.highScore.highest_country)
+            setHighestScore(pastGameInfo.highScore.recent_score) 
+        }
+        
+    }, [pastGameInfo])
    
     return (
     <div className="profile-page">
@@ -29,6 +42,7 @@ export default function ProfilePage() {
             <div className="game-stats">
                 <h1>Last Played Category: {recent_category}</h1>
                 <h1>Most Recent Score: {recent_score}</h1>
+                <h1>Best Country: {best_country}</h1>
                 <h1>Highest Score: {highest_score}</h1>
             </div>
             

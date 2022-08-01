@@ -15,7 +15,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import GameSummaryPage from "../GameSummaryPage/GameSummaryPage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import apiClient from "../services/apiClient"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CitiesContextProvider } from "../contexts/cities";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +48,20 @@ function App() {
   const [userPlacesInfo, setUserPlacesInfo] = useState({});
 
 
+//   const [guesses, setGuesses] = useState([]);
 
+//   const [error, setError] = useState({ guess: "" });
+//   useEffect(() => {
+//     fetchGuesses()
+//     // console.log(guesses)
+//   }, []);
+//   const fetchGuesses = async () => {
+//     const { data, err } = await apiClient.fetchGuesses();
+//     if (data) 
+//     setGuesses(data.guesses);
+
+//     if (err) setError(err);
+// }
 
  
 
@@ -163,7 +176,7 @@ function App() {
                 }
               ></Route>
 
-                <Route path="/gameSummary" element={<GameSummaryPage location={location} setLocation={setLocation}  positions={positions} longitude={longitude} latitude={latitude} />} />
+                <Route path="/gameSummary" element={<GameSummaryPage country_id={country_id} location={location} setLocation={setLocation}  positions={positions} longitude={longitude} latitude={latitude}  />} />
 
               {/* <Route path="/instructions" element={<InstructionsPage />} />
               <Route path="/countdown" element={<RoundCountdownPage />} />

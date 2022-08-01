@@ -15,6 +15,7 @@ function YourInformation({}) {
   const [guesses, setGuesses] = useState([]);
 
   const [error, setError] = useState({ guess: "" });
+  //gets guesses from database to display information
   useEffect(() => {
     fetchGuesses()
     // console.log(guesses)

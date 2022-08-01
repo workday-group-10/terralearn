@@ -7,6 +7,7 @@ export const AuthContextProvider = ({ children }) => {
   const [error, setError] = useState({ appState: '' })
   const [initialized, setInitialized] = useState(false)
   const [loggedIn,setIsLoggedIn] = useState(false)
+  const [pastGameInfo, setPastGameInfo] = useState()
   useEffect(() => {
     const fetchUserFromToken = async () => {
       const { data, error } = await apiClient.fetchUserFromToken()
@@ -16,7 +17,13 @@ export const AuthContextProvider = ({ children }) => {
 
         setInitialized(true)
         setIsLoggedIn(true)
-        setNavbarName(data.user.firstName)
+        setNavbarName(data.user.username)
+      }
+      //checks if there is a user in the appState
+      if(appState.user != undefined) {
+
+        getGameInfo();
+
       }
       
 
@@ -35,6 +42,25 @@ export const AuthContextProvider = ({ children }) => {
       setInitialized(true)
     }
   },[])
+  //double checks to see if appState is not null
+  useEffect(() => {
+    getGameInfo()
+     
+  },[appState])
+  //calls apiClient to get users past game info
+  async function getGameInfo(){
+    try{
+      const {data, error} = await apiClient.fetchGamesForUser(appState.user.id);
+      setPastGameInfo(data)
+      if (error){
+      setError(error)
+      }
+  } catch (err){
+      setError(err)
+  }
+  
+  }
+
   const userValue = {
     appState,
     setAppState,
@@ -44,7 +70,10 @@ export const AuthContextProvider = ({ children }) => {
     loggedIn,
     setIsLoggedIn,
     navbarName,
-    setNavbarName
+    setNavbarName,
+    pastGameInfo,
+    setPastGameInfo
+
   }
   return (
     <AuthContext.Provider value={userValue}>
