@@ -153,7 +153,7 @@ function App() {
                 path="/favorites"
                 element={
                   <ProtectedRoute
-                    element={<FavoriteContainer appState={appState} />}
+                    element={<FavoriteContainer appState={appState}  setCountry_id={setCountryId} />}
                   />
                 }
               ></Route>
