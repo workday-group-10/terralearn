@@ -46,7 +46,7 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   async function addGuessB(){
     try{
       const {data, error} = await apiClient.addGuess(guessBack)
-      console.log(data)
+      // console.log(data)
     } catch(error){
       setError(error)
     }
