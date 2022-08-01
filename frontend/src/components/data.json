@@ -3,22 +3,27 @@
         {
             "country_id": 1,
             "country_name":"France",
-            "country_description":"France is one of the oldest nations on Earth and the most ethnically diverse country in Europe."
+            "country_description":"France is one of the oldest nations on Earth and the most ethnically diverse country in Europe.",
+            "country_image": "https://wallpaperaccess.com/full/850241.jpg"
         },
         {
             "country_id": 2,
             "country_name":"USA",
-            "country_description":"The United States of America is the world's third largest country in size and nearly the third largest in terms of population."
+            "country_description":"The United States of America is the world's third largest country in size and nearly the third largest in terms of population.",
+            "country_image": "https://wallpaperaccess.com/full/1098761.jpg"
         },
         {
             "country_id": 3,
             "country_name":"Germany",
-            "country_description":" Germany is bordered by Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium, Netherlands, the North Sea, and the Baltic Sea."
+            "country_description":" Germany is bordered by Denmark, Poland, Czechia, Austria, Switzerland, France, Luxembourg, Belgium, Netherlands, the North Sea, and the Baltic Sea.",
+            "country_image": "https://wallpaperaccess.com/full/775617.jpg"
         },
         {
             "country_id": 4,
             "country_name":"Japan",
-            "country_description":"There are four main islands: Hokkaido, Honshu, Shikoku, and Kyushu."
+            "country_description":"There are four main islands: Hokkaido, Honshu, Shikoku, and Kyushu.",
+            "country_image": "https://wallpaperaccess.com/full/22287.jpg"
+
         }
     ]
 }

@@ -13,15 +13,20 @@ export default function YourInformationContainer(){
 }
 function YourInformation({}) {
   const [guesses, setGuesses] = useState([]);
+
   const [error, setError] = useState({ guess: "" });
   useEffect(() => {
     fetchGuesses()
   }, []);
   const fetchGuesses = async () => {
     const { data, err } = await apiClient.fetchGuesses();
-    if (data) setGuesses(data.guesses);
+    if (data) 
+    setGuesses(data.guesses);
+
     if (err) setError(err);
 }
+
+
   
 
   return (
