@@ -37,11 +37,12 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   function navSummary(){
     if (guessed==true)
     {
+      setGuessBack({})
       navigate("/gameSummary")
     }
   }
   //adds location and link to information about place to backend 
-  async function addGuess(){
+  async function addGuessB(){
     try{
       const {data, error} = await apiClient.addGuess(guessBack)
     } catch(error){
@@ -73,17 +74,16 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
        newString = stringSpace.replace(/\s/g, '%20')
       
        setCurrInfo("https://www.google.com/search?q=" + newString);
-      
-      setIsFetching(false)
-      
+           
+      setIsFetching(false)      
   }
   //sets useState that goes to backend, then calls api
   useEffect(() => {
     if(isFetching == false){
     setGuessBack({user_id: appState.user.id, location, link: currInfo});
+    if (guessBack != undefined){
+    addGuessB();
     }
-    if(guessBack != undefined){
-      addGuess();
     }
   }, [isFetching]);
 
