@@ -18,7 +18,7 @@ export default function FavoriteContainer(props) {
 
 function Favorite(props) {
   props= props.props
-  console.log(props)
+  
   const { favorites } = useFavoritesContext();
 
   const [countries, setCountries] = useState([{country_id: 12213, country_name: 'TestCountry', country_description: ' Test Card …, Netherlands, the North Sea, and the Baltic Sea.'}]);
