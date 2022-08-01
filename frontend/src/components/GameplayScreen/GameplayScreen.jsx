@@ -38,12 +38,14 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
     if (guessed==true)
     {
       navigate("/gameSummary")
+      setGuessBack({})
     }
   }
   //adds location and link to information about place to backend 
-  async function addGuess(){
+  async function addGuessB(){
     try{
       const {data, error} = await apiClient.addGuess(guessBack)
+      console.log(data)
     } catch(error){
       setError(error)
     }
@@ -80,11 +82,13 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   //sets useState that goes to backend, then calls api
   useEffect(() => {
     if(isFetching == false){
-    setGuessBack({user_id: appState.user.id, location, link: currInfo});
+    setGuessBack({user_id: appState.user.id, location:location, link: currInfo});
+    if (guessBack != undefined) addGuessB();
+    
     }
-    if(guessBack != undefined){
-      addGuess();
-    }
+    // if(guessBack != undefined){
+      
+    // }
   }, [isFetching]);
 
   return (
