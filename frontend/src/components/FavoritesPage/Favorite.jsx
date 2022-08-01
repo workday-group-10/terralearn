@@ -8,15 +8,17 @@ import {
 import data from "../data.json";
 import "./Favorite.css";
 
-export default function FavoriteContainer() {
+export default function FavoriteContainer(props) {
   return (
     <FavoritesContextProvider>
-      <Favorite />
+      <Favorite   props={props} />
     </FavoritesContextProvider>
   );
 }
 
-function Favorite() {
+function Favorite(props) {
+  props= props.props
+  
   const { favorites } = useFavoritesContext();
 
   const [countries, setCountries] = useState([{country_id: 12213, country_name: 'TestCountry', country_description: ' Test Card …, Netherlands, the North Sea, and the Baltic Sea.'}]);
@@ -63,10 +65,11 @@ function Favorite() {
       
 {favorites?.favorite?.length>0 ? countries.map((country)=>
 (
-  <div className="grid-container">
+  <div className="grid-container" key= {country.country_id}>
       <div key={country.country_name} className="grid-item">
        <Category 
       country_id={country.country_id}
+      setCountry_id= {props.setCountry_id}
       key={country.country_name} continent={country.country_name} Icon={country.country_image} description={country.country_description} id={country.country_id}/>
  </div>
 
