@@ -24,7 +24,7 @@ function Favorite() {
   const [hashmap, setHashmap] = useState({});
 
   useEffect(() => {
-    console.log(Object.values(data.countries));
+   
 
     setHashmap(Object.values(data.countries));
   }, []);

@@ -26,7 +26,7 @@ function YourInformation({}) {
     if (err) setError(err);
 }
 
-console.log(guesses)
+
   
 
   return (
