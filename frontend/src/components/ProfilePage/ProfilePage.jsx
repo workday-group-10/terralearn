@@ -2,10 +2,23 @@ import react from "react"
 import "./ProfilePage.css"
 import { useAuthContext } from "../contexts/auth";
 import {useState, useEffect} from "react"
+import { useProfileContext } from "../contexts/profile";
+import apiClient from "../services/apiClient"
+import { ProfileContextProvider } from "../contexts/profile";
 
-export default function ProfilePage({userType, setUserType}) {
+export default function ProfilePageContainer({userType, setUserType}){
+    return(
+    <ProfileContextProvider> 
+    <ProfilePage userType={userType} setUserType={setUserType} /> 
+    </ProfileContextProvider>
+    )
+}
+
+function ProfilePage({userType, setUserType}) {
     //gets users info from usecontext
     const { appState, pastGameInfo } = useAuthContext();
+    const {Profile, setProfiles, error, setError} = useProfileContext();
+    console.log(Profile)
   
     // useStates that will reference users past games
     const [recent_score, setRecentScore] = useState(0)
@@ -33,6 +46,7 @@ export default function ProfilePage({userType, setUserType}) {
     const [value, setValue] = useState('tourism');
 
     const handleChange = (event) => {
+      const {data, error} = apiClient.updateUserType({user_id: appState.user.id, value: event.target.value})
       setUserType(event.target.value);
       setValue(event.target.value);
     }
