@@ -25,6 +25,7 @@ import YourInformation from "../YourInformation/YourInformation";
 import Feedback from "../Feedback/Feedback";
 import { FavoritesContextProvider } from "../contexts/favorites";
 import FavoriteContainer from "../FavoritesPage/Favorite";
+import Leaderboard from "../Leaderboard/Leaderboard";
 
 
 export default function AppContainer() {
@@ -46,6 +47,7 @@ function App() {
   const [location, setLocation] = useState("")
   const [currInfo, setCurrInfo] = useState("");
   const [userPlacesInfo, setUserPlacesInfo] = useState({});
+  const [selectedCountryId, setSelectedCountryId] = useState(3)
 
 
 //   const [guesses, setGuesses] = useState([]);
@@ -139,6 +141,12 @@ function App() {
                     element={<Feedback/>}
                   />
                 }
+              ></Route>
+              <Route
+                path="/leaderboard"
+                
+                element={<Leaderboard selectedCountryId={selectedCountryId} setSelectedCountryId={setSelectedCountryId}/>}
+                  
               ></Route>
 
               <Route

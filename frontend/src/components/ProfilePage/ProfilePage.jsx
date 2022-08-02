@@ -9,8 +9,8 @@ export default function ProfilePage() {
   
     // useStates that will reference users past games
     const [recent_score, setRecentScore] = useState(0)
-    const [recent_category, setRecentCategory] = useState("USA")
-    const [best_country, setBestCountry] = useState("USA")
+    const [recent_category, setRecentCategory] = useState("N/A")
+    const [best_country, setBestCountry] = useState("N/A")
     const [highest_score, setHighestScore] = useState(0)
     
     //as soon as pastGameInfo loads, it sets the stats to the correct values for the user
