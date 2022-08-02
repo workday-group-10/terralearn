@@ -75,6 +75,13 @@ export default function GameSummaryPage({location, positions, longitude, latitud
 
   return (
     <div className="game-summary-page">
+    <div class="bg-animation">
+            <div id="stars1"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="stars4"></div>
+            <div id="stars5"></div>
+            </div>
       <div className="game-summary-header">
         <h1>Game Summary</h1>
         <hr></hr>
@@ -83,7 +90,7 @@ export default function GameSummaryPage({location, positions, longitude, latitud
       <div className="game-summary-image">
         {/*Add the My summary component passing in the pathCoordinates for the two markers and the central Latitude and longitude for the centre of the map */}
      <MySummaryComponent pathCoordinates={pathCoordinates} centLat={centLat} centLng={centLng} isMarkerShown={isMarkerShown} />
-        <ProgressBar transitionDuration="2s"  animateOnRender={true} className="progressbar" completed={percentageDis} bgColor='#6495ed' baseBgColor="#385682" labelColor="#FFFFFF" />
+        <ProgressBar transitionDuration="2s"  animateOnRender={true} className="progressbar" completed={percentageDis} bgColor='#3084d3' baseBgColor="#385682" labelColor="#FFFFFF" />
         <div className="score-section">
           <div className="distance-score">
             Your score was <span className="distance-title">{distanceKm}km</span> from the correct location
