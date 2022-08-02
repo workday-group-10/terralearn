@@ -33,19 +33,34 @@ function YourInformation({}) {
 
   return (
     <div className="your-info">
-        <h1>Your Information</h1>
+    <div className='light x1'></div>
+            <div className='light x2'></div>
+            <div className='light x3'></div>
+            <div className='light x4'></div>
+            <div className='light x5'></div>
+            <div className='light x6'></div>
+            <div className='light x7'></div>
+            <div className='light x8'></div>
+            <div className='light x9'></div>
+            <div className="bg-animation">
+            <div id="stars1"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="stars4"></div>
+            <div id="stars5"></div>
+            </div>
         <div className="info-activity">
-          <h2>Past Guess Locations:</h2>
+          <h2>Past Guess Locations</h2>
           {/* table that contains guesses and links to guesses */}
           <div className="table">
-            <div className="table-header table-row">
-              <span className="col x4">Location</span>
-              <span className="col x2">Link to Information</span>
+            <div className="table-row">
+              <h3>Location</h3>
+              <h4>Link to Information</h4>
             </div>
             {guesses.map((item, index) => (
               <div className="table-row" key={index}>
-                <span className="col x4">{item.location}</span>
-                <span className="col x2"><a href={item.link} target="__blank">{item.link}</a></span>
+                <span className="col4">{item.location}</span>
+                <span className="col2"><a href={item.link} target="__blank">{item.link}</a></span>
               </div>
             ))}
             

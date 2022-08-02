@@ -26,7 +26,7 @@
     color: yellow;
 }
 .category-color{
-    background-color: #0b0a32;
+    background-color: rgba(6,78,184,1);
     justify-content: space-between;
    
    
@@ -36,7 +36,7 @@
 .category-but{
     justify-content: space-between;
     padding: 10px;
-    background-color: #0b0a32;
+    background-color: #3084d3;
     
     
 }

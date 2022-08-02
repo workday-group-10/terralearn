@@ -171,8 +171,8 @@ export default function InformationSlideshow(props) {
 
     return (
     <div className="information-slideshow">
-        <h2>The location you guessed is:</h2>
-        <h1>{infoTitle}</h1>
+        <h2 className="guessed-is">The location you guessed is:</h2>
+        <h1 className="guessed-is">{infoTitle}</h1>
         <div className="slideshow">
             <div className="arrowbg">
                 <ChevronLeftIcon className="left-arrow" onClick={prevSlide}/>
@@ -197,7 +197,7 @@ export default function InformationSlideshow(props) {
             
         </div>
         
-        <h2 className="wikiLink">To learn more about {infoTitle}, click <a href={link} target="_blank">here</a>.</h2>
+        <h2 className="wikiLink">To learn more about {infoTitle}, click <a href={link} target="_blank" className="link-here">here</a>.</h2>
     </div>
   )
 }

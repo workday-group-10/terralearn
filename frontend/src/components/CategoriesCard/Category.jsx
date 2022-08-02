@@ -119,8 +119,8 @@ function Category({
         <div className="buttons-below">
         <CardActions className="category-but">
           <Button
-            size="small"
-            color="secondary"
+            size="large"
+            color="blue"
             onClick={handleOnSubmit}
             className="buttons"
           >

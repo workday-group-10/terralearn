@@ -1,8 +1,10 @@
 /* ---------------------------------- Picture portion of slide ------------------------------------ */
 .wikiLink{
-    background-color: #FBE9DA;
+    background-color: #3084d3;
     width: 65vw;
     margin: auto;
+    color:aliceblue;
+    padding:10px;
 }
 .wikiLink a{
     text-decoration: none;
@@ -34,12 +36,12 @@
 }
 .slideshow:hover{
     box-shadow:
-    1px 1px #f9dec8,
-    2px 2px #f9dec8,
-    3px 3px #f9dec8,
-    4px 4px #f9dec8,
-    5px 5px #f9dec8,
-    10px 10px #f1b27e;
+    1px 1px rgba(6,78,184,1),
+    2px 2px rgba(6,78,184,1),
+    3px 3px rgba(6,78,184,1),
+    4px 4px rgba(6,78,184,1),
+    5px 5px rgba(6,78,184,1),
+    10px 10px #3084d3;
     border-radius: 12px;
     -webkit-transform: translateX(-8px);
     transform: translateX(-38x);
@@ -91,17 +93,46 @@
     /* display: table-cell; */
     width: 40vw;
     height: 48.5vh;
-    background-color: #FBE9DA;
+    background-color: #3084d3;
     justify-content: center;
     text-align: center;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+    color:aliceblue;
 }
 
-/* .paragraph-text{
-    /* margin: 0; */
-  /* position: absolute;
-  -ms-transform: translateY(50%);
-  transform: translateY(50%);
-  top: 50%; */
-/* }  */
+.paragraph-text{
+    color:aliceblue;
+    padding: 15px;
+}
+
+.guessed-is{
+    color:aliceblue;
+    font-size: 30px;
+    font-family: 'Raleway',sans-serif; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+}
+
+.link-here{
+    color:#f6f33f;
+    text-decoration: none;
+    background:
+      linear-gradient(
+        to right,
+        #f6f33f,
+        #f6f33f
+      ),
+      linear-gradient(
+        to right,
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 180, 1),
+        rgba(0, 100, 200, 1)
+    );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+  }
+  
+  .link-here:hover {
+    background-size: 0 3px, 100% 3px;
+  }

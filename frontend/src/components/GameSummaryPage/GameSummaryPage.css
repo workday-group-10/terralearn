@@ -1,27 +1,29 @@
 .game-summary-page{
-    display:flex;
+    display: flex;
     flex-direction: column;
     padding-bottom: 10px;
     background-image: linear-gradient(to right top, #0b131c, #0e1a29, #0f2137, #122745, #162e53, #193663, #1e3d73, #234583, #25509a, #275bb1, #2966c9, #2a72e1);
-    height: calc(100vh - 90px);
+    height: 170vh;
     
 }
 .game-summary-header{
+    padding: 15px;
     text-align: center;
     color: aliceblue;
     font-size: 30px;
+    font-family: 'Raleway',sans-serif; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
 }
 
 .game-summary-image{
     text-align: center;
     margin: auto;
-    width:80%;
-    height:60%;
+    width:80vw;
+    height:60vh;
     margin-top: 10px;
 }
 .playAgain-button {
     margin-top: 20px;
-    background-color:#C04CFD;
+    background-color:rgba(6,78,184,1);
     margin-left: 10px;
     color: #fff;
     border:none;
@@ -38,8 +40,8 @@
     .mainMenu-button {
         margin-top: 20px;
         margin-left: 10px;
-        background-color:black;
-        color: #fff;
+        background-color:white;
+        color: rgba(6,78,184,1);
         border:none;
         border-radius:10px;
         min-height:50px; 
@@ -71,6 +73,7 @@
         }
         .progressbar{
             margin-top: 20px;
+            padding: 15px;
         }
         .information-slideshow{
             margin-top: 20px;
@@ -85,7 +88,7 @@
             color: aliceblue;
         }
         .score-section .distance-score  .distance-title{
-            background-color: blue;
+            background-color: rgba(6,78,184,1);
             height: 20px;
             font-size: 20px;
             border-radius:15px ;
