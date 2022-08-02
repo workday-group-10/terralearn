@@ -44,6 +44,7 @@
 }
 
 .prof-title, .game-stats{
+  margin-top: 25px;
     text-align: center;
     z-index: 1;
 }
