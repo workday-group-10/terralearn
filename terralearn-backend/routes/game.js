@@ -27,6 +27,15 @@ router.get("/id/:countryId/country", async(req, res, next) => {
     }
 })
 
+//end points that gets every game up to top ten score
+router.get("/", async(req, res, next) => {
+    try{
+        const allGames = await Game.fetchAllGames()
+        return res.status(201).json({ allGames })
+    } catch(err){
+        next(err)
+    }
+})
 
 //route to add guess to guesstable
 router.post("/", security.requireAuthenticatedUser, async(req, res, next) => {
