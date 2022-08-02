@@ -22,6 +22,24 @@ class Game{
         
        return gameAdded
     }
+    //fetches all Games 
+    static async fetchAllGames(){
+
+        const query = `SELECT  username, country, final_score FROM games 
+        JOIN category
+        ON category.id = games.category_id
+        JOIN users
+        ON users.id = games.user_id
+        ORDER BY final_score DESC
+        
+        LIMIT 10;`
+
+        const result = await db.query(query)
+
+        const scores = result.rows
+
+        return scores
+    }
     //fetches games from games table by country 
     static async fetchGamesByCountryId(countryId){
 
@@ -30,7 +48,8 @@ class Game{
         ON category.id = games.category_id
         JOIN users
         ON users.id = games.user_id
-        WHERE category_id = $1;`
+        WHERE category_id = $1
+        ORDER BY final_score DESC;`
 
         const result = await db.query(query, [countryId])
 
@@ -43,7 +62,8 @@ class Game{
         const query = `SELECT * from games
         JOIN category
         ON category.id = games.category_id
-        WHERE user_id= $1;`;
+        WHERE user_id= $1
+        ORDER BY final_score DESC;`;
         const result = await db.query(query, [user_id]);
         const guesses = result.rows;
         return guesses;

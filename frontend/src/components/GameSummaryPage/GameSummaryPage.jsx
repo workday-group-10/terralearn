@@ -117,7 +117,7 @@ export default function GameSummaryPage({location, positions, longitude, latitud
 
   return (
     <div className="game-summary-page">
-    <div class="bg-animation">
+    <div className="bg-animation">
             <div id="stars1"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
