@@ -2,12 +2,21 @@
 .info-activity {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to right top, rgba(0,0,0,1) 0%, rgba(5,5,45,1) 24%, rgba(8,21,57,1) 36%, rgba(0,59,98,1) 59%, rgba(1,89,148,1) 79%, rgba(6,78,184,1) 100%);
+  background-size: cover;
 }
 .info-activity h2 {
-  color: black;
+  color: rgb(255, 255, 255);
+  padding: 50px;
   margin-bottom: 24px;
   font-size: 28px;
   margin-top: 40px;
+  font-family: 'Raleway',sans-serif; 
+  font-size: 62px; 
+  font-weight: 800; 
+  line-height: 72px; 
+  text-align: center; 
+  text-transform: uppercase;
 }
 /* ---------------------------------- References table and table rows ------------------------------------ */
 .info-activity .table {
@@ -16,6 +25,8 @@
   margin: auto;
   width: 75vw;
   border: 1px solid rgba(196, 196, 196, 0.3);
+  z-index: 10;
+  
 }
 
 .info-activity .table .table-row {
@@ -29,33 +40,44 @@
   cursor: pointer;
 }
 
-.info-activity .table .table-row.table-header .col {
-  background: rgba(44, 64, 71, 1);
-  color: white;
+.info-activity .table .table-row h3 {
+  height: 80px;
+  width: 50%;
+  padding: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  background-color: rgba(44, 65, 71, 1);
+  font-family: 'Raleway',sans-serif; font-size: 21px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
 }
 
 
-.info-activity .table .table-row .col {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.info-activity .table .table-row h4{
   height: 80px;
   padding: 25px;
+  width: 50%;
+  /* text-indent: 50%; */
   color: rgba(44, 65, 71, 1);
   font-weight: 600;
+  font-family: 'Raleway',sans-serif; font-size: 21px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
 }
 
 
-.info-activity .table .table-row .col.x2 {
-  flex: 2;
+.info-activity .table .table-row .col2 {
+  flex: 3.3;
+  margin-top: 25px;
+  margin-right: 4%;
+  text-align: center;
 }
 
-.info-activity .table .table-row .col.x4 {
+.info-activity .table .table-row .col4 {
   flex: 4;
+  margin-top: 25px;
+  margin-right: 4%;
   color: black;
+  text-align: center;
 }
 
-.info-activity .table .table-row .col.x2 a{
+.info-activity .table .table-row .col2 a{
   transition: transform .2s; /* Animation */
 }
 

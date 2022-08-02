@@ -31,3 +31,7 @@
     font-size: 30px;
     text-align: center;
 }
+.fav-title{
+    padding: 30px;
+    color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+}
