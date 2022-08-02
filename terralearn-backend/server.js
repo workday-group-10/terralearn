@@ -9,6 +9,7 @@ const placesRoutes = require("./routes/places")
 const favoritesRoutes = require("./routes/favorites")
 const feedbackRoutes = require("./routes/feedback")
 const gameRoutes = require("./routes/game")
+const profileRoutes = require("./routes/profile")
 
 
 const { BadRequestError, NotFoundError } = require("./utils/errors")
@@ -37,6 +38,8 @@ app.use("/favorites",favoritesRoutes)
 app.use("/feedback",feedbackRoutes)
 //game routes
 app.use("/game",gameRoutes)
+//profile routes
+app.use("/profile", profileRoutes)
 
 
 app.use((req, res, next) => {
