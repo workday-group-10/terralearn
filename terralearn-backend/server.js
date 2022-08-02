@@ -6,9 +6,12 @@ const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
 
+const gameRoutes = require("./routes/game")
+
+
+
 const favoritesRoutes = require("./routes/favorites")
 const feedbackRoutes = require("./routes/feedback")
-const gameRoutes = require("./routes/game")
 
 
 const { BadRequestError, NotFoundError } = require("./utils/errors")
@@ -35,8 +38,10 @@ app.use("/places", placesRoutes)
 app.use("/favorites",favoritesRoutes)
 //feedback routes
 app.use("/feedback",feedbackRoutes)
+
 //game routes
 app.use("/game",gameRoutes)
+
 
 
 app.use((req, res, next) => {

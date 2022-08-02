@@ -3,17 +3,25 @@ import React from 'react'
 import './Navbar.css'
 import { useEffect } from 'react';
 import { Avatar, IconButton } from '@material-ui/core';
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link,useLocation } from "react-router-dom"
 import SearchIcon from '@material-ui/icons/Search';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import earthIcon from '../assets/earth-icon.png'
 import { useAuthContext } from "../contexts/auth";
 import apiClient from "../services/apiClient"
+import { useState } from 'react';
+import { useCountriesContext } from '../contexts/countries';
 
 
-export default function Navbar(props) {
+export default function Navbar({CategoriesArray,SetCategoriesArray}) {
   const { appState, setAppState, loggedIn, setIsLoggedIn, navbarName,setNavbarName } = useAuthContext();
   const navigate = useNavigate()
+
+  const {Countries} = useCountriesContext()
+
+  
+
+  
 
   const handleLogout = async () => {
     await apiClient.logoutUser();
@@ -23,6 +31,94 @@ export default function Navbar(props) {
     navigate("/login")
    
   };
+  const[showSearch,SetShowSearch]= useState(false)
+  const [search, setSearch] = useState("")
+
+  
+  ////////////Check if useLocation is Favorite
+  const location = useLocation();
+  var pathname = location.pathname
+
+  useEffect(()=>{
+
+    if (pathname=="/allcategories")
+    {
+     
+      SetShowSearch(true)
+      
+    }
+    else{
+      SetShowSearch(false)
+    }
+  })
+  useEffect(()=>{
+  if (Countries)
+  {
+    SetCategoriesArray(Countries)
+  }
+  },[Countries])
+
+
+  
+ 
+//   let countries_array = [...Countries]
+// /////SSearch Functionality
+//   if (search.length > 0) {
+//     // If the search is not empty
+    
+
+    
+//     const matches = Countries?.filter(element => {
+     
+//   if (element.country.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
+//     return true;
+//       }
+     
+// });
+//  countries_array = matches
+ 
+//   }
+//   var countries=[]
+ 
+//   useEffect(()=>{
+//     countries =countries_array
+    
+//   },[countries_array])
+
+//   useEffect(()=>{
+    
+//     SetCategoriesArray(countries)
+//     console.log("countries",CategoriesArray)
+//   },[])
+
+
+let handleOnSearchChange = (event) => {
+  console.log(event.target.value)
+  setSearch(event.target.value) 
+
+}
+
+
+//   SetCategoriesArray(Countries.filter( product => {
+//     return (product.country.toLowerCase().includes(search.toLowerCase()))
+//   }))
+// }
+
+useEffect(()=>{
+  console.log("useEffect",CategoriesArray)
+
+  const matches = Countries.filter(element => 
+     element.country.toLowerCase().indexOf(search.toLowerCase()) !== -1   
+  );
+  SetCategoriesArray(matches)
+
+},[search])
+
+  
+ 
+
+
+
 
   //function that routes user to specific landing page depending on whether
   // they are logged in or not
@@ -80,13 +176,18 @@ export default function Navbar(props) {
       
       </div>
       
-
-      <div className="Navbar_search">
-     
-        <input className="Navbar_search_input" type="text" />
+{/* {Display search only in AllCategories Tab} */}
+{showSearch ? <div className="Navbar_search">
+        
+        
+        <input className="Navbar_search_input" type="text" onChange={handleOnSearchChange}/>
            {<SearchIcon className="Navbar_searchIcon"/>}
-        {/*Logo*/}
-      </div>
+        
+      </div>:<div className='imiginary_search'>
+        
+        
+        </div>}
+     
       {/* routes to different pages throughout webpage */}
       <div className="Navbar_nav">
         <div className={logNav}>
@@ -106,7 +207,10 @@ export default function Navbar(props) {
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">All</span>
-          <span className="Navbar_optionLineTwo">Categories</span>
+          <span className="Navbar_optionLineTwo"><Link className="nav-u" to="/allcategories">
+            All Categories
+            </Link>
+            </span>
         </div>
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
@@ -119,7 +223,7 @@ export default function Navbar(props) {
         <div className="profile_logo" >
           <Avatar alt="image of profile icon" className="pro_pic" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-male-circle-blue-512.png" onClick={navigateProfile}/>
           <div className='profile_name'>
-            <span className="nav-user" onClick={navigateProfile}>{props.navbarName.toUpperCase()}</span>
+            <span className="nav-user" onClick={navigateProfile}>{navbarName.toUpperCase()}</span>
           </div>
         </div>
         {/* dropdown menu of options person can choose when hovering over profile */}

@@ -35,7 +35,7 @@ function Category({
 }) {
   const navigate = useNavigate();
   const classes = useStyles();
-  const {favorites ,setFavorites } = useFavoritesContext()
+
   const { appState} = useAuthContext();
   const handleOnSubmit = () => {
     //

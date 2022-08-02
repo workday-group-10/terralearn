@@ -10,7 +10,9 @@ CREATE TABLE category(
     id         SERIAL PRIMARY KEY,
     country    TEXT NOT NULL,
     image_url  TEXT NOT NULL,
-    difficulty TEXT NOT NULL
+    difficulty TEXT NOT NULL,
+    descriptions TEXT NOT NULL
+
 );
 CREATE TABLE cities(
     id          SERIAL PRIMARY KEY,
