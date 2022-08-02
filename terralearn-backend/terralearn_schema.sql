@@ -4,7 +4,8 @@ CREATE TABLE users(
     email       TEXT NOT NULL UNIQUE CHECK(POSITION('@' IN email) > 1),
     first_name  TEXT NOT NULL,
     last_name   TEXT NOT NULL,
-    username    TEXT NOT NULL
+    username    TEXT NOT NULL,
+    search_type TEXT NOT NULL DEFAULT 'tourism'
 );
 CREATE TABLE category(
     id         SERIAL PRIMARY KEY,

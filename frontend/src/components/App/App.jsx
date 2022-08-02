@@ -46,6 +46,7 @@ function App() {
   const [location, setLocation] = useState("")
   const [currInfo, setCurrInfo] = useState("");
   const [userPlacesInfo, setUserPlacesInfo] = useState({});
+  const [userType, setUserType] = useState("");
 
 
 //   const [guesses, setGuesses] = useState([]);
@@ -100,6 +101,7 @@ function App() {
                         navbarName={navbarName} setNavbarName={setNavbarName}
                         country_id={country_id}
                         setCountry_id={setCountryId}
+                        userType={userType} setUserType={setUserType}
                       />
                     }
                   />
@@ -110,7 +112,7 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={
-                      <ProfilePage/>
+                      <ProfilePage userType={userType} setUserType={setUserType} />
                     }
                   />
                 }
@@ -171,6 +173,7 @@ function App() {
                         setCurrInfo={setCurrInfo}
                         setUserPlacesInfo={setUserPlacesInfo}
                       longitude={longitude} setLongitude={setLongitude} latitude={latitude} setLatitude={setLatitude}
+                      userType={userType} setUserType={setUserType}
                     />}
                   />
                 }
