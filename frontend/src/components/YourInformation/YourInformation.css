@@ -4,13 +4,13 @@
   flex-direction: column;
   background: linear-gradient(to right top, rgba(0,0,0,1) 0%, rgba(5,5,45,1) 24%, rgba(8,21,57,1) 36%, rgba(0,59,98,1) 59%, rgba(1,89,148,1) 79%, rgba(6,78,184,1) 100%);
   background-size: cover;
+  padding: 65px;
 }
 .info-activity h2 {
   color: rgb(255, 255, 255);
   padding: 50px;
   margin-bottom: 24px;
   font-size: 28px;
-  margin-top: 40px;
   font-family: 'Raleway',sans-serif; 
   font-size: 62px; 
   font-weight: 800; 
@@ -26,7 +26,6 @@
   width: 75vw;
   border: 1px solid rgba(196, 196, 196, 0.3);
   z-index: 10;
-  
 }
 
 .info-activity .table .table-row {

@@ -26,6 +26,7 @@ import YourInformation from "../YourInformation/YourInformation";
 import Feedback from "../Feedback/Feedback";
 
 import FavoriteContainer from "../FavoritesPage/Favorite";
+import Leaderboard from "../Leaderboard/Leaderboard";
 
 import AllCategoriesContaine from "../AllCategories/AllCategories";
 
@@ -57,6 +58,8 @@ function App() {
   const [location, setLocation] = useState("")
   const [currInfo, setCurrInfo] = useState("");
   const [userPlacesInfo, setUserPlacesInfo] = useState({});
+  const [selectedCountryId, setSelectedCountryId] = useState(3)
+  const [userType, setUserType] = useState("");
 
 
 //   const [guesses, setGuesses] = useState([]);
@@ -110,6 +113,7 @@ function App() {
                         navbarName={navbarName} setNavbarName={setNavbarName}
                         country_id={country_id}
                         setCountry_id={setCountryId}
+                        userType={userType} setUserType={setUserType}
                       />
                     }
                   />
@@ -120,7 +124,7 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={
-                      <ProfilePage/>
+                      <ProfilePage userType={userType} setUserType={setUserType} />
                     }
                   />
                 }
@@ -159,6 +163,12 @@ function App() {
                   />
                 }
               ></Route>
+              <Route
+                path="/leaderboard"
+                
+                element={<Leaderboard selectedCountryId={selectedCountryId} setSelectedCountryId={setSelectedCountryId}/>}
+                  
+              ></Route>
 
               <Route
                 path="/countdown"
@@ -190,6 +200,7 @@ function App() {
                         setCurrInfo={setCurrInfo}
                         setUserPlacesInfo={setUserPlacesInfo}
                       longitude={longitude} setLongitude={setLongitude} latitude={latitude} setLatitude={setLatitude}
+                      userType={userType} setUserType={setUserType}
                     />}
                   />
                 }

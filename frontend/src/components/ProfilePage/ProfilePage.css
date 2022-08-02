@@ -26,7 +26,7 @@
     background-color: rgb(0, 92, 148);
     border: rgb(255, 255, 255) solid 2px;
     border-radius: 13px;
-    height: 70vh; 
+    height: 80vh; 
     width: 50vw;
     z-index: 1;
     overflow:hidden;
@@ -44,6 +44,7 @@
 }
 
 .prof-title, .game-stats{
+  margin-top: 25px;
     text-align: center;
     z-index: 1;
 }
@@ -64,6 +65,7 @@
     width: 20%;
     height: 30%;
 }
+
 
 
 /* --animation stuff ---- */

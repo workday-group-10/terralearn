@@ -3,14 +3,14 @@ import "./ProfilePage.css"
 import { useAuthContext } from "../contexts/auth";
 import {useState, useEffect} from "react"
 
-export default function ProfilePage() {
+export default function ProfilePage({userType, setUserType}) {
     //gets users info from usecontext
     const { appState, pastGameInfo } = useAuthContext();
   
     // useStates that will reference users past games
     const [recent_score, setRecentScore] = useState(0)
-    const [recent_category, setRecentCategory] = useState("USA")
-    const [best_country, setBestCountry] = useState("USA")
+    const [recent_category, setRecentCategory] = useState("N/A")
+    const [best_country, setBestCountry] = useState("N/A")
     const [highest_score, setHighestScore] = useState(0)
     
     //as soon as pastGameInfo loads, it sets the stats to the correct values for the user
@@ -23,6 +23,33 @@ export default function ProfilePage() {
         }
         
     }, [pastGameInfo])
+
+    const options = [
+        { label: 'Tourist', value: 'tourism' },
+        { label: 'Student', value: 'education' },
+        { label: 'Medical Proffessional', value: 'healthcare' },
+      ];
+
+    const [value, setValue] = useState('tourism');
+
+    const handleChange = (event) => {
+      setUserType(event.target.value);
+      setValue(event.target.value);
+    }
+
+    const Dropdown = ({ label, value, options, onChange }) => {
+        return (
+          <label>
+            {label}
+            <select value={value} onChange={onChange}>
+              {options.map((option) => (
+                <option value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </label>
+        );
+      };
+
    
     return (
     <div className="profile-page">
@@ -54,6 +81,14 @@ export default function ProfilePage() {
                     <span className="profile-name">{appState.user.lastName}</span>
                 </div>
             </div>
+            <div className="current-user">You currently want games to display information about {userType}.</div>
+            <Dropdown
+                className = "dropdown"
+                label="What kind of user are you  "
+                options={options}
+                value={value}
+                onChange={handleChange}
+                />
             {/* displays stats of users last and best played games */}
             <div className="game-stats">
                 <h1>Last Played Category: {recent_category}</h1>
@@ -71,3 +106,6 @@ export default function ProfilePage() {
     </div>
     )
 }
+
+
+
