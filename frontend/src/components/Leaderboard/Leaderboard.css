@@ -1,0 +1,146 @@
+/* ---------------------------------- References entire page ------------------------------------ */
+.leaderboard-table {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right top, rgba(0,0,0,1) 0%, rgba(5,5,45,1) 24%, rgba(8,21,57,1) 36%, rgba(0,59,98,1) 59%, rgba(1,89,148,1) 79%, rgba(6,78,184,1) 100%);
+    background-size: cover;
+    
+  }
+  .leaderboard-table h2 {
+    color: rgb(255, 255, 255);
+    padding: 50px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    margin-top: 40px;
+    font-family: 'Raleway',sans-serif; 
+    font-size: 62px; 
+    font-weight: 800; 
+    line-height: 72px; 
+    text-align: center; 
+    text-transform: uppercase;
+  }
+  /* ---------------------------------- References table and table rows ------------------------------------ */
+  .leaderboard-table .l-table {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 75vw;
+    border: 1px solid rgba(196, 196, 196, 0.3);
+    z-index: 10;
+    
+  }
+  
+  .leaderboard-table .l-table .leader-row {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.3);
+    background: white;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .leaderboard-table .l-table .leader-row h3 {
+    height: 80px;
+    width: 50%;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background-color: rgba(44, 65, 71, 1);
+    font-family: 'Raleway',sans-serif; font-size: 21px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+  }
+  
+  
+  .leaderboard-table .l-table .leader-row h4{
+    height: 80px;
+    padding: 25px;
+    width: 50%;
+    /* text-indent: 50%; */
+    color: rgba(44, 65, 71, 1);
+    font-weight: 600;
+    font-family: 'Raleway',sans-serif; font-size: 21px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+  }
+  
+  
+  .leaderboard-table .l-table .leader-row .leader-col4 {
+    flex: 3.6;
+    margin-top: 25px;
+    margin-right: 4%;
+    color: black;
+    text-align: center;
+  }
+  .leaderboard-table .l-table .leader-row .leader-col1 {
+    flex: 3;
+    margin-top: 25px;
+    margin-right: 4%;
+    text-align: center;
+  }
+  
+  .leaderboard-table .l-table .leader-row .leader-col2 {
+    flex: 2.5;
+    margin-top: 25px;
+    margin-right: 4%;
+    color: black;
+    text-align: center;
+  }
+  
+  .leaderboard-table .l-table .leader-row .leader-col3 {
+    flex: 3;
+    margin-top: 25px;
+    margin-right: 4%;
+    color: black;
+    text-align: center;
+  }
+  
+
+
+  /* .leaderboard-table .l-table .leader-row .leader-col1 a{
+    transition: transform .2s; 
+  } */
+  
+  /* ---------------------------------- Hover instances ------------------------------------ */
+  .leaderboard-table .l-table .leader-row:hover {
+    background: #f3fffb;
+  }
+  /* .leaderboard-table .l-table .leader-row .leader-col2 a:hover {
+    background-color: #EBFFF8;
+    transform: scale(1.05);
+    
+  }
+   */
+/* ---------------------------------- Button Styling ------------------------------------ */
+   .country-btn {
+    margin: 10px;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color:#599bb3;
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:13px 32px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+  }
+  .country-btn:hover {
+    background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color:#408c99;
+  }
+  .country-btn:active {
+    position:relative;
+    top:1px;
+  }
+
+  .leaderboard-table .leader-row .button-row {
+    /* display: flex;
+    flex-direction: space-around; */
+    margin: auto;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  

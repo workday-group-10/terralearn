@@ -45,6 +45,10 @@ export default function Navbar(props) {
     const navigateInfo = () => {
       navigate("/yourinfo")
     }
+    //navigates user to your leaderboard
+    const navigateLeader = () => {
+      navigate("/leaderboard")
+    }
   let logNav = "Navbar_option"
   let preNav = "close"
   
@@ -111,6 +115,10 @@ export default function Navbar(props) {
         <div className={preNav}>
           <span className="Navbar_optionLineOne">Your</span>
           <span className="Navbar_optionLineTwo" onClick={navigateInfo}>Info</span>
+        </div>
+        <div className="Navbar_option">
+          <span className="Navbar_optionLineOne">View</span>
+          <span className="Navbar_optionLineTwo" onClick={navigateLeader}>Leaderboard</span>
         </div>
         
       </div>
