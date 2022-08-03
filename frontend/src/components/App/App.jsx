@@ -25,6 +25,7 @@ import YourInformation from "../YourInformation/YourInformation";
 import Feedback from "../Feedback/Feedback";
 import { FavoritesContextProvider } from "../contexts/favorites";
 import FavoriteContainer from "../FavoritesPage/Favorite";
+import { ProfileContextProvider } from "../contexts/profile";
 import Leaderboard from "../Leaderboard/Leaderboard";
 
 
@@ -32,7 +33,9 @@ export default function AppContainer() {
   return (
     <AuthContextProvider>
     <CitiesContextProvider>
+    <ProfileContextProvider>
       <App />
+      </ProfileContextProvider>
     </CitiesContextProvider>
     </AuthContextProvider>
   );
