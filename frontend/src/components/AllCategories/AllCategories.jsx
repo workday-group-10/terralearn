@@ -19,7 +19,7 @@ function AllCategories(props) {
   props = props.props;
 
   var mapArray = props.CategoriesArray;
-  console.log(props);
+ 
 
   return (
     <div className="favorite-container">

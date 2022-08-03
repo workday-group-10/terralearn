@@ -93,7 +93,7 @@ export default function Navbar({CategoriesArray,SetCategoriesArray}) {
 
 
 let handleOnSearchChange = (event) => {
-  console.log(event.target.value)
+
   setSearch(event.target.value) 
 
 }
@@ -105,7 +105,7 @@ let handleOnSearchChange = (event) => {
 // }
 
 useEffect(()=>{
-  console.log("useEffect",CategoriesArray)
+ 
 
   const matches = Countries.filter(element => 
      element.country.toLowerCase().indexOf(search.toLowerCase()) !== -1   
