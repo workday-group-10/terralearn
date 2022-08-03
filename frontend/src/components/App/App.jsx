@@ -62,7 +62,7 @@ function App() {
   const [currInfo, setCurrInfo] = useState("");
   const [userPlacesInfo, setUserPlacesInfo] = useState({});
   const [selectedCountryId, setSelectedCountryId] = useState(3)
-  const [userType, setUserType] = useState("");
+  const [userType, setUserType] = useState("tourism");
 
 
 //   const [guesses, setGuesses] = useState([]);
