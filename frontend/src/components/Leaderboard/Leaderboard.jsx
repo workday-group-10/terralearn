@@ -28,7 +28,8 @@ function Leaderboard(props) {
   async function getScores(){
     try {
       const {data, error} = await apiClient.fetchGamesForCountry(props.selectedCountryId);
-      if(data){
+      console.log(data)
+      if(data && data.gamesForCountry.length > 0){
           setAllScores(data.gamesForCountry)
       }
 
