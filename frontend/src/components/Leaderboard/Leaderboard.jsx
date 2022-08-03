@@ -16,20 +16,22 @@ export default function LeaderboardContainer(props){
 function Leaderboard(props) {
 
   //useStates that change as api is called
-  const [allScores, setAllScores] = useState([{country: "No Leaderboard Available for Country"}])
+  const [allScores, setAllScores] = useState([{country: "No Games Have Been Played For This Country Yet. Be the first!"}])
   const [errors, setErrors] = useState()
   const [countryHashmap, setCountryHashmap] = useState()
-  const [allCountries, setAllCountries] = useState([{country: "No Countries Available"}])
+  const [allCountries, setAllCountries] = useState([{country: "No Games Have Been Played For This Country Yet. Be the first!"}])
   const {Countries} = useCountriesContext()
-  const [countryArr, setCountryArr] =  useState([{country: "No Countries Available"}])
+  const [countryArr, setCountryArr] =  useState([{country: "No Countries Available", id: 1000}])
   const [isAC, setIsAC] = useState(false)
 
   //call to api to get scores for certain countries
   async function getScores(){
     try {
       const {data, error} = await apiClient.fetchGamesForCountry(props.selectedCountryId);
-      if(data){
-          setAllScores(data.gamesForCountry)
+      if(data && data.gamesForCountry.length > 0){
+        setAllScores(data.gamesForCountry)
+      } else if (data.gamesForCountry.length == 0) {
+        setAllScores([{country: "No Games Have Been Played For This Country Yet. Be the first!"}])
       }
 
     } catch (error) {
@@ -68,9 +70,11 @@ function Leaderboard(props) {
 
   //creates hashmap everytime arr holding scores of certain country changes
   useEffect(() => {
+    
     if (countryArr.length > 1){
       setCountryHashmap(new Map(countryArr.map(i => [i.country, i.id])))
     }
+    
     
   }, [countryArr])
 

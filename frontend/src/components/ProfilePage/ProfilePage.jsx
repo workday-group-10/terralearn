@@ -15,19 +15,19 @@ export default function ProfilePage({userType, setUserType}) {
     
     //as soon as pastGameInfo loads, it sets the stats to the correct values for the user
     useEffect(() => {
-        if(pastGameInfo){
-            setRecentScore(pastGameInfo.recentScore.final_score)
-            setRecentCategory(pastGameInfo.recentScore.country)
-            setBestCountry(pastGameInfo.highScore.highest_country)
-            setHighestScore(pastGameInfo.highScore.recent_score) 
-        }
+      if(pastGameInfo){
+        setRecentScore(pastGameInfo.recentScore.final_score)
+        setRecentCategory(pastGameInfo.recentScore.country)
+        setBestCountry(pastGameInfo.highScore.highest_country)
+        setHighestScore(pastGameInfo.highScore.recent_score) 
+      }
         
     }, [pastGameInfo])
 
     const options = [
         { label: 'Tourist', value: 'tourism' },
         { label: 'Student', value: 'education' },
-        { label: 'Medical Proffessional', value: 'healthcare' },
+        { label: 'Medical Professional', value: 'healthcare' },
       ];
 
     const [value, setValue] = useState('tourism');

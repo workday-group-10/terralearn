@@ -49,7 +49,8 @@ class Game{
         JOIN users
         ON users.id = games.user_id
         WHERE category_id = $1
-        ORDER BY final_score DESC;`
+        ORDER BY final_score DESC
+        LIMIT 10;`
 
         const result = await db.query(query, [countryId])
 
