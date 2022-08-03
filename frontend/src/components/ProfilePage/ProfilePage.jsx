@@ -19,11 +19,19 @@ function ProfilePage({userType, setUserType}) {
     const { appState, pastGameInfo } = useAuthContext();
     const {Profile, setProfiles, error, setError} = useProfileContext();
     console.log(Profile)
+
+    //set the profile from context for user type display
+    useEffect(() => {
+      if(Profile.length != 0){
+      setUserType(Profile?.userType[0]?.search_type)
+      }
+    }, [Profile])
+    
   
     // useStates that will reference users past games
     const [recent_score, setRecentScore] = useState(0)
-    const [recent_category, setRecentCategory] = useState("USA")
-    const [best_country, setBestCountry] = useState("USA")
+    const [recent_category, setRecentCategory] = useState("N/A")
+    const [best_country, setBestCountry] = useState("N/A")
     const [highest_score, setHighestScore] = useState(0)
     
     //as soon as pastGameInfo loads, it sets the stats to the correct values for the user

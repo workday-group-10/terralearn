@@ -11,6 +11,7 @@ import apiClient from "../services/apiClient"
 import axios from 'axios';
 import { useState } from 'react';
 import { FavoritesContextProvider } from '../contexts/favorites';
+import { ProfileContextProvider } from "../contexts/profile";
 
 
 
@@ -20,7 +21,9 @@ export default function PostLoginLandingContainer(props)
 {
   return(   
     <FavoritesContextProvider>
+    <ProfileContextProvider> 
     <PostLoginLanding props={props}/>
+    </ProfileContextProvider>
     </FavoritesContextProvider>
   )
 

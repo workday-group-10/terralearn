@@ -8,7 +8,6 @@ export const ProfileContextProvider = ({ children, loggedIn}) => {
     useEffect(() => {
         const fetchFav = async () => {
             const { data, err } = await apiClient.fetchUserType();
-            console.log(data)
             if (data) setProfiles(data);
             if (err) setError(err);
         }

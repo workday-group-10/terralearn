@@ -83,6 +83,10 @@ class ApiClient {
   async fetchGamesForCountry(countryId){
     return await this.request({ endpoint: `game/id/${countryId}/country`, method: 'GET' })
   }
+  //function calls game endpoint to get all games 
+  async fetchAllGames(){
+    return await this.request({ endpoint: `game`, method: 'GET' })
+  }
   // async fetchNutrition() {
   //   return await this.request({ endpoint: `nutrition`, method: `GET` })
   // }

@@ -8,7 +8,7 @@ export const CountriesContextProvider = ({ children }) => {
         const fetchCountries = async () => {
             const { data, err } = await apiClient.fetchCountries();
             //
-            if (data) setCountries(data.Countries);
+            if (data) setCountries(data.countries);
             if (err) setError(err);
         }
         fetchCountries()
