@@ -137,7 +137,7 @@ export default function Login(props) {
       setIsLoading(false)
     }
   }
-  console.log(errors)
+
 
   return (
     <div className="Login">
