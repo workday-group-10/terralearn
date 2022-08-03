@@ -137,6 +137,7 @@ export default function Login(props) {
       setIsLoading(false)
     }
   }
+  console.log(errors)
 
   return (
     <div className="Login">
@@ -149,6 +150,10 @@ export default function Login(props) {
               <Link className="underline" to="/register">Sign up</Link>
           </p>
           <h1 className="sign-title">Sign In</h1>
+         
+
+
+       {Boolean(errors.form) && <span className="error">{errors.form}</span>}
 
           <div className="form">
             <form>
