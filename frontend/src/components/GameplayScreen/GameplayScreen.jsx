@@ -10,9 +10,10 @@ import { GEOAPIFY_KEY } from "../constants";
 import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 import { useAuthContext } from "../contexts/auth";
 import apiClient from "../services/apiClient"
+import { useProfileContext } from "../contexts/profile";
 
 export default function GameplayScreen({location, setLocation, positions ,setPositions, latitude, setLatitude,
-   longitude, setLongitude, country_id, userPlacesInfo, setCurrInfo, currInfo, setUserPlacesInfo}) {
+   longitude, setLongitude, country_id, userPlacesInfo, setCurrInfo, currInfo, setUserPlacesInfo, userType, setUserType}) {
   const [guessed,setGuessed] = useState(false)
   const {cities, setCities} = useCitiesContext();
   var categorizedCities = [];
@@ -23,6 +24,14 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   const {appState} = useAuthContext();
   var stringSpace = ""
   var newString = ""
+  const {Profile, setProfiles} = useProfileContext();
+
+  //gets profile context and sets it to user type
+  useEffect(() => {
+    if(Profile.length != 0){
+    setUserType(Profile?.userType[0]?.search_type)
+    }
+  }, [Profile])
   
   // filters city context based on where the user chose their category
   function filterCities(){
@@ -46,7 +55,6 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   async function addGuessB(){
     try{
       const {data, error} = await apiClient.addGuess(guessBack)
-      // console.log(data)
     } catch(error){
       setError(error)
     }
@@ -63,7 +71,7 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
     const fetchData = async () => {
       var i =  Math.floor(Math.random() *20);
 
-      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=tourism&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
+      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
       //sets location, latitude, longtitude of place guessed
       setLocation(data.features[i].properties.name);

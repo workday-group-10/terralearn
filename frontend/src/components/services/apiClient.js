@@ -140,6 +140,14 @@ class ApiClient {
   async fetchCategory(id) {
     return await this.request({ endpoint: `favorites/category/${id}`, method: `GET` })
   }
+
+  async fetchUserType() {
+    return await this.request({endpoint: `profile/userType`, method: 'GET'})
+  }
+
+  async updateUserType(userType) {
+    return await this.request({endpoint: `profile/userType`, method: 'PUT', data: userType})
+  }
   
 }
 
