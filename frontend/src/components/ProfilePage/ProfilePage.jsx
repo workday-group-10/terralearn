@@ -18,7 +18,6 @@ function ProfilePage({userType, setUserType}) {
     //gets users info from usecontext
     const { appState, pastGameInfo } = useAuthContext();
     const {Profile, setProfiles, error, setError} = useProfileContext();
-    console.log(Profile)
 
     //set the profile from context for user type display
     useEffect(() => {
