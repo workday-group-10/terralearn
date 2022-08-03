@@ -23,6 +23,15 @@ function ProfilePage({userType, setUserType}) {
     useEffect(() => {
       if(Profile.length != 0){
       setUserType(Profile?.userType[0]?.search_type)
+      if(Profile?.userType[0]?.search_type == 'tourism'){
+        setUserLabel('Tourist')
+      }
+      else if(Profile?.userType[0]?.search_type == 'education'){
+        setUserLabel('Student')
+      }
+      else if(Profile?.userType[0]?.search_type == 'healthcare'){
+        setUserLabel('Medical Professional')
+      }
       }
     }, [Profile])
     
@@ -44,6 +53,8 @@ function ProfilePage({userType, setUserType}) {
         
     }, [pastGameInfo])
 
+    //allow user to change their user type with dropdown box
+
     const options = [
         { label: 'Tourist', value: 'tourism' },
         { label: 'Student', value: 'education' },
@@ -51,18 +62,28 @@ function ProfilePage({userType, setUserType}) {
       ];
 
     const [value, setValue] = useState('tourism');
+    const [userLabel, setUserLabel] = useState('tourist');
 
     const handleChange = (event) => {
       const {data, error} = apiClient.updateUserType({user_id: appState.user.id, value: event.target.value})
+      if(event.target.value == 'tourism'){
+        setUserLabel('Tourist')
+      }
+      else if(event.target.value == 'education'){
+        setUserLabel('Student')
+      }
+      else if(event.target.value == 'healthcare'){
+        setUserLabel('Medical Professional')
+      }
       setUserType(event.target.value);
       setValue(event.target.value);
     }
 
     const Dropdown = ({ label, value, options, onChange }) => {
         return (
-          <label>
+          <label className="dropdown-userType">
             {label}
-            <select value={value} onChange={onChange}>
+            <select className="dropdown-userType" value={value} onChange={onChange}>
               {options.map((option) => (
                 <option value={option.value}>{option.label}</option>
               ))}
@@ -95,7 +116,10 @@ function ProfilePage({userType, setUserType}) {
             <h1 className="prof-title">Profile Page</h1>
             {/* displays generic profile picture, and users first,last, and username */}
             <div className="profile-div">
-                <img alt="image of profile icon" className="prof-pic" src="https://icons-for-free.com/download-icon-profile+profile+page+user+icon-1320186864367220794_512.png" />
+                <div className="item">
+                  <img alt="image of profile icon" className="prof-pic" src="https://icons-for-free.com/download-icon-profile+profile+page+user+icon-1320186864367220794_512.png"/>
+                  <span className="caption">{userLabel}</span>
+                </div>
                 <div className="profile_info">
                     <h1 className="profile_item">{appState.user.username}</h1>
                     <span className="profile-name">{appState.user.firstName}</span>
@@ -103,9 +127,10 @@ function ProfilePage({userType, setUserType}) {
                 </div>
             </div>
             <div className="current-user">You currently want games to display information about {userType}.</div>
+            <div className="prompt-user">What kind of user are you?</div>
             <Dropdown
-                className = "dropdown"
-                label="What kind of user are you  "
+                className = "dropdown-userType"
+                label=""
                 options={options}
                 value={value}
                 onChange={handleChange}

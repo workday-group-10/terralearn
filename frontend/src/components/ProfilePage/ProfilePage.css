@@ -59,15 +59,43 @@
 .profile-div{
     display: flex;
     justify-content: space-around;
+    height: 25%
 }
 .none{
     display: none;
 }
 .prof-pic{
-    width: 20%;
-    height: 30%;
+    width: 150px;
+    height: 150px;
 }
-
+.item {
+  margin-left: 12%;
+  margin-top: 20px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+}
+.dropdown-userType{
+  height: 5%;
+  width: 20%;
+  font-size: 20px;
+  text-align: center;
+}
+.caption {
+  color: #ffffff; font-family: 'Raleway',sans-serif; 
+  font-size: 24px;
+    display: block;
+}
+.current-user{
+    color: #ffffff; font-family: 'Raleway',sans-serif; 
+    font-size: 24px; font-weight: 800; line-height: 72px; 
+    margin: 0 0 24px; text-align: center; text-transform: uppercase;
+}
+.prompt-user{
+  color: #ffffff; font-family: 'Raleway',sans-serif; 
+    font-size: 24px; font-weight: 800; line-height: 72px; 
+     text-align: center; text-transform: uppercase;
+}
 
 
 /* --animation stuff ---- */
