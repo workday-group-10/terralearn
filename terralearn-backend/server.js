@@ -5,6 +5,10 @@ const { PORT } = require("./config")
 const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
+
+
+
+
 const favoritesRoutes = require("./routes/favorites")
 const feedbackRoutes = require("./routes/feedback")
 const gameRoutes = require("./routes/game")
@@ -41,6 +45,11 @@ app.use("/game",gameRoutes)
 //profile routes
 app.use("/profile", profileRoutes)
 
+app.get("/", function (req, res) {
+    return res.status(200).json({
+      ping: "pong",
+    })
+})
 
 app.get("/", function (req, res) {
     return res.status(200).json({
