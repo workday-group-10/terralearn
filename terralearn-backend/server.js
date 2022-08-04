@@ -6,7 +6,6 @@ const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
 
-const gameRoutes = require("./routes/game")
 
 
 
