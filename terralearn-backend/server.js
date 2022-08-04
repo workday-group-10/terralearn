@@ -45,6 +45,11 @@ app.use("/game",gameRoutes)
 //profile routes
 app.use("/profile", profileRoutes)
 
+app.get("/", function (req, res) {
+    return res.status(200).json({
+      ping: "pong",
+    })
+})
 
 
 app.use((req, res, next) => {
