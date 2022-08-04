@@ -34,8 +34,24 @@
 .profile_info{
     width: 20vw;
     height: 30vh;
+    margin-top: 8px;
     text-align: center;
     z-index: 1;
+}
+.profile-div .item{
+  display: flex;
+  flex-direction: column;
+ 
+  height: 100%;
+  width: 20%;
+}
+.caption{
+  width: 100%;
+  margin-bottom: 60px;
+
+  font-size: 15px;
+ 
+
 }
 
 .profile_item{
@@ -95,6 +111,7 @@
     font-size: 20px; font-weight: 800; line-height: 72px; 
      text-align: center; text-transform: uppercase;
 }
+
 
 
 /* --animation stuff ---- */
