@@ -6,7 +6,6 @@ const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
 
-const gameRoutes = require("./routes/game")
 
 
 
@@ -46,6 +45,11 @@ app.use("/game",gameRoutes)
 //profile routes
 app.use("/profile", profileRoutes)
 
+app.get("/", function (req, res) {
+    return res.status(200).json({
+      ping: "pong",
+    })
+})
 
 
 app.use((req, res, next) => {
