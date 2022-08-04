@@ -6,7 +6,7 @@ const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
 
-const gameRoutes = require("./routes/game")
+
 
 
 
@@ -20,7 +20,7 @@ const { BadRequestError, NotFoundError } = require("./utils/errors")
 
 const app = express()
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:'*', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
