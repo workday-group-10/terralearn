@@ -30,6 +30,7 @@ import { ProfileContextProvider } from "../contexts/profile";
 import Leaderboard from "../Leaderboard/Leaderboard";
 
 import AllCategoriesContaine from "../AllCategories/AllCategories";
+import GeneralInfo from "../GeneralInfo/GeneralInfo";
 
 
 export default function AppContainer() {
@@ -128,6 +129,16 @@ function App() {
                   <ProtectedRoute
                     element={
                       <ProfilePage userType={userType} setUserType={setUserType} />
+                    }
+                  />
+                }
+              ></Route>
+              <Route
+                path="/genInfo"
+                element={
+                  <ProtectedRoute
+                    element={
+                      <GeneralInfo />
                     }
                   />
                 }

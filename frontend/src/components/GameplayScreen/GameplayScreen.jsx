@@ -65,6 +65,9 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
     setIsFetching(true);
     filterCities();
     fetchData();
+    console.log("props", props)
+    console.log("cat cities", categorizedCities)
+    console.log("cities", cities)
   }, []);
 
     //API call to geoapify to get places given the place_id from our filtered city context
@@ -72,6 +75,7 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       var i =  Math.floor(Math.random() *20);
 
       const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
+      console.log("data form geoapify", data)
       setData(data);
       //sets location, latitude, longtitude of place guessed
       setLocation(data.features[i].properties.name);
@@ -112,7 +116,7 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       {isFetching && <LoadingSpinner/>}
       {!isFetching && (
         <div className="google_street">
-        <StreetViewMap latitude={latitude} longitude={longitude}/>
+        <StreetViewMap latitude={2.2945} longitude={48.8584}/>
         </div>
       )};
         <div className="google_map">
