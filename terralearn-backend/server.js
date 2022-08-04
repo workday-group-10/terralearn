@@ -5,11 +5,6 @@ const { PORT } = require("./config")
 const security = require("./middleware/security")
 const authRoutes = require("./routes/auth")
 const placesRoutes = require("./routes/places")
-
-const gameRoutes = require("./routes/game")
-
-
-
 const favoritesRoutes = require("./routes/favorites")
 const feedbackRoutes = require("./routes/feedback")
 const gameRoutes = require("./routes/game")
@@ -20,7 +15,7 @@ const { BadRequestError, NotFoundError } = require("./utils/errors")
 
 const app = express()
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:'*', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
@@ -47,6 +42,11 @@ app.use("/game",gameRoutes)
 app.use("/profile", profileRoutes)
 
 
+app.get("/", function (req, res) {
+    return res.status(200).json({
+      ping: "pong",
+    })
+})
 
 app.use((req, res, next) => {
     return next(new NotFoundError())
