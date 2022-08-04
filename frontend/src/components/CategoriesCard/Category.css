@@ -13,13 +13,13 @@
 .description{
     color: white;
     line-height: 1.6;
-    height: 100px;
+    height: 105px;
    
    
 }
 .description p{
     line-height: 1.6;
-    margin-top: 5px;
+    margin-top: 1px;
    
 }
 .continent{

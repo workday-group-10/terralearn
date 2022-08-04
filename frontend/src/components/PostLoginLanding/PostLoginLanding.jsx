@@ -101,7 +101,7 @@ export default function PostLoginLandingContainer(props)
         <Category 
         country_id={props.country_id}
         setCountry_id={props.setCountry_id}
-        key={datum.country_name} continent={datum.country_name} Icon={franceIcon} description={datum.country_description} id={datum.country_id}/>
+        key={datum.country_name} continent={datum.country_name} Icon={datum.country_image} description={datum.country_description} id={datum.country_id}/>
         )
          
 

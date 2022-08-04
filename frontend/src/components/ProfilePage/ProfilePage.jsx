@@ -118,15 +118,20 @@ function ProfilePage({userType, setUserType}) {
             <div className="profile-div">
                 <div className="item">
                   <img alt="image of profile icon" className="prof-pic" src="https://icons-for-free.com/download-icon-profile+profile+page+user+icon-1320186864367220794_512.png"/>
+                
                   <span className="caption">{userLabel}</span>
+                
+
                 </div>
                 <div className="profile_info">
                     <h1 className="profile_item">{appState.user.username}</h1>
+                    
                     <span className="profile-name">{appState.user.firstName}</span>
                     <span className="profile-name">{appState.user.lastName}</span>
                 </div>
+             
             </div>
-            <div className="current-user">You currently want games to display information about {userType}.</div>
+            <div className="current-user">You currently want games to display information about <b>{userType}</b>.</div>
             <div className="prompt-user">What kind of user are you?</div>
             <Dropdown
                 className = "dropdown-userType"
