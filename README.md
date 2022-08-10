@@ -17,7 +17,7 @@ Project Code Repository Links
 
 Add a quick summary of what your project theme and objectives are. 
 
-Deployment Website: [Terralearn](https://terralearn.surge.sh/)
+Deployment Website: [TerraLearn](https://terralearn.surge.sh/)
 
 
 ### Open-source libraries used
