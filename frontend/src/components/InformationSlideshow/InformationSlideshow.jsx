@@ -9,7 +9,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 export default function InformationSlideshow(props) {
 
     //takes in input thats passed in from geoapify api
-    var input = props.location
+    var [input, setInput] = useState(props.location)
 
     //usestates
     const [errors, setErrors] = useState({})
@@ -21,7 +21,7 @@ export default function InformationSlideshow(props) {
     // takes in information 
     
     if (props.location === undefined){
-        input = 0
+        setInput(0)
         
         setInfoTitle("Information Slideshow!")
 
@@ -71,7 +71,7 @@ export default function InformationSlideshow(props) {
                 
                 //checks if api call returns undefined
                 if (response.data.query == undefined){
-                    input = 0;
+                    setInput(0)
                 }
                 if (response != undefined){
                 // 
