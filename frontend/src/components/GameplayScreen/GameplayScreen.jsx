@@ -96,7 +96,11 @@ const hintOnclick=()=>{
         const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[randomCity].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
         setData(data);
 
+        console.log(data)
+  
+
         var i =  Math.floor(Math.random() * data.features.length);
+
         //sets location, latitude, longtitude of place guessed
         setLocation(data.features[i].properties.name);
         setLatitude(data.features[i].properties.lat);
@@ -132,6 +136,7 @@ const hintOnclick=()=>{
       console.log(data)
       // console.log("data", data)
       setHint(data.hintsForCity[0].hint)
+      setDisplayHintButton(true)
       console.log("hint on image", hint)
       if(error){
         console.log("eroor", error)
