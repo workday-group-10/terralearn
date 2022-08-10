@@ -1,15 +1,15 @@
-img {
+.product-image {
     height: 150px;
     margin-top: 3px;
     border-radius: 10%;
-    max-width: 100%;
+    max-width: 50px;
   }
   .products {
     display: flex;
     justify-content: center;
     align-content: center;
     border-style: outset;
-    width: 150px;
+    width: 250px;
   }
   .product-card {
     display: flex;
