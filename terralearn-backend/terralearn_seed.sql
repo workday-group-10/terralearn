@@ -4,7 +4,7 @@ VALUES
     ('USA', 'https://www.attractionsofamerica.com/images/all_travel/20191109114454_times-square-ny.jpg', 'Easy', 'Time Square is one of the most famous places in the US where street performers come to playshops open their doors wide, traffic rages on, the billboards are bright, and people from all over the world come together'),
     ('Germany', 'https://media.istockphoto.com/photos/munich-picture-id962642536?k=20&m=962642536&s=612x612&w=0&h=SS7uIBeZ07NvjqKrJ6QU5JVnvEyo96p8PmQVyf3js84=', 'Easy','Munich is Germany''s lifestyle capital. And on top of all this, it boasts one of the country''s most beautiful squares: Marienplatz, at the heart of the city and home to the Old and New Town Halls'),
     ('Japan', 'https://www.japan-guide.com/thumb/XYZeXYZe3401_1680a.jpg', 'Easy','Miyajima is a romantic place, best enjoyed by staying overnight at one of the island''s ryokan. While there are usually many day tourists, in the evening the area becomes much quieter and more peaceful.'),
-    ('World', 'https://images4.alphacoders.com/695/695882.jpg', 'Easy','The world is at your disposal. Explore');
+    ('World', 'https://images4.alphacoders.com/695/695882.jpg', 'Easy','The world is at your disposal. Explore all 7 continents and find out if you know your home.');
 INSERT INTO cities(city, place_id, category_id)
 VALUES
     ('Paris','519cde56ca3cbe02405952699d53a56d4840f00101f9016517010000000000c002099203055061726973', (SELECT id FROM category WHERE country='France')),
@@ -30,7 +30,7 @@ VALUES
     ('Jakarta','518b8eb2d3a7ab5a4059217fc03c678316c0f00101f901361761000000000092031d446165726168204b6875737573204962756b6f7461204a616b61727461', (SELECT id FROM category WHERE country='Indonesia')),
     ('Delhi', '51de7e3fb25b47534059493c6a0fe2a43c40f00101f9013aa41d000000000092030544656c6869', (SELECT id FROM category WHERE country='India')),
     ('Manila', '51ab58de687c3a5e405964cd53c6a3312d40f00101f9011795010000000000c002099203064d616e696c61', (SELECT id FROM category WHERE country='Philippines')),
-    ('Elmina Castle', '517f779bdbca0df3bf592f58cbe62e541f40f00101f9010df1020000000000c0020b9203054768616e61', (SELECT id FROM category WHERE country='Ghana')),
+    ('Ghana', '517f779bdbca0df3bf592f58cbe62e541f40f00101f9010df1020000000000c0020b9203054768616e61', (SELECT id FROM category WHERE country='Ghana')),
     ('Cairo', '517c3d460afc993f4059d717413bdffb3d40f00101f901736853000000000092030ed8a7d984d982d8a7d987d8b1d8a9', (SELECT id FROM category WHERE country='Egypt')),
     ('Moscow', '511e7433c031cd4240595ecbb6a2fcde4b40f00101f901fdfc26000000000092030cd09cd0bed181d0bad0b2d0b0', (SELECT id FROM category WHERE country='Russia')),
     ('Soweto', '51a4703d0ad7e33b4059619843f707393ac0f00103f901fa9ba40100000000920306536f7765746f', (SELECT id FROM category WHERE country='South Africa')),
