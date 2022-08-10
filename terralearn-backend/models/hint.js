@@ -2,12 +2,10 @@ const {UnauthorizedError, BadRequestError, NotFoundError} = require("../utils/er
 const db = require("../db")
 
 class Hint{
-    static async getHintForCity(location){
+    static async getHintForCity(city_id){
         const query = `SELECT * from hint
-        JOIN cities
-        ON cities.id = hint.city_id
-        WHERE city=$1`;
-        const result = await db.query(query, [location])
+        WHERE city_id=$1`;
+        const result = await db.query(query, [city_id])
        const hint = result.rows
        return hint
     }
@@ -15,3 +13,8 @@ class Hint{
     
 }
 module.exports = Hint
+
+// const query = `SELECT * from hint
+//         JOIN cities
+//         ON cities.id = hint.city_id
+//         WHERE city=$1`;

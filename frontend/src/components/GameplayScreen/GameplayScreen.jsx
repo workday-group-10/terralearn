@@ -120,25 +120,25 @@ const hintOnclick=()=>{
              
         setIsFetching(false)
         if(country_id == 5){
-          console.log("in world, category, this is cities", categorizedCities[randomCity].city)
-          setCurrCity({city: categorizedCities[randomCity].city})
+          // console.log("in world, category, this is cities", categorizedCities[randomCity].city)
+          // setCurrCity({city: categorizedCities[randomCity].city})
           console.log("currCity", currCity)
-          fetchHintforCity()
+          fetchHintforCity(randomCity)
         }   
 
      
   }
-  async function fetchHintforCity(){
+  async function fetchHintforCity(randomCity){
     setisHint(true);
-    if(currCity != undefined){
+    if(randomCity != undefined){
       try {
-      console.log(currCity)
+      console.log(randomCity)
       // const response = await apiClient.fetchHints()
-      const response = await axios.get(`https://terralearn-w10.herokuapp.com/game/hint`, currCity)
-      console.log(response)
+      const {data, error} = await apiClient.fetchHints(randomCity)
+      console.log(data)
       // console.log("data", data)
-      // setHint(data.hintsForCity[0].hint)
-      // console.log("hint on image", hint)
+      setHint(data.hintsForCity[0].hint)
+      console.log("hint on image", hint)
       if(error){
         console.log("eroor", error)
       }
