@@ -11,8 +11,6 @@ VALUES
     ('New York','511afd6c89127c52c059336cb0c7f3544440f00101f90121af020000000000c0020a9203084e657720596f726b', (SELECT id FROM category WHERE country='USA')),
     ('Berlin', '5141d026fcfbcd2a4059ef44a4d830404a40f00101f901d6f30000000000009203064265726c696e', (SELECT id FROM category WHERE country='Germany')),
     ('Shibuya', '5180c7a04848766140599e2996c87cd54140f00101f901f5d81a0000000000c00208920309e6b88be8b0b7e58cba', (SELECT id FROM category WHERE country='Japan'));
-
-
 INSERT INTO category(country, image_url, difficulty,descriptions)
 VALUES
     ('Indonesia', 'https://images.unsplash.com/photo-1555043722-4523972f07ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aW5kb25lc2lhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60', 'Easy', 'Indonesia, country located off the coast of mainland Southeast Asia in the Indian and Pacific oceans. It is an archipelago that lies across the Equator and spans a distance equivalent to one-eighth of Earth''s circumference.'),
@@ -23,7 +21,6 @@ VALUES
     ('Russia', 'https://images.unsplash.com/photo-1576413326475-ea6c788332fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW9zY293fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60', 'Easy','Russia, country that stretches over a vast expanse of eastern Europe and northern Asia. Once known as the USSR, Russia became an independent country after the dissolution of the Soviet Union in December 1991.'),
     ('South Africa', 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80', 'Easy','South Africa, the southernmost country on the African continent, renowned for its varied topography, great natural beauty, and cultural diversity, all of which have made the country a favoured destination for travelers since the legal ending of apartheid.'),
     ('Brazil', 'https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnJhemlsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60', 'Easy','Brazil, officially Federative Republic of Brazil, country of South America that occupies half the continent''s landmass. It is the fifth largest country in the world, exceeded in size only by Russia, Canada, China, and the United States.');
-
 INSERT INTO cities(city, place_id, category_id)
 VALUES
     ('Tokyo','51754d6407e217614059d7badc5abd144240f00101f90169d5050000000000c0020b920306e697a5e69cac', (SELECT id FROM category WHERE country='Japan')),
@@ -35,7 +32,6 @@ VALUES
     ('Moscow', '511e7433c031cd4240595ecbb6a2fcde4b40f00101f901fdfc26000000000092030cd09cd0bed181d0bad0b2d0b0', (SELECT id FROM category WHERE country='Russia')),
     ('Soweto', '51429afad02b13394059084f24564e433dc0f00101f9010d56010000000000c0020b92030c536f75746820416672696361', (SELECT id FROM category WHERE country='South Africa')),
     ('SÃ£o Paulo', '5116fdbec28b4448c059d5d766ab8c6d36c0f00101f901dc8c04000000000092030a53c3a36f205061756c6f', (SELECT id FROM category WHERE country='Brazil'));
-
 INSERT INTO hints(hint, category_id)
 VALUES
     ('https://st.depositphotos.com/1588500/1462/i/600/depositphotos_14625469-stock-photo-flag-of-japan.jpg', (SELECT id FROM cities WHERE city='Tokyo')),
@@ -50,12 +46,12 @@ VALUES
     ('https://viatravelers.com/wp-content/uploads/2019/10/Masskara.jpeg', (SELECT id FROM cities WHERE city='Manila')),
     ('https://a.cdn-hotels.com/gdcs/production23/d1646/7a8f7eb3-df74-4fd2-90ff-1f6481afb378.jpg?impolicy=fcrop&w=1600&h=1066&q=medium', (SELECT id FROM cities WHERE city='Manila')),
     ('https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTgwMTk1OTE3OTYwMzI0NDQw/gettyimages-1257609884.jpg', (SELECT id FROM cities WHERE city='Manila')),
-    ('https://st2.depositphotos.com/1483008/6167/i/950/depositphotos_61672653-stock-photo-kwame-nkrumah-memorial-park-monument.jpg', (SELECT id FROM cities WHERE city='Elmina Castle')),
-    ('https://static2.mansionglobal.com/production/media/article-images/89c34b78142fc4354fa368adf53cad4f/large_ghana-lead.jpg', (SELECT id FROM cities WHERE city='Elmina Castle')),
-    ('https://cdn.sanity.io/images/eqr4ac4k/production/5e13ae41b0d65c571404262d66832efee53d136d-1500x2250.jpg?rect=0,157,1500,1350&w=1200&h=1080&fit=crop', (SELECT id FROM cities WHERE city='Elmina Castle')),
-    ('https://resources.premierleague.com/premierleague/photos/players/250x250/p118748.png', (SELECT id FROM cities WHERE city='Cairo')),
-    ('https://image.shutterstock.com/image-vector/transparent-high-detailed-black-map-600w-550624726.jpg', (SELECT id FROM cities WHERE city='Cairo')),
-    ('https://www.egypttoday.com/siteimages/Larg/2020082405030838.jpg', (SELECT id FROM cities WHERE city='Cairo')),
+    ('https://st2.depositphotos.com/1483008/6167/i/950/depositphotos_61672653-stock-photo-kwame-nkrumah-memorial-park-monument.jpg', (SELECT id FROM cities WHERE city='Ghana')),
+    ('https://static2.mansionglobal.com/production/media/article-images/89c34b78142fc4354fa368adf53cad4f/large_ghana-lead.jpg', (SELECT id FROM cities WHERE city='Ghana')),
+    ('https://cdn.sanity.io/images/eqr4ac4k/production/5e13ae41b0d65c571404262d66832efee53d136d-1500x2250.jpg?rect=0,157,1500,1350&w=1200&h=1080&fit=crop', (SELECT id FROM cities WHERE city='Ghana')),
+    ('https://resources.premierleague.com/premierleague/photos/players/250x250/p118748.png', (SELECT id FROM cities WHERE city='South Sinai')),
+    ('https://image.shutterstock.com/image-vector/transparent-high-detailed-black-map-600w-550624726.jpg', (SELECT id FROM cities WHERE city='South Sinai')),
+    ('https://www.egypttoday.com/siteimages/Larg/2020082405030838.jpg', (SELECT id FROM cities WHERE city='South Sinai')),
     ('https://www.expatica.com/app/uploads/sites/11/2021/10/red-square-1536x1024.jpg', (SELECT id FROM cities WHERE city='Moscow')),
     ('https://cdn.britannica.com/42/3842-050-68EEE2C4/Flag-Russia.jpg', (SELECT id FROM cities WHERE city='Moscow')),
     ('https://www.planetware.com/wpimages/2019/10/russia-best-places-to-visit-olkhon-island.jpg', (SELECT id FROM cities WHERE city='Moscow')),
