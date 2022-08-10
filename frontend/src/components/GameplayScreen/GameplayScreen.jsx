@@ -9,8 +9,12 @@ import axios from "axios";
 import { GEOAPIFY_KEY } from "../constants";
 import LoadingSpinner from "../LoadingPage/LoadingSpinner"
 import { useAuthContext } from "../contexts/auth";
+import worldData from "../worldData.json"
 import apiClient from "../services/apiClient"
+import { BsFillPatchQuestionFill } from "react-icons/bs";
+
 import { useProfileContext } from "../contexts/profile";
+import HintCard from "../HintCard/HintCard"
 
 export default function GameplayScreen({location, setLocation, positions ,setPositions, latitude, setLatitude,
    longitude, setLongitude, country_id, userPlacesInfo, setCurrInfo, currInfo, setUserPlacesInfo, userType, setUserType}) {
@@ -25,6 +29,9 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   var stringSpace = ""
   var newString = ""
   const {Profile, setProfiles} = useProfileContext();
+  const [hint,setHint]= useState("")
+  const [isHint,setisHint] = useState(false) 
+  const [displayHintButton,setDisplayHintButton]=useState(false)
 
   //gets profile context and sets it to user type
   useEffect(() => {
@@ -42,6 +49,10 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   }
 }
 
+const hintOnclick=()=>{
+  setisHint(!isHint)
+
+}
   const navigate = useNavigate()
   function navSummary(){
     if (guessed==true)
@@ -69,7 +80,6 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
 
     //API call to geoapify to get places given the place_id from our filtered city context
     const fetchData = async () => {
-      var i =  Math.floor(Math.random() *20);
 
       const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
       setData(data);
@@ -80,12 +90,64 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       
       //New Feature commented not done yet
        stringSpace = data.features[i].properties.address_line1;
+
+      console.log(country_id)
+      /////
+
+      if (country_id!=5)
+      {
+        var i =  Math.floor(Math.random() *20);
+
+        const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
+        setData(data);
+        //sets location, latitude, longtitude of place guessed
+        console.log(data.features[i].properties.name)
+        setLocation(data.features[i].properties.name);
+        setLatitude(data.features[i].properties.lat);
+        setLongitude(data.features[i].properties.lon);
+        console.log(data)
+
+        
+        
+        //New Feature commented not done yet
+         stringSpace = data.features[i].properties.address_line1;
+       
+         newString = stringSpace.replace(/\s/g, '%20')
+        
+         setCurrInfo("https://www.google.com/search?q=" + newString);
+             
+        setIsFetching(false)   
+      }
+      else{
+        var length= worldData.length
+        setDisplayHintButton(true)
      
-       newString = stringSpace.replace(/\s/g, '%20')
-      
-       setCurrInfo("https://www.google.com/search?q=" + newString);
-           
-      setIsFetching(false)      
+       
+        var i =  Math.floor(Math.random() *length);
+        console.log(worldData[i])
+        console.log(worldData[i].lat)
+        console.log(worldData[i].lng)
+
+        await setLocation(worldData[i].city);
+        await setLatitude(worldData[i].lat);
+        await setLongitude(worldData[i].lng);
+
+        var hint = Math.floor(Math.random()*3)
+        console.log(worldData[i].hint[hint])
+        setHint(worldData[i].hint[hint])
+
+        stringSpace = worldData[i].city;
+       
+        newString = stringSpace.replace(/\s/g, '%20')
+       
+        setCurrInfo("https://www.google.com/search?q=" + newString);
+            
+       setIsFetching(false) 
+
+      }
+
+
+     
   }
   //sets useState that goes to backend, then calls api
    //sets useState that goes to backend, then calls api
@@ -115,11 +177,23 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
         <StreetViewMap latitude={latitude} longitude={longitude}/>
         </div>
       )};
+      {!isFetching && isHint && (
+        <div className="hints">
+         <HintCard hint={hint}/> {console.log("Hint")}
+        </div>
+      )}
+      
         <div className="google_map">
           <PinMap guessed={guessed} setGuessed={setGuessed} positions={positions}  setPositions={setPositions}/>
 
           <button onClick={navSummary}>Guess</button>
         </div>
+        {!isFetching && displayHintButton && (
+        <div >
+        <BsFillPatchQuestionFill className="hint-button" id="hint-button" onClick={hintOnclick}/>
+      </div>
+      )}
+       
       </div>
   )
       }
