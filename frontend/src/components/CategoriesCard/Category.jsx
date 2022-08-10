@@ -88,11 +88,13 @@ function Category({
   },[datum])
   return (
     <div className="category">
-      <Card className={classes.root}>
+      <Card className="cards" >
+        <div className="cardAction">
         <CardActionArea>
           {/* image display in card */}
           <CardMedia
             component="img"
+            className="cardMedia"
             alt="Contemplative Reptile"
             height="180"
             // gets icon props
@@ -115,7 +117,9 @@ function Category({
               </Typography>
             </div>
           </CardContent>
+          
         </CardActionArea>
+        </div>
         <div className="buttons-below">
         <CardActions className="category-but">
           <Button
