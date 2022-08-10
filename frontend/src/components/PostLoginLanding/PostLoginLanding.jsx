@@ -31,7 +31,7 @@ export default function PostLoginLandingContainer(props)
 
   function PostLoginLanding(props) {
   var dat= data.countries
-  var values = dat
+  const [values, setValues] = useState(dat)
   props= props.props
  
 
@@ -40,6 +40,15 @@ export default function PostLoginLandingContainer(props)
   useEffect(() => {
     props.setNavbarName(props.user.username)
    { <Navigate replace to="/PostLoginlanding" />}
+   if (values.length > 4) {
+    setValues([])
+    console.log("in loop", values)
+    for (let i = 0; i < 3; i++) {
+      // values.push(dat[i])
+      setValues(values => [...values, dat[i]]);
+      console.log("values", values)
+    }
+   }
   
   }, []);
   
