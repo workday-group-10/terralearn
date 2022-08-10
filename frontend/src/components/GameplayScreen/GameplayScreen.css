@@ -1,82 +1,69 @@
 .gameplay-screen{
-	position:relative;
-	height: calc(100vh - 90px );
-	
-
+    position:relative;
+    height: calc(100vh - 90px );
 }
 .google_street{
-	width: 100%;
-	height: calc(100vh - 90px );
+    width: 100%;
+    height: calc(100vh - 90px );
 }
 .google_map{
-	position:absolute;
+    position:absolute;
     bottom:0;
     right:0;
-	z-index: 1000;
-	width: 20%;
-	opacity: 0.5;
-	transition: 0.7s;
-
-	height: calc(100vh - 80vh );
-	margin-right: 70px;
-	margin-bottom: 30px;
-	display: flex;
-	flex-direction: column;
+    z-index: 1000;
+    width: 20%;
+    opacity: 0.5;
+    transition: 0.7s;
+    height: calc(100vh - 80vh );
+    margin-right: 70px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
 }
 .google_map button{
-	margin: 10px;
-	border-radius:10px ;
-	height: 25%;
-	font-size: 20px;
-	cursor: pointer;
+    margin: 10px;
+    border-radius:10px ;
+    height: 25%;
+    font-size: 20px;
+    cursor: pointer;
 }
 .google_map:hover{
-	opacity: 1;
-	height: calc(100vh - 60vh );
-	width: 30%;
-	transition: 0.7s;
-
-	
+    opacity: 1;
+    height: calc(100vh - 60vh );
+    width: 30%;
+    transition: 0.7s;
 }
 .google_map button:hover{
-	background-color:#f6f33f;
+    background-color:#f6f33f;
         color:#094876;
         transition: 0.7s;
 }
-
 .hints{
-	position: absolute;
-	top: 50px;
-	left: 16px;
-	font-size: 18px;
-	z-index: 1000;
-	
-	
+    position: absolute;
+    top: 50px;
+    left: 16px;
+    font-size: 18px;
+    z-index: 1000;
 }
-
 .hint-button{
-	position: absolute;
-	
-	bottom: 30px;
-	left: 16px;
-	font-size: 18px;
-	z-index: 1000;
-	
-
+    position: absolute;
+    bottom: 30px;
+    left: 16px;
+    font-size: 18px;
+    z-index: 1000;
 }
-
 @keyframes blinking {
-	0% {
-	  background-color: #06c3d1;
-	  border: 3px solid #666;
-	}
-	100% {
-	  background-color: #270da6;
-	  border: 3px solid #666;
-	}
+    0% {
+      background-color: #06C3D1;
+      border: 3px solid #666;
+    }
+    100% {
+      background-color: #270DA6;
+      border: 3px solid #666;
+    }
   }
   #hint-button {
-	width: 50px;
-	height: 50px;
-	animation: blinking 1s infinite;
+    width: 50px;
+    height: 50px;
+    animation: blinking 1s infinite;
   }
