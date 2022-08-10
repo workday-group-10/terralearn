@@ -54,10 +54,10 @@ router.post("/", security.requireAuthenticatedUser, async(req, res, next) => {
 })
 
 //end points that gets every game up to top ten score
-router.get("/hint", async(req, res, next) => {
+router.get("/id/:cityId/hint", async(req, res, next) => {
     try{
-        console.log(req.body.city)
-        const hintsForCity = await Hint.getHintForCity(req.body.city)
+        const cityId = Number(req.params.cityId);
+        const hintsForCity = await Hint.getHintForCity(cityId)
         return res.status(201).json({ hintsForCity })
     } catch(err){
         next(err)
