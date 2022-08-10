@@ -90,11 +90,12 @@ const hintOnclick=()=>{
 
       // if (country_id!=5)
       // {
-        var i =  Math.floor(Math.random() *20);
         var randomCity = Math.floor(Math.random() * categorizedCities.length);
 
         const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[randomCity].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
         setData(data);
+
+        var i =  Math.floor(Math.random() * data.features.length);
         //sets location, latitude, longtitude of place guessed
         setLocation(data.features[i].properties.name);
         setLatitude(data.features[i].properties.lat);
