@@ -35,10 +35,17 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   
   // filters city context based on where the user chose their category
   function filterCities(){
+  if(country_id != 5){
   for(var i = 0; i < cities.length; i++){
   if(cities[i].category_id == country_id){
   categorizedCities.push(cities[i])
   }
+  }
+}
+  else{
+    for(var i = 0; i < cities.length; i++){
+      categorizedCities.push(cities[i])
+    }
   }
 }
 
@@ -85,11 +92,12 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       //New Feature commented not done yet
        stringSpace = data.features[i].properties.address_line1;
 
-      if (country_id!=5)
-      {
+      // if (country_id!=5)
+      // {
         var i =  Math.floor(Math.random() *20);
+        var randomCity = Math.floor(Math.random() * categorizedCities.length);
 
-        const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
+        const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[randomCity].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
         setData(data);
         //sets location, latitude, longtitude of place guessed
         console.log(data.features[i].properties.name)
@@ -108,34 +116,34 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
          setCurrInfo("https://www.google.com/search?q=" + newString);
              
         setIsFetching(false)   
-      }
-      else{
-        var length= worldData.length
-        setDisplayHintButton(true)
+      // }
+      // else{
+      //   var length= worldData.length
+      //   setDisplayHintButton(true)
      
        
-        var i =  Math.floor(Math.random() *length);
-        console.log(worldData[i])
-        console.log(worldData[i].lat)
-        console.log(worldData[i].lng)
+      //   var i =  Math.floor(Math.random() *length);
+      //   console.log(worldData[i])
+      //   console.log(worldData[i].lat)
+      //   console.log(worldData[i].lng)
 
-        await setLocation(worldData[i].city);
-        await setLatitude(worldData[i].lat);
-        await setLongitude(worldData[i].lng);
+      //   await setLocation(worldData[i].city);
+      //   await setLatitude(worldData[i].lat);
+      //   await setLongitude(worldData[i].lng);
 
-        var hint = Math.floor(Math.random()*3)
-        console.log(worldData[i].hint[hint])
-        setHint(worldData[i].hint[hint])
+      //   var hint = Math.floor(Math.random()*3)
+      //   console.log(worldData[i].hint[hint])
+      //   setHint(worldData[i].hint[hint])
 
-        stringSpace = worldData[i].city;
+      //   stringSpace = worldData[i].city;
        
-        newString = stringSpace.replace(/\s/g, '%20')
+      //   newString = stringSpace.replace(/\s/g, '%20')
        
-        setCurrInfo("https://www.google.com/search?q=" + newString);
+      //   setCurrInfo("https://www.google.com/search?q=" + newString);
             
-       setIsFetching(false) 
+      //  setIsFetching(false) 
 
-      }
+      // }
 
 
 
