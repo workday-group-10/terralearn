@@ -61,3 +61,10 @@ VALUES
     ('http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTF6ULLB-4skDfS2ehsT7zWmHq6OPiicfMypRhmaZOGJfDfYA5D66QeUPTN9hl6XgJn', (SELECT id FROM cities WHERE city='SÃ£o Paulo')),
     ('https://ca-times.brightspotcdn.com/dims4/default/bf19efd/2147483647/strip/true/crop/1200x700+0+0/resize/840x490!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff6%2Fbb%2F9a3400236fe7596f2d55ff919c73%2Fla-sp-brazil-world-cup-stadium-20140601-001', (SELECT id FROM cities WHERE city='SÃ£o Paulo')),
     ('https://www.celebritycruises.com/blog/content/uploads/2021/09/what-is-brazil-known-for-christ-the-redeemer-aerial-hero-1600x890.jpg', (SELECT id FROM cities WHERE city='SÃ£o Paulo'));
+INSERT INTO hint(hint, category_id)
+VALUES
+    ('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/640px-Flag_of_France.svg.png', (SELECT id FROM cities WHERE city='Paris')),
+    ('https://i5.walmartimages.com/asr/ca1a7178-6b83-4e2b-98c3-6431724bd092.98d8be637fdd243c592fa1bfa1d7767d.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', (SELECT id FROM cities WHERE city='New York')),
+    ('https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg', (SELECT id FROM cities WHERE city='Berlin')),
+    ('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Japan_%281870%E2%80%931999%29.svg/220px-Flag_of_Japan_%281870%E2%80%931999%29.svg.png', (SELECT id FROM cities WHERE city='Shibuya'));
+    

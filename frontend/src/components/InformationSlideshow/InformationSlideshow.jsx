@@ -9,7 +9,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 export default function InformationSlideshow(props) {
 
     //takes in input thats passed in from geoapify api
-    var input = props.location
+    var [input, setInput] = useState(props.location)
 
     //usestates
     const [errors, setErrors] = useState({})
@@ -20,13 +20,19 @@ export default function InformationSlideshow(props) {
     const [link, setLink] = useState("https://www.google.com/")
     // takes in information 
     
-    if (props.location === undefined){
-        input = 0
+    // if (props.location === undefined){
+    //     setInput(0)
         
-        setInfoTitle("Information Slideshow!")
+    //     setInfoTitle("Information Slideshow!")
 
-    }
+    // }
     
+    useEffect(() => {
+        if(props.location != undefined){
+            setInput(props.location)
+        }
+        
+    }, [props.location])
     
     
     //endpoints and parameters for mediawiki api call
@@ -69,13 +75,12 @@ export default function InformationSlideshow(props) {
             try{
                 const response = await axios.get(endpoints, {params})
                 
-                //checks if api call returns undefined
-                if (response.data.query == undefined){
-                    input = 0;
-                }
+         
                 if (response != undefined){
                 // 
                 setFirstReponse(Object.values(response.data.query.pages)[0])
+           } else {
+                setInput(0)
            }
             } catch (err){
                 setErrors(err)
@@ -86,7 +91,13 @@ export default function InformationSlideshow(props) {
     }
     //is not relevant at the moment, but necessary for error handling later on
     useEffect(() => {
-        if (input != undefined ) {
+        if (props.location === undefined){
+            setInput(0)
+            
+            setInfoTitle("Information Slideshow!")
+    
+        }
+        if (input != undefined && input != 0 ) {
             setInfoTitle(input)
         }
         if(input == 0){

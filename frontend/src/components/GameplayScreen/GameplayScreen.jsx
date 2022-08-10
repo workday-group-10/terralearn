@@ -127,12 +127,12 @@ const hintOnclick=()=>{
      
   }
   async function fetchHintforCity(randomCity){
-    setisHint(true);
+    setisHint(false);
     if(randomCity != undefined){
       try {
       console.log(randomCity)
       // const response = await apiClient.fetchHints()
-      const {data, error} = await apiClient.fetchHints(randomCity)
+      const {data, error} = await apiClient.fetchHints(randomCity+1)
       console.log(data)
       // console.log("data", data)
       setHint(data.hintsForCity[0].hint)
