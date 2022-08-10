@@ -107,6 +107,7 @@ export default function PostLoginLandingContainer(props)
       <div className="break">Most Popular Categories</div>
       <div ref={cardRef} className="home_row">
         {values.map((datum)=>(
+          
         <Category 
         country_id={props.country_id}
         setCountry_id={props.setCountry_id}
