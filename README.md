@@ -4,7 +4,7 @@ SITE Course Year: **2022**
 
 Cohort: **Workday 10**
 
-Team Member Names:**Folasade Oloye, Evans Asuboah, Andrew Valerio**
+Team Member Names: **Folasade Oloye, Evans Asuboah, Andrew Valerio**
 
 Mentors Names: **Matt Carreon, Arianna Malakis, Lalitha Nanduri**
 
