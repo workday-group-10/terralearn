@@ -142,10 +142,10 @@ function ProfilePage({userType, setUserType}) {
                 />
             {/* displays stats of users last and best played games */}
             <div className="game-stats">
-                <h1>Last Played Category: {recent_category}</h1>
-                <h1>Most Recent Score: {recent_score}</h1>
-                <h1>Best Country: {best_country}</h1>
-                <h1>Highest Score: {highest_score}</h1>
+                <h2>Last Played Category: {recent_category}</h2>
+                <h2>Most Recent Score: {recent_score}</h2>
+                <h2>Best Country: {best_country}</h2>
+                <h2>Highest Score: {highest_score}</h2>
             </div>
             
             
