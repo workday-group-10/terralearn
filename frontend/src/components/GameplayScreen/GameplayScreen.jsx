@@ -76,10 +76,14 @@ const hintOnclick=()=>{
     setIsFetching(true);
     filterCities();
     fetchData();
+    console.log("props", props)
+    console.log("cat cities", categorizedCities)
+    console.log("cities", cities)
   }, []);
 
     //API call to geoapify to get places given the place_id from our filtered city context
     const fetchData = async () => {
+
       console.log(country_id)
       /////
 
@@ -134,6 +138,7 @@ const hintOnclick=()=>{
        setIsFetching(false) 
 
       }
+
      
   }
   //sets useState that goes to backend, then calls api
@@ -161,7 +166,7 @@ const hintOnclick=()=>{
       {isFetching && <LoadingSpinner/>}
       {!isFetching && (
         <div className="google_street">
-        <StreetViewMap latitude={latitude} longitude={longitude}/>
+        <StreetViewMap latitude={2.2945} longitude={48.8584}/>
         </div>
       )};
       {!isFetching && isHint && (

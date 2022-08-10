@@ -31,13 +31,13 @@ Role 3 Persona 2: Jake is a 27 year old living in New York. He dropped out of co
 - [x]  As a traveler, I want to be able to see all the places I've guessed in a list.
 - [x] As a traveler, I want to be able to limit the areas I want to guess in.
 - [x] As a traveler, I want to be able to see information about the places I am guessing.
-- [] As a student. I want to be able to search for a country I want to learn about.
+- [x] As a student. I want to be able to search for a country I want to learn about.
 - [x] As a student, I want to be able to store my favorite countries in order to visit them later.
 - [x] As a student I will need the places to be categorized. For example, national park, cities , capital towns
 - [] As a player, I want to be able to chose difficulty modes and other modes to start a game with so that I can make the game remain fun and engaging.
 - [x] As a player, I want to create a profile so that others can see my scores in games. 
 - [ ] As a player, I want to be able to view other profiles and see their scores so that I can compare them with my own.
-- []  As a player, I want to be able to see a leaderboard so that I can see how I compare to the rest of the userbase.
+- [x]  As a player, I want to be able to see a leaderboard so that I can see how I compare to the rest of the userbase.
 
 
 

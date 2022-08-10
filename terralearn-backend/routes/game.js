@@ -8,7 +8,12 @@ router.get("/id/:userId/user", async(req, res, next) => {
     try{
         const userId = Number(req.params.userId);
         const gamesForUser = await Game.fetchGamesByUserId(userId)
-        const recentScore = gamesForUser[gamesForUser.length-1]
+        if (gamesForUser.length >1){
+            const recentScore = gamesForUser[gamesForUser.length-1]
+        } else{
+            const recentScore = ["No games found"]
+        }
+        
         const highScore = await Game.fetchHighScore(userId)
         return res.status(201).json({ gamesForUser, recentScore, highScore })
     } catch(err){

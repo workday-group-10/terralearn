@@ -19,7 +19,7 @@ const { BadRequestError, NotFoundError } = require("./utils/errors")
 
 const app = express()
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:'*', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
@@ -51,6 +51,11 @@ app.get("/", function (req, res) {
     })
 })
 
+app.get("/", function (req, res) {
+    return res.status(200).json({
+      ping: "pong",
+    })
+})
 
 app.use((req, res, next) => {
     return next(new NotFoundError())
