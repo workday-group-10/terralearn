@@ -71,3 +71,4 @@ CREATE TABLE hint(
     city_id     INTEGER NOT NULL,
     FOREIGN KEY(city_id) REFERENCES city(id)
 );
+

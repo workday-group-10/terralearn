@@ -32,6 +32,7 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
   const [hint,setHint]= useState("")
   const [isHint,setisHint] = useState(false) 
   const [displayHintButton,setDisplayHintButton]=useState(false)
+  const [currCity, setCurrCity] = useState({city: "Manila"})
 
   //gets profile context and sets it to user type
   useEffect(() => {
@@ -91,7 +92,7 @@ const hintOnclick=()=>{
       // if (country_id!=5)
       // {
         var randomCity = Math.floor(Math.random() * categorizedCities.length);
-
+        
         const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[randomCity].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
         setData(data);
 
@@ -111,39 +112,37 @@ const hintOnclick=()=>{
         
          setCurrInfo("https://www.google.com/search?q=" + newString);
              
-        setIsFetching(false)   
-      // }
-      // else{
-      //   var length= worldData.length
-      //   setDisplayHintButton(true)
-     
-       
-      //   var i =  Math.floor(Math.random() *length);
-      //   console.log(worldData[i])
-      //   console.log(worldData[i].lat)
-      //   console.log(worldData[i].lng)
-
-      //   await setLocation(worldData[i].city);
-      //   await setLatitude(worldData[i].lat);
-      //   await setLongitude(worldData[i].lng);
-
-      //   var hint = Math.floor(Math.random()*3)
-      //   console.log(worldData[i].hint[hint])
-      //   setHint(worldData[i].hint[hint])
-
-      //   stringSpace = worldData[i].city;
-       
-      //   newString = stringSpace.replace(/\s/g, '%20')
-       
-      //   setCurrInfo("https://www.google.com/search?q=" + newString);
-            
-      //  setIsFetching(false) 
-
-      // }
-
+        setIsFetching(false)
+        if(country_id == 5){
+          console.log("in world, category, this is cities", categorizedCities[randomCity].city)
+          setCurrCity({city: categorizedCities[randomCity].city})
+          console.log("currCity", currCity)
+          fetchHintforCity()
+        }   
 
      
   }
+  async function fetchHintforCity(){
+    setisHint(true);
+    if(currCity != undefined){
+      try {
+      console.log(currCity)
+      // const response = await apiClient.fetchHints()
+      const response = await axios.get(`https://terralearn-w10.herokuapp.com/game/hint`, currCity)
+      console.log(response)
+      // console.log("data", data)
+      // setHint(data.hintsForCity[0].hint)
+      // console.log("hint on image", hint)
+      if(error){
+        console.log("eroor", error)
+      }
+      } catch(error){
+        setError(error)
+      }
+    }
+    
+  }
+
   //sets useState that goes to backend, then calls api
    //sets useState that goes to backend, then calls api
    useEffect(() => {
@@ -192,4 +191,3 @@ const hintOnclick=()=>{
       </div>
   )
       }
-
