@@ -16,11 +16,17 @@ CREATE TABLE category(
 
 );
 CREATE TABLE cities(
-    id          SERIAL PRIMARY KEY,
+    id          SERIAL PRIMARY KEY UNIQUE,
     city        TEXT NOT NULL,
     place_id    TEXT NOT NULL,
     category_id INTEGER NOT NULL,
     FOREIGN KEY(category_id) REFERENCES category(id)
+);
+CREATE TABLE hint(
+    id              SERIAL PRIMARY KEY,
+    hint            TEXT NOT NULL,
+    city_id     INTEGER NOT NULL,
+    FOREIGN KEY(city_id) REFERENCES cities(id)
 );
 
 CREATE TABLE favorities(
@@ -64,10 +70,4 @@ CREATE TABLE feedback(
     paragraph   TEXT NOT NULL,
     user_id     INTEGER NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users(id)
-);
-CREATE TABLE hint(
-    id              SERIAL PRIMARY KEY,
-    hint            TEXT NOT NULL,
-    category_id     INTEGER NOT NULL,
-    FOREIGN KEY(category_id) REFERENCES category(id)
 );

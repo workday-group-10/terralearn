@@ -2,6 +2,7 @@ const express = require("express")
 const Game = require("../models/game")
 const router = express.Router()
 const security = require("../middleware/security")
+const Hint = require("../models/hint")
 
 //endpoint that gets games by user id
 router.get("/id/:userId/user", async(req, res, next) => {
@@ -47,6 +48,17 @@ router.post("/", security.requireAuthenticatedUser, async(req, res, next) => {
     try{
        const game = await Game.addGame(req.body)
         return res.status(201).json({ game })
+    } catch(err){
+        next(err)
+    }
+})
+
+//end points that gets every game up to top ten score
+router.get("/hint", async(req, res, next) => {
+    try{
+        console.log(req.body.city)
+        const hintsForCity = await Hint.getHintForCity(req.body.city)
+        return res.status(201).json({ hintsForCity })
     } catch(err){
         next(err)
     }
