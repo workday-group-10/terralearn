@@ -84,6 +84,61 @@ export default function GameplayScreen({location, setLocation, positions ,setPos
       
       //New Feature commented not done yet
        stringSpace = data.features[i].properties.address_line1;
+
+      if (country_id!=5)
+      {
+        var i =  Math.floor(Math.random() *20);
+
+        const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
+        setData(data);
+        //sets location, latitude, longtitude of place guessed
+        console.log(data.features[i].properties.name)
+        setLocation(data.features[i].properties.name);
+        setLatitude(data.features[i].properties.lat);
+        setLongitude(data.features[i].properties.lon);
+        console.log(data)
+
+        
+        
+        //New Feature commented not done yet
+         stringSpace = data.features[i].properties.address_line1;
+       
+         newString = stringSpace.replace(/\s/g, '%20')
+        
+         setCurrInfo("https://www.google.com/search?q=" + newString);
+             
+        setIsFetching(false)   
+      }
+      else{
+        var length= worldData.length
+        setDisplayHintButton(true)
+     
+       
+        var i =  Math.floor(Math.random() *length);
+        console.log(worldData[i])
+        console.log(worldData[i].lat)
+        console.log(worldData[i].lng)
+
+        await setLocation(worldData[i].city);
+        await setLatitude(worldData[i].lat);
+        await setLongitude(worldData[i].lng);
+
+        var hint = Math.floor(Math.random()*3)
+        console.log(worldData[i].hint[hint])
+        setHint(worldData[i].hint[hint])
+
+        stringSpace = worldData[i].city;
+       
+        newString = stringSpace.replace(/\s/g, '%20')
+       
+        setCurrInfo("https://www.google.com/search?q=" + newString);
+            
+       setIsFetching(false) 
+
+      }
+
+
+
      
        newString = stringSpace.replace(/\s/g, '%20')
       

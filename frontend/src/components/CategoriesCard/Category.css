@@ -8,6 +8,19 @@
     width: 100%;
     max-height: 400px;
     max-width: 325px;
+  
+}
+.cards{
+   padding: auto;;
+}
+.cardMedia{
+    border-radius: 0px;
+   
+}
+
+.cardAction{
+    background-color:  rgba(6,78,184,1);
+    
 }
 
 .description{
