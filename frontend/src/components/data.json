@@ -24,6 +24,13 @@
             "country_description":"There are four main islands: Hokkaido, Honshu, Shikoku, and Kyushu.",
             "country_image": "https://wallpaperaccess.com/full/22287.jpg"
 
+        },
+        {
+            "country_id": 5,
+            "country_name":"World",
+            "country_description":"There are 195 countries in the world, seven continents, different colors but one people",
+            "country_image": "https://previews.123rf.com/images/schlaumal/schlaumal1804/schlaumal180400188/99585988-no-to-racism-flat-design-icon.jpg?fj=1"
+
         }
     ]
 }

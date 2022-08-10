@@ -16,7 +16,7 @@ export default function LandingPage() {
 
   return (
     <div className="landingPage">
-    <ul class="circles">
+    <ul className="circles">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -29,7 +29,7 @@ export default function LandingPage() {
                     <li></li>
             </ul>
 
-            <div class="bg-animation">
+            <div className="bg-animation">
             <div id="stars1"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>

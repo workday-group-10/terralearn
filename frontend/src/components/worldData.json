@@ -1,0 +1,110 @@
+[
+  {
+    "city": "Tokyo",
+    "lat": 35.684183,
+    "lng": 139.774368,
+    "country": "Japan",
+    "iso3": "JPN",
+    "hint": [
+      "https://st.depositphotos.com/1588500/1462/i/600/depositphotos_14625469-stock-photo-flag-of-japan.jpg",
+      "https://bigseventravel.com/wp-content/uploads/2022/02/Tokyo-tower.jpg",
+      "https://cdn.britannica.com/01/23901-004-21681A91/flag-Olympic-Games.jpg"
+    ]
+  },
+  {
+    "city": "Jakarta",
+    "lat": -6.214579,
+    "lng": 106.845121,
+    "country": "Indonesia",
+    "iso3": "IDN",
+    "hint": [
+      "https://www.flagsonline.it/uploads/2016-6-6/1200-0/indonesia.jpg",
+      "https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F160222142959-indonesian-food-indomie-9444-1900px.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bhairava_Adityavarman.jpg"
+    ]
+  },
+  {
+    "city": "Delhi",
+    "lat": 28.666728,
+    "lng": 77.216721,
+    "country": "India",
+    "iso3": "IND",
+    "hint": [
+      "https://www.holidify.com/images/cmsuploads/compressed/2277457413_993362dca4_b_20190520143148.jpg",
+      "https://media.gettyimages.com/vectors/delhi-map-with-long-shadow-on-blue-background-flat-design-vector-id1285679283?s=2048x2048",
+      "https://c.ndtvimg.com/2019-09/q91h92f8_delhi-india-gate-pixabay-650_625x300_09_September_19.jpg"
+    ]
+  },
+  {
+    "city": "Manila",
+    "lat": 14.6,
+    "lng": 120.983306,
+    "country": "Philippines",
+    "iso3": "PHL",
+    "hint": [
+      "https://viatravelers.com/wp-content/uploads/2019/10/Masskara.jpeg",
+      "https://a.cdn-hotels.com/gdcs/production23/d1646/7a8f7eb3-df74-4fd2-90ff-1f6481afb378.jpg?impolicy=fcrop&w=1600&h=1066&q=medium",
+      "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTgwMTk1OTE3OTYwMzI0NDQw/gettyimages-1257609884.jpg"
+    ]
+  },
+  {
+    "city": "Elmina Castle",
+    "lat": 5.082999,
+    "lng": -1.347989,
+    "country": "Ghana",
+    "iso3": "GHA",
+    "hint": [
+      "https://st2.depositphotos.com/1483008/6167/i/950/depositphotos_61672653-stock-photo-kwame-nkrumah-memorial-park-monument.jpg",
+      "https://static2.mansionglobal.com/production/media/article-images/89c34b78142fc4354fa368adf53cad4f/large_ghana-lead.jpg",
+      "https://cdn.sanity.io/images/eqr4ac4k/production/5e13ae41b0d65c571404262d66832efee53d136d-1500x2250.jpg?rect=0,157,1500,1350&w=1200&h=1080&fit=crop"
+    ]
+  },
+  {
+    "city": "Cairo",
+    "lat": 30.044678979229058,
+    "lng": 31.23566589539811,
+    "country": "Egypt",
+    "iso3": "EGY",
+    "hint": [
+      "https://resources.premierleague.com/premierleague/photos/players/250x250/p118748.png",
+      "https://image.shutterstock.com/image-vector/transparent-high-detailed-black-map-600w-550624726.jpg",
+      "https://www.egypttoday.com/siteimages/Larg/2020082405030838.jpg"
+    ]
+  },
+  {
+    "city": "Moscow",
+    "lat": 55.755975,
+    "lng": 37.617768,
+    "country": "Russia",
+    "iso3": "RUS",
+    "hint": [
+      "https://www.expatica.com/app/uploads/sites/11/2021/10/red-square-1536x1024.jpg",
+      "https://cdn.britannica.com/42/3842-050-68EEE2C4/Flag-Russia.jpg",
+      "https://www.planetware.com/wpimages/2019/10/russia-best-places-to-visit-olkhon-island.jpg"
+    ]
+  },
+  {
+    "city": "Soweto",
+    "lat": -26.238413,
+    "lng": 27.908816,
+    "country": "South Africa",
+    "iso3": "ZAF",
+    "hint": [
+      "https://rightepharmacy.co.za/wp-content/uploads/2020/03/city_back.jpg",
+      "https://addicted2success.com/wp-content/uploads/2017/09/Nelson-Mandela-History.jpg",
+      "https://cdn.britannica.com/27/4227-050-00DBD10A/Flag-South-Africa.jpg"
+    ]
+  },
+  {
+    "city": "SÃ£o Paulo",
+    "lat": -23.550311,
+    "lng": -46.6339,
+    "country": "Brazil",
+    "iso3": "BRA",
+    "hint": [
+      "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTF6ULLB-4skDfS2ehsT7zWmHq6OPiicfMypRhmaZOGJfDfYA5D66QeUPTN9hl6XgJn",
+      "https://ca-times.brightspotcdn.com/dims4/default/bf19efd/2147483647/strip/true/crop/1200x700+0+0/resize/840x490!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Ff6%2Fbb%2F9a3400236fe7596f2d55ff919c73%2Fla-sp-brazil-world-cup-stadium-20140601-001",
+      "https://www.celebritycruises.com/blog/content/uploads/2021/09/what-is-brazil-known-for-christ-the-redeemer-aerial-hero-1600x890.jpg"
+    ]
+  }
+]

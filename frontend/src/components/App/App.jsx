@@ -30,6 +30,7 @@ import { ProfileContextProvider } from "../contexts/profile";
 import Leaderboard from "../Leaderboard/Leaderboard";
 
 import AllCategoriesContaine from "../AllCategories/AllCategories";
+import HintCard from "../HintCard/HintCard"
 
 
 export default function AppContainer() {
@@ -172,6 +173,16 @@ function App() {
                 element={<Leaderboard selectedCountryId={selectedCountryId} setSelectedCountryId={setSelectedCountryId}/>}
                   
               ></Route>
+              {/*Hint*/
+              
+              <Route
+              path="/hint"
+              
+              element={<HintCard />}
+                
+            ></Route>
+              
+              }
 
               <Route
                 path="/countdown"
