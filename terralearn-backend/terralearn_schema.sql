@@ -68,6 +68,6 @@ CREATE TABLE feedback(
 CREATE TABLE hint(
     id              SERIAL PRIMARY KEY,
     hint            TEXT NOT NULL,
-    category_id     INTEGER NOT NULL,
-    FOREIGN KEY(category_id) REFERENCES category(id)
+    city_id     INTEGER NOT NULL,
+    FOREIGN KEY(city_id) REFERENCES city(id)
 );
