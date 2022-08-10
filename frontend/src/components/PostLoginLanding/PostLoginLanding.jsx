@@ -40,7 +40,7 @@ export default function PostLoginLandingContainer(props)
   useEffect(() => {
     props.setNavbarName(props.user.username)
    { <Navigate replace to="/PostLoginlanding" />}
-   if (values.length > 4) {
+   if (values.length > 3) {
     setValues([])
     console.log("in loop", values)
     for (let i = 0; i < 3; i++) {
