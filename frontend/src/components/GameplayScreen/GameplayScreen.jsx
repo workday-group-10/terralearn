@@ -81,19 +81,6 @@ const hintOnclick=()=>{
     //API call to geoapify to get places given the place_id from our filtered city context
     const fetchData = async () => {
 
-      const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[0].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
-      setData(data);
-      //sets location, latitude, longtitude of place guessed
-      setLocation(data.features[i].properties.name);
-      setLatitude(data.features[i].properties.lat);
-      setLongitude(data.features[i].properties.lon);
-      
-      //New Feature commented not done yet
-       stringSpace = data.features[i].properties.address_line1;
-
-      console.log(country_id)
-      /////
-
       if (country_id!=5)
       {
         var i =  Math.floor(Math.random() *20);
