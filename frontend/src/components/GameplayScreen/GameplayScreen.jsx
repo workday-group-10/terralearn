@@ -96,11 +96,10 @@ const hintOnclick=()=>{
         const { data } = await axios.get(`https://api.geoapify.com/v2/places?categories=${userType}&filter=place:${categorizedCities[randomCity].place_id}&limit=20&apiKey=${GEOAPIFY_KEY}`)
         setData(data);
         //sets location, latitude, longtitude of place guessed
-        console.log(data.features[i].properties.name)
         setLocation(data.features[i].properties.name);
         setLatitude(data.features[i].properties.lat);
         setLongitude(data.features[i].properties.lon);
-        console.log(data)
+        
 
         
         
