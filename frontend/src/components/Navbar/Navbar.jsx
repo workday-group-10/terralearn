@@ -212,7 +212,7 @@ useEffect(()=>{
         <div className={preNav}>
           <span className="Navbar_optionLineOne">All</span>
           <span className="Navbar_optionLineTwo"><Link className="nav-u" to="/allcategories">
-            All Categories
+            Categories
             </Link>
             </span>
         </div>
