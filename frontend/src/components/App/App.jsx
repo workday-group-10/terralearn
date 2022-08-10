@@ -35,6 +35,8 @@ import HintCard from "../HintCard/HintCard"
 
 import GeneralInfo from "../GeneralInfo/GeneralInfo";
 
+import LearnMorePage from "../LearnMore/LearnMore";
+
 
 
 export default function AppContainer() {
@@ -153,6 +155,14 @@ function App() {
                 element={
                   <ProtectedRoute
                     element={<InstructionsPage appState={appState} />}
+                  />
+                }
+              ></Route>
+              <Route
+                path="/learnMore"
+                element={
+                  <ProtectedRoute
+                    element={<LearnMorePage appState={appState} />}
                   />
                 }
               ></Route>
