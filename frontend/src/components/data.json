@@ -30,17 +30,12 @@
             "country_description":"There are 195 countries in the world, seven continents, different colors but one people",
             "country_image": "https://previews.123rf.com/images/schlaumal/schlaumal1804/schlaumal180400188/99585988-no-to-racism-flat-design-icon.jpg?fj=1"
 
-
-
-
         },
         {
             "country_id": 6,
             "country_name":"Indonesia",
             "country_description":"Indonesia is a very unique destination located in South east region. The country is famous throughout the world for its islands and beautiful landscapes",
             "country_image": "https://www.planetware.com/wpimages/2020/02/indonesia-in-pictures-beautiful-places-to-photograph-broken-beach.jpg"
-
-
         },
         {
             "country_id": 7,
@@ -60,39 +55,19 @@
         },
         {
             "country_id": 9,
-            "country_name":"Ghana",
-            "country_description":"Ghana, country of western Africa, situated on the coast of the Gulf of Guinea. Although relatively small in area and population, Ghana is one of the leading countries of Africa, partly because of its considerable natural wealth.",
-            "country_image": "https://images.unsplash.com/photo-1630386226447-af0a955c1009?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=824&q=80"
-
-
-        },
-        {
-            "country_id": 10,
-            "country_name":"Egypt",
-            "country_description":"Egypt, officially the Arab Republic of Egypt, is one of the greatest, most interesting countries you will ever see. With all of its history, culture, culinary, religion, and versatile geography, Egypt has a special spot for everyone who gets to visit this magnificent place.",
-            "country_image": "https://www.worldtravelguide.net/wp-content/uploads/2017/04/Think-Egypt-Giza-Sphynx-178375366-pius99-copy.jpg"
-
-
-        },
-        {
-            "country_id": 11,
             "country_name":"Russia",
             "country_description":"As the world's largest country, Russia occupies one-tenth of all the land on Earth. It spans 11 time zones across two continents (Europe and Asia) and has shores on three oceans (the Atlantic, Pacific and Arctic Ocean)",
             "country_image": "https://www.natgeokids.com/wp-content/uploads/2016/11/35e1e8efcce37bafbbe6ab288a8afde3ebb77202_1466173577.jpg"
 
         },
         {
-            "country_id": 12,
+            "country_id": 10,
             "country_name":"South Africa",
             "country_description":"South Africa, the southernmost country on the African continent, renowned for its varied topography, great natural beauty, and cultural diversity, all of which have made the country a favoured destination for travelers since the legal ending of apartheid in 1994",
             "country_image": "https://images.pexels.com/photos/59989/elephant-herd-of-elephants-african-bush-elephant-africa-59989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-
-
-            
-
         },
         {
-            "country_id": 13,
+            "country_id": 11,
             "country_name":"Brazil",
             "country_description":"Brazil is South America's biggest and the world's fifth largest country. The country covers three time zones! Brazil is also the largest country in the Southern hemisphere as it is bigger than Australia",
             "country_image": "https://previews.123rf.com/images/luizrocha/luizrocha1809/luizrocha180900107/109437651-jericoacoara-is-a-virgin-beach-hidden-behind-the-dunes-of-the-west-coast-of-jijoca-de-jericoacoara-c.jpg?fj=1"
