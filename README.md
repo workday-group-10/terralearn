@@ -4,7 +4,7 @@ SITE Course Year: **2022**
 
 Cohort: **Workday 10**
 
-Team Member Names:**Folasade Oloye, Evans Asuboah, Andrew Valerio**
+Team Member Names: **Folasade Oloye, Evans Asuboah, Andrew Valerio**
 
 Mentors Names: **Matt Carreon, Arianna Malakis, Lalitha Nanduri**
 
@@ -17,7 +17,7 @@ Project Code Repository Links
 
 Add a quick summary of what your project theme and objectives are. 
 
-Deployment Website: [Terralearn](https://terralearn.surge.sh/)
+Deployment Website: [TerraLearn](https://terralearn.surge.sh/)
 
 
 ### Open-source libraries used
