@@ -8,7 +8,7 @@ function HintCard({hint}) {
           <section className="products">
       <div className="product-card">
         <div className="product-image">
-          <img src={hint} />
+          <img className= "img-hint" src={hint} />
         </div>
         <div className="product-info">
           
